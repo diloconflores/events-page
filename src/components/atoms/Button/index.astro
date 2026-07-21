@@ -1,0 +1,129 @@
+---
+import Icon from "../Icon/index.astro";
+import { cn } from "../../../utils/cn";
+
+import {
+  getAnchorAttributes,
+  getButtonAttributes,
+  getButtonLeadingIcon,
+  getButtonTrailingIcon,
+  getButtonVariant,
+  isButtonGhost,
+  isButtonLink,
+} from "./logic";
+import type { ButtonProps } from "./types";
+
+const props = Astro.props as ButtonProps;
+const variant = getButtonVariant(props);
+const isGhost = isButtonGhost(props);
+const isSharped = props.sharped ?? (isGhost && props.underline === true);
+const isRounded = props.rounded === true;
+const isGlass = props.glass === true;
+const isGhostUnderlined = isGhost && props.underline === true;
+const isGhostUnderlinedPrimary = isGhostUnderlined && variant === "primary";
+const isLink = isButtonLink(props);
+const leadingIcon = getButtonLeadingIcon(props);
+const trailingIcon = getButtonTrailingIcon(props);
+const leadingIconClass = props.leadingIconClass ?? "h-4 w-4";
+const trailingIconClass =
+  props.trailingIconClass ??
+  (variant === "primary" && isRounded && !isGhost
+    ? "h-4 w-4 transition-transform duration-200 ease-[cubic-bezier(0.22,0.72,0.2,1)] group-hover:translate-x-[3px]"
+    : "h-4 w-4");
+const anchorAttributes = isLink ? getAnchorAttributes(props) : undefined;
+const buttonAttributes = isLink ? undefined : getButtonAttributes(props);
+const ghostTextClass = isGhostUnderlinedPrimary ? "text-brand-pink" : "text-current";
+const roundedClass = isSharped ? "rounded-none" : isRounded ? "rounded-full" : "rounded-[18px]";
+const slotClass = isGhostUnderlined
+  ? isGhostUnderlinedPrimary
+    ? "underline decoration-2 decoration-brand-pink underline-offset-4"
+    : "underline decoration-2 decoration-current underline-offset-4"
+  : undefined;
+---
+
+{
+  isLink ? (
+    <a
+      class={cn(
+        "group inline-flex items-center justify-center gap-2 font-sans font-semibold focus-visible:outline-none disabled:pointer-events-none disabled:opacity-45",
+        roundedClass,
+        isGhost && "bg-transparent border-0 shadow-none backdrop-blur-0",
+        !isGhost && variant === "primary" && "bg-pink px-6 py-4 text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-pink-dark focus-visible:ring-2 focus-visible:ring-pink/30",
+        !isGhost && variant === "secondary" && !isGlass && "border border-brand-line bg-white px-6 py-4 text-brand-ink transition hover:-translate-y-0.5 hover:bg-brand-pink-soft focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        !isGhost && variant === "secondary" && isGlass && "border border-white/55 bg-white/5 px-6 py-4 text-white backdrop-blur-[8px] transition-[transform,background-color,color,border-color] duration-[250ms] ease-[cubic-bezier(0.22,0.72,0.2,1)] hover:-translate-y-0.5 hover:bg-white hover:text-black focus-visible:ring-2 focus-visible:ring-white/20",
+        !isGhost && variant === "light" && "border border-brand-line bg-white px-6 py-4 text-brand-ink transition hover:-translate-y-0.5 hover:bg-brand-pink-soft focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        !isGhost && variant === "nav" && "rounded-full bg-pink px-5 py-3 text-white transition hover:bg-pink-dark focus-visible:ring-2 focus-visible:ring-pink/30",
+        !isGhost && variant === "wizard-back" && "border-0 bg-transparent p-0 text-brand-muted transition hover:text-brand-pink focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        !isGhost && variant === "wizard-next" && "rounded-full bg-pink px-5 py-3 text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-pink-dark focus-visible:ring-2 focus-visible:ring-pink/30",
+        !isGhost && variant === "submit" && "min-h-[58px] min-w-[240px] justify-between gap-3 rounded-[18px] bg-pink px-5 py-4 text-white transition hover:bg-pink-dark focus-visible:ring-2 focus-visible:ring-pink/30",
+        !isGhost && variant === "link" && "border-b border-current pb-1 font-bold text-brand-pink transition hover:opacity-80 focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        !isGhost && variant === "chip" && "border border-brand-line bg-white px-3 py-2 text-[11px] font-bold text-brand-muted transition hover:border-brand-pink hover:bg-brand-pink-soft hover:text-brand-pink focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        !isGhost && variant === "icon" && "h-[54px] w-[54px] rounded-full border border-brand-line bg-brand-surface/90 text-brand-ink shadow-soft transition hover:border-brand-pink hover:text-brand-pink focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        isGhost && ghostTextClass,
+        isGhost && "bg-transparent border-0 shadow-none backdrop-blur-0",
+        isGhost && "data-[active=true]:text-pink! data-[active=true]:font-bold",
+        props.active && variant === "chip" && "border-brand-pink bg-brand-pink-soft text-brand-pink",
+        props.past && variant === "chip" && "opacity-72",
+        props.class,
+      )}
+      {...anchorAttributes}
+    >
+      {variant === "chip" && props.count !== undefined ? <span class="grid h-[22px] w-[22px] place-items-center rounded-full bg-brand-cream text-[10px] text-brand-ink">{props.count}</span> : null}
+      {leadingIcon ? <Icon name={leadingIcon} class={leadingIconClass} /> : null}
+      <span class:list={slotClass}>
+        <slot />
+      </span>
+      {trailingIcon ? <Icon name={trailingIcon} class={trailingIconClass} /> : null}
+    </a>
+  ) : (
+    <button
+      class={cn(
+        "group inline-flex items-center justify-center gap-2 font-sans font-semibold focus-visible:outline-none disabled:pointer-events-none disabled:opacity-45",
+        roundedClass,
+        isSharped && "rounded-none",
+        isGhost && "bg-transparent border-0 shadow-none backdrop-blur-0",
+        !isGhost && variant === "primary" && "bg-pink px-6 py-4 text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-pink-dark focus-visible:ring-2 focus-visible:ring-pink/30",
+        !isGhost && variant === "secondary" && !isGlass && "border border-brand-line bg-white px-6 py-4 text-brand-ink transition hover:-translate-y-0.5 hover:bg-brand-pink-soft focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        !isGhost && variant === "secondary" && isGlass && "border border-white/55 bg-white/5 px-6 py-4 text-white backdrop-blur-[8px] transition-[transform,background-color,color,border-color] duration-[250ms] ease-[cubic-bezier(0.22,0.72,0.2,1)] hover:-translate-y-0.5 hover:bg-white hover:text-black focus-visible:ring-2 focus-visible:ring-white/20",
+        !isGhost && variant === "light" && "border border-brand-line bg-white px-6 py-4 text-brand-ink transition hover:-translate-y-0.5 hover:bg-brand-pink-soft focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        !isGhost && variant === "nav" && "rounded-full bg-pink px-5 py-3 text-white transition hover:bg-pink-dark focus-visible:ring-2 focus-visible:ring-pink/30",
+        !isGhost && variant === "wizard-back" && "border-0 bg-transparent p-0 text-brand-muted transition hover:text-brand-pink focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        !isGhost && variant === "wizard-next" && "rounded-full bg-pink px-5 py-3 text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-pink-dark focus-visible:ring-2 focus-visible:ring-pink/30",
+        !isGhost && variant === "submit" && "min-h-[58px] min-w-[240px] justify-between gap-3 rounded-[18px] bg-pink px-5 py-4 text-white transition hover:bg-pink-dark focus-visible:ring-2 focus-visible:ring-pink/30",
+        !isGhost && variant === "link" && "border-b border-current pb-1 font-bold text-brand-pink transition hover:opacity-80 focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        !isGhost && variant === "chip" && "border border-brand-line bg-white px-3 py-2 text-[11px] font-bold text-brand-muted transition hover:border-brand-pink hover:bg-brand-pink-soft hover:text-brand-pink focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        !isGhost && variant === "icon" && "h-[54px] w-[54px] rounded-full border border-brand-line bg-brand-surface/90 text-brand-ink shadow-soft transition hover:border-brand-pink hover:text-brand-pink focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        isGhost && ghostTextClass,
+        isGhost && "bg-transparent border-0 shadow-none backdrop-blur-0",
+        isGhost && "data-[active=true]:text-pink! data-[active=true]:font-bold",
+        props.active && variant === "chip" && "border-brand-pink bg-brand-pink-soft text-brand-pink",
+        props.past && variant === "chip" && "opacity-72",
+        props.class,
+      )}
+      {...buttonAttributes}
+    >
+      {variant === "chip" && props.count !== undefined ? <span class="grid h-[22px] w-[22px] place-items-center rounded-full bg-brand-cream text-[10px] text-brand-ink">{props.count}</span> : null}
+      {leadingIcon ? <Icon name={leadingIcon} class={leadingIconClass} /> : null}
+
+      {variant === "submit" ? (
+        <span class="flex items-center gap-2">
+          <span class:list={slotClass}>
+            <slot />
+          </span>
+        </span>
+      ) : (
+        <span class:list={slotClass}>
+          <slot />
+        </span>
+      )}
+
+      {trailingIcon ? <Icon name={trailingIcon} class={trailingIconClass} /> : null}
+
+      {variant === "submit" ? (
+        <span class="grid h-5 w-5 place-items-center">
+          <span class:list={["h-5 w-5 rounded-full border-2 border-white/35 border-t-white", props.loading ? "animate-spin" : "hidden"]}></span>
+        </span>
+      ) : null}
+    </button>
+  )
+}

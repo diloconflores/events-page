@@ -1,0 +1,116 @@
+---
+import { cn } from "../../../utils/cn";
+import {
+  getMediaCardAttributes,
+  getMediaCardIsOverflow,
+  isMediaCardLink,
+  getMediaCardVariant,
+} from "./logic";
+import type { MediaCardProps } from "./types";
+
+const props = Astro.props as MediaCardProps;
+const variant = getMediaCardVariant(props);
+const isOverflow = getMediaCardIsOverflow(props);
+const isLink = isMediaCardLink(props);
+const attributes = getMediaCardAttributes(props);
+---
+
+{
+  isLink ? (
+    <a
+      class={cn(
+        "group relative block overflow-hidden rounded-[2rem] bg-[#ddd] shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        props.class,
+      )}
+      {...attributes}
+    >
+      <img
+        src={props.src}
+        alt={props.alt}
+        loading={props.loading ?? "lazy"}
+        class="block h-auto w-full transition duration-700 group-hover:scale-[1.05]"
+      />
+
+      {
+        isOverflow ? (
+          <span
+            class="absolute inset-0 right-0 top-0 z-20 grid min-h-0 min-w-0 place-items-center rounded-none bg-[rgba(6,4,5,0.72)] px-0 text-[clamp(2rem,4vw,4.2rem)]"
+          >
+            +{props.overflowCount}
+          </span>
+        ) : (
+          <span
+            class:list={[
+              "absolute left-[18px] right-[18px] bottom-[18px] z-10 grid gap-[3px] text-white",
+              variant === "gallery" && "gap-1",
+            ]}
+          >
+            {variant === "album" && props.tag ? (
+              <small class="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/72">
+                {props.tag}
+              </small>
+            ) : null}
+            <p class="text-[0.68rem] font-extrabold uppercase tracking-[0.22em] text-white/70">
+              {props.subtitle}
+            </p>
+            <strong class:list={[
+              "font-semibold tracking-tight text-white",
+              variant === "gallery" ? "text-[clamp(1rem,1.25vw,1.1rem)]" : "text-[clamp(1.02rem,1.4vw,1.25rem)]",
+            ]}>
+              {props.title}
+            </strong>
+            {props.caption ? <p class="mt-2 text-sm leading-6 text-white/82">{props.caption}</p> : null}
+          </span>
+        )
+      }
+    </a>
+  ) : (
+    <button
+      class={cn(
+        "group relative block overflow-hidden rounded-[2rem] bg-[#ddd] shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/20",
+        props.class,
+      )}
+      {...attributes}
+    >
+      <img
+        src={props.src}
+        alt={props.alt}
+        loading={props.loading ?? "lazy"}
+        class="block h-auto w-full transition duration-700 group-hover:scale-[1.05]"
+      />
+
+      {
+        isOverflow ? (
+          <span
+            class="absolute inset-0 right-0 top-0 z-20 grid min-h-0 min-w-0 place-items-center rounded-none bg-[rgba(6,4,5,0.72)] px-0 text-[clamp(2rem,4vw,4.2rem)]"
+          >
+            +{props.overflowCount}
+          </span>
+        ) : (
+          <span
+            class:list={[
+              "absolute left-[18px] right-[18px] bottom-[18px] z-10 grid gap-[3px] text-white",
+              variant === "gallery" && "gap-1",
+            ]}
+          >
+            {variant === "album" && props.tag ? (
+              <small class="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/72">
+                {props.tag}
+              </small>
+            ) : null}
+            <p class="text-[0.68rem] font-extrabold uppercase tracking-[0.22em] text-white/70">
+              {props.subtitle}
+            </p>
+            <strong class:list={[
+              "font-semibold tracking-tight text-white",
+              variant === "gallery" ? "text-[clamp(1rem,1.25vw,1.1rem)]" : "text-[clamp(1.02rem,1.4vw,1.25rem)]",
+            ]}>
+              {props.title}
+            </strong>
+            {props.caption ? <p class="mt-2 text-sm leading-6 text-white/82">{props.caption}</p> : null}
+          </span>
+        )
+      }
+    </button>
+  )
+}

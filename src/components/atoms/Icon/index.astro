@@ -1,0 +1,21 @@
+---
+import { getIconClassName, getIconMarkup } from "./logic";
+import type { IconProps } from "./types";
+
+const { name, class: className = "", title, decorative = false } = Astro.props as IconProps;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={getIconClassName(className)}
+  aria-hidden={decorative || !title ? "true" : undefined}
+  aria-label={title}
+  role={title && !decorative ? "img" : "presentation"}
+  set:html={getIconMarkup(name, title && !decorative ? title : undefined)}
+></svg>

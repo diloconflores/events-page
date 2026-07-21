@@ -1,0 +1,13 @@
+{
+  "siteLabel": "Dilo con Flores",
+  "gatewayHeading": "Selecciona tu idioma",
+  "gatewayLead": "El proyecto ya queda estructurado para servir contenido indexable en español e inglés sin duplicar arquitectura.",
+  "languagePrompt": "Cambiar idioma",
+  "languageSpanish": "Español",
+  "languageEnglish": "Inglés",
+  "skipLink": "Saltar al contenido",
+  "homeLabel": "Ir al inicio",
+  "openMenuLabel": "Abrir menú",
+  "closeMenuLabel": "Cerrar menú",
+  "primaryNavLabel": "Navegación principal"
+}

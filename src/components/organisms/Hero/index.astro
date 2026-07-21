@@ -1,0 +1,45 @@
+---
+import Button from "../../atoms/Button/index.astro";
+import type { HeroProps } from "./types";
+
+const { content } = Astro.props as HeroProps;
+---
+
+<section id="hero" class="relative isolate grid min-h-[100svh] overflow-hidden text-white">
+  <img
+    src={content.image.src}
+    alt={content.image.alt}
+    fetchpriority="high"
+    class="absolute inset-0 h-full w-full scale-[1.08] object-cover object-[54%_center] will-change-transform"
+  />
+  <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,10,12,0.2)_0%,rgba(14,10,12,0.35)_30%,rgba(14,10,12,0.88)_100%)]"></div>
+
+  <div class="relative z-[1] mx-auto grid w-[min(calc(100%-32px),1240px)] items-end pt-[120px] pb-[95px] min-[700px]:w-[min(calc(100%-64px),1240px)] min-[980px]:pb-[105px]">
+    <div class="max-w-[960px]">
+      <p class="mb-[14px] text-xs font-bold uppercase tracking-[0.18em] text-white">
+        {content.kicker}
+      </p>
+      <h1 class="mb-6 max-w-[980px] font-sans text-[clamp(2.45rem,7.2vw,5.2rem)] font-bold leading-[1.05] tracking-[-0.05em] text-white">
+        {content.title}
+      </h1>
+      <p class="mb-7 max-w-[760px] text-[clamp(1.05rem,2.4vw,1.3rem)] leading-[1.6] text-[rgba(255,255,255,0.85)]">
+        {content.text}
+      </p>
+
+      <div class="mt-8 flex flex-col items-start gap-3 min-[700px]:flex-row">
+        <Button href="#quote" variant="primary" rounded>{content.primaryCta}</Button>
+        <Button href="#inspiration" variant="secondary" rounded glass>
+          {content.secondaryCta}
+        </Button>
+      </div>
+
+      <ul class="mt-7 flex flex-wrap gap-x-[22px] gap-y-3 p-0 text-xs uppercase tracking-[0.08em] text-[rgba(255,255,255,0.78)]">
+        {content.trust.map((item) => (
+          <li class="relative flex items-center gap-2 pl-[13px] before:absolute before:left-0 before:top-1/2 before:h-[5px] before:w-[5px] before:-translate-y-1/2 before:rounded-full before:bg-brand-pink">
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

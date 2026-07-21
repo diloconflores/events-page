@@ -1,0 +1,125 @@
+---
+import Button from "../../atoms/Button/index.astro";
+import Dropdown from "../../molecules/Dropdown/index.astro";
+import { OCCASIONS_URL } from "./constants";
+import { getHeaderBrandMenuId, getHeaderPrimaryNavId } from "./logic";
+import { getHeaderScript } from "./scripts";
+import type { HeaderProps } from "./types";
+
+const { locale, content, common } = Astro.props as HeaderProps;
+const brandMenuId = getHeaderBrandMenuId(locale);
+const mobileMenuId = getHeaderPrimaryNavId(locale);
+const brandMenuItems = [
+  {
+    id: "events",
+    label: content.brand.events,
+    href: "#hero",
+    selected: true,
+  },
+  {
+    id: "occasions",
+    label: content.brand.occasions,
+    href: OCCASIONS_URL,
+    target: "_blank",
+    rel: "nofollow",
+    title: content.brand.occasions,
+    trailingIcon: "external-link",
+  },
+] as const;
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-[100] flex h-[78px] items-center justify-between px-4 text-white transition-[height,color,background-color,border-color,backdrop-filter] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] data-[scrolled=true]:h-[68px] data-[scrolled=true]:border-b data-[scrolled=true]:border-line data-[scrolled=true]:bg-[rgba(251,248,246,0.94)] data-[scrolled=true]:text-ink data-[scrolled=true]:backdrop-blur-[16px] min-[980px]:h-[88px] min-[980px]:px-8"
+  data-header
+  data-scrolled="false"
+>
+  <div class="relative z-[2] flex min-w-0 items-center gap-3">
+    <a
+      class="relative flex min-w-0 items-center gap-2.5"
+      href="#hero"
+      aria-label={common.homeLabel}
+    >
+      <img
+        class="h-[30px] w-[min(150px,45vw)] object-contain min-[980px]:h-[34px] min-[980px]:w-[150px]"
+        src="/brand/logo-horz-white.svg"
+        alt={content.brand.label}
+        data-brand-logo="white"
+      />
+      <img
+        class="h-[30px] w-[min(150px,45vw)] object-contain min-[980px]:h-[34px] min-[980px]:w-[150px]"
+        src="/brand/logo-horz-color.svg"
+        alt={content.brand.label}
+        hidden
+        data-brand-logo="color"
+      />
+    </a>
+
+    <Dropdown
+      id={brandMenuId}
+      triggerLabel={content.brand.switcherLabel}
+      triggerText={content.brand.division}
+      menuLabel={content.brand.switcherLabel}
+      items={brandMenuItems}
+      class="data-[scrolled=true]:text-ink!"
+      triggerClass="data-[scrolled=true]:text-ink!"
+    />
+  </div>
+
+  <button
+    class="group relative z-[2] h-[46px] w-[46px] border-0 bg-transparent text-current min-[980px]:hidden data-[scrolled=true]:text-ink!"
+    type="button"
+    aria-expanded="false"
+    aria-controls={mobileMenuId}
+    aria-label={common.openMenuLabel}
+    data-menu-button
+  >
+    <span
+      class="absolute left-[10px] top-[18px] block h-px w-[26px] bg-current transition-[top,transform] duration-[250ms] ease-[cubic-bezier(0.4,0,0.2,1)] group-data-[open=true]:top-[23px] group-data-[open=true]:rotate-45"
+    ></span>
+    <span
+      class="absolute left-[10px] top-[27px] block h-px w-[26px] bg-current transition-[top,transform] duration-[250ms] ease-[cubic-bezier(0.4,0,0.2,1)] group-data-[open=true]:top-[23px] group-data-[open=true]:-rotate-45"
+    ></span>
+  </button>
+
+  <nav
+    id={mobileMenuId}
+    class="fixed inset-0 flex translate-x-full flex-col gap-2 bg-cream px-6 pb-8 pt-[110px] text-ink transition-transform duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] data-[open=true]:translate-x-0 min-[980px]:static min-[980px]:inset-auto min-[980px]:ml-auto min-[980px]:translate-x-0 min-[980px]:flex-row min-[980px]:items-center min-[980px]:gap-6 min-[980px]:bg-transparent min-[980px]:px-0 min-[980px]:py-0 min-[980px]:text-inherit"
+    data-nav
+    data-open="false"
+    aria-label={common.primaryNavLabel}
+  >
+    <Button
+      href="#service"
+      ghost
+      class="border-b border-line py-3 font-serif text-[32px] data-[scrolled=true]:text-ink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold"
+      data-header-nav-link>{content.nav.service}</Button
+    >
+    <Button
+      href="#inspiration"
+      ghost
+      class="border-b border-line py-3 font-serif text-[32px] data-[scrolled=true]:text-ink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold"
+      data-header-nav-link>{content.nav.inspiration}</Button
+    >
+    <Button
+      href="#why-us"
+      ghost
+      class="border-b border-line py-3 font-serif text-[32px] data-[scrolled=true]:text-ink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold"
+      data-header-nav-link>{content.nav.whyUs}</Button
+    >
+    <Button
+      href="#process"
+      ghost
+      class="border-b border-line py-3 font-serif text-[32px] data-[scrolled=true]:text-ink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold"
+      data-header-nav-link>{content.nav.process}</Button
+    >
+    <Button href="#quote" variant="primary" sharped>{content.nav.cta}</Button>
+  </nav>
+</header>
+
+<script
+  type="module"
+  set:html={getHeaderScript({
+    openMenuLabel: common.openMenuLabel,
+    closeMenuLabel: common.closeMenuLabel,
+  })}
+/>

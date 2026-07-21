@@ -1,0 +1,42 @@
+---
+import {
+  DEFAULT_GTAG_CONFIG,
+  GOOGLE_ANALYTICS_SCRIPT_URL,
+} from './constants';
+
+const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+
+const isEnabled =
+  import.meta.env.PROD &&
+  typeof measurementId === 'string' &&
+  measurementId.trim().length > 0;
+---
+
+{
+  isEnabled && (
+    <>
+      <script
+        async
+        src={`${GOOGLE_ANALYTICS_SCRIPT_URL}?id=${measurementId}`}
+      />
+
+      <script
+        is:inline
+        define:vars={{
+          measurementId,
+          config: DEFAULT_GTAG_CONFIG,
+        }}
+      >
+        window.dataLayer = window.dataLayer || [];
+
+        window.gtag = function () {
+          window.dataLayer.push(arguments);
+        };
+
+        window.gtag('js', new Date());
+
+        window.gtag('config', measurementId, config);
+      </script>
+    </>
+  )
+}

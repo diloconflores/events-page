@@ -1,0 +1,29 @@
+---
+import { cn } from "../../../utils/cn";
+import { getShopProductCardAttributes } from "./logic";
+import type { ShopProductCardProps } from "./types";
+
+const props = Astro.props as ShopProductCardProps;
+const attributes = getShopProductCardAttributes(props);
+---
+
+<a
+  class={cn(
+    "group overflow-hidden rounded-[2rem] border border-brand-line bg-brand-surface-strong shadow-soft transition hover:-translate-y-1 hover:shadow-glow",
+    props.class,
+  )}
+  {...attributes}
+>
+  <div class="relative aspect-[4/5] overflow-hidden">
+    <img src={props.image} alt={props.alt} loading={props.loading ?? "lazy"} class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_30%,rgba(0,0,0,0.72)_100%)]"></div>
+    <div class="absolute inset-x-4 bottom-4">
+      <p class="text-[0.68rem] font-extrabold uppercase tracking-[0.24em] text-white/72">
+        {props.label}
+      </p>
+      <h3 class="mt-2 text-lg font-semibold tracking-tight text-white">
+        {props.title}
+      </h3>
+    </div>
+  </div>
+</a>

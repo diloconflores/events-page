@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/manrope/700.css";
+@import "@fontsource/playfair-display/500.css";
+@import "@fontsource/playfair-display/500-italic.css";
+
+@theme {
+  --color-black: #151214;
+  --color-cream: #fbf8f6;
+  --color-surface: #fffaf4;
+  --color-surface-strong: #ffffff;
+  --color-ink: #241f22;
+  --color-muted: #746d71;
+  --color-line: #e8dfe3;
+  --color-pink: #e72371;
+  --color-pink-dark: #c9155c;
+  --color-pink-soft: #fff0f6;
+  --color-occasion-background: #f6f1ed;
+
+  --color-brand-black: #151214;
+  --color-brand-cream: #fbf8f6;
+  --color-brand-surface: #fffaf4;
+  --color-brand-surface-strong: #ffffff;
+  --color-brand-ink: #241f22;
+  --color-brand-muted: #746d71;
+  --color-brand-line: #e8dfe3;
+  --color-brand-pink: #e72371;
+  --color-brand-pink-dark: #c9155c;
+  --color-brand-pink-soft: #fff0f6;
+
+  --font-sans: "Manrope", Arial, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+
+  --shadow-soft: 0 24px 70px rgba(32, 16, 22, 0.08);
+  --shadow-glow: 0 18px 48px rgba(231, 35, 113, 0.18);
+
+  --radius-panel: 1.75rem;
+}

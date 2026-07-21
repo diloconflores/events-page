@@ -1,0 +1,13 @@
+{
+  "siteLabel": "Dilo con Flores",
+  "gatewayHeading": "Choose your language",
+  "gatewayLead": "The project is already structured to serve indexable content in Spanish and English without duplicating architecture.",
+  "languagePrompt": "Switch language",
+  "languageSpanish": "Spanish",
+  "languageEnglish": "English",
+  "skipLink": "Skip to content",
+  "homeLabel": "Go to home",
+  "openMenuLabel": "Open menu",
+  "closeMenuLabel": "Close menu",
+  "primaryNavLabel": "Primary navigation"
+}

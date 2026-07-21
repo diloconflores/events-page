@@ -1,0 +1,63 @@
+---
+import { defaultLocale, getAlternateLocalePaths, getLocaleConfig, getLocalizedPath } from "../../i18n";
+import { SITE_NAME, DEFAULT_THEME_COLOR } from "./constants";
+import type { BaseLayoutProps } from "./types";
+import "../../styles/global.css";
+
+const {
+  locale,
+  title,
+  description,
+  canonicalPath = getLocalizedPath(locale),
+  route = "home",
+  noIndex = false,
+  ogType = "website",
+} = Astro.props as BaseLayoutProps;
+
+const localeConfig = getLocaleConfig(locale);
+const siteUrl = Astro.site ?? new URL("https://example.com");
+const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
+const localeAlternates = getAlternateLocalePaths(route);
+const xDefaultUrl = new URL(getLocalizedPath(defaultLocale, route), siteUrl).toString();
+const ogLocale = localeConfig.code === "es" ? "es_ES" : "en_US";
+---
+
+<!doctype html>
+<html lang={localeConfig.code} dir={localeConfig.direction} class="scroll-smooth bg-cream text-ink">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content={DEFAULT_THEME_COLOR} />
+    <link rel="icon" href="/favicon/isotipo-color.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/favicon/isotipo-white.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon/favicon-light-16.png" type="image/png" sizes="16x16" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/favicon/favicon-dark-16.png" type="image/png" sizes="16x16" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon/favicon-light-32.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/favicon/favicon-dark-32.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content={DEFAULT_THEME_COLOR} />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+    <link rel="canonical" href={canonicalUrl} />
+    {localeAlternates.map((alternate) => (
+      <link rel="alternate" hreflang={alternate.code} href={new URL(alternate.href, siteUrl).toString()} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body class="min-h-screen overflow-x-hidden bg-cream font-sans antialiased selection:bg-pink/20 selection:text-ink">
+    <slot />
+  </body>
+</html>
