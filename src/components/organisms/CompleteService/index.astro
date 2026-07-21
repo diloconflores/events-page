@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+import Button from "../../atoms/Button/index.astro";
+import completeServiceImage from "../../../assets/images/why-dilo-flores.webp";
+import {
+  COMPLETE_SERVICE_CTA_HREF,
+  COMPLETE_SERVICE_SECTION_ID,
+} from "./constants";
+import { getCompleteServiceScript } from "./scripts";
+import type { CompleteServiceProps } from "./types";
+
+const { content } = Astro.props as CompleteServiceProps;
+---
+
+<section
+  id={COMPLETE_SERVICE_SECTION_ID}
+  class="bg-white pt-[92px] pb-20"
+  data-complete-service
+>
+  <div
+    class="mx-auto grid w-[min(calc(100%-32px),1240px)] gap-10 min-[700px]:w-[min(calc(100%-64px),1240px)] lg:grid-cols-[1.08fr_0.92fr] lg:items-center"
+  >
+    <div class="reveal text-left">
+      <p
+        class="mb-[14px] text-xs font-bold uppercase tracking-[0.18em] text-brand-pink"
+      >
+        {content.promise.kicker}
+      </p>
+      <h2
+        class="max-w-[850px] font-sans text-[clamp(1.8rem,4.4vw,3.1rem)] font-bold leading-[1.05] tracking-[-0.05em] text-brand-ink"
+      >
+        {content.promise.title}
+      </h2>
+
+      <div class="mt-6 max-w-[720px] text-[1.08rem] leading-8 text-brand-muted">
+        <p class="m-0">{content.promise.text}</p>
+        <div class="mt-6 flex flex-col gap-4 min-[720px]:flex-row min-[720px]:items-center">
+          <Button
+            href={COMPLETE_SERVICE_CTA_HREF}
+            variant="primary"
+            trailingIcon="arrow-right"
+            class="w-fit shrink-0 self-center"
+          >
+            {content.promise.cta}
+          </Button>
+          <aside class="max-w-[320px] pt-1">
+            <p class="text-sm font-bold leading-5 text-black">
+              {content.promise.proposal.title}
+            </p>
+            <p class="mt-0 text-sm leading-6 text-black">
+              {content.promise.proposal.subtitle}
+            </p>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal lg:justify-self-end">
+      <div class="relative overflow-visible rounded-[2rem] bg-brand-surface shadow-soft">
+        <div class="overflow-hidden rounded-[2rem]">
+          <Image
+            src={completeServiceImage}
+            alt={content.promise.imageAlt}
+            class="h-full w-full object-cover"
+            sizes="(min-width: 1024px) 560px, 100vw"
+            loading="lazy"
+            format="webp"
+          />
+        </div>
+        <div class="absolute bottom-[-18px] left-[-10px] z-10 max-w-[min(90%,17rem)] -rotate-2 bg-white px-4 py-3 text-left text-brand-ink shadow-[0_18px_45px_rgba(0,0,0,0.16)] ring-1 ring-black/5 sm:bottom-[-22px] sm:left-[-18px] sm:max-w-[18rem] sm:px-5 sm:py-4">
+          <p class="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-brand-pink">
+            {content.promise.postIt.caption}
+          </p>
+          <p class="mt-1 text-[0.82rem] font-bold leading-5 text-black">
+            {content.promise.postIt.title}
+          </p>
+          <p class="mt-1 text-[0.76rem] leading-5 text-black">
+            {content.promise.postIt.description}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-brand-pink text-white">
+  <div
+    class="mx-auto flex w-[min(calc(100%-32px),1240px)] flex-col justify-center gap-2 py-[22px] min-[700px]:w-[min(calc(100%-64px),1240px)] min-[700px]:flex-row min-[700px]:items-center min-[700px]:justify-between"
+  >
+    <p class="m-0 text-base font-bold leading-[1.2]">
+      {content.conversionBand.text}
+    </p>
+    <Button
+      href={COMPLETE_SERVICE_CTA_HREF}
+      ghost
+      underline
+      trailingIcon="arrow-right"
+      trailingIconClass="h-4 w-4 transition-transform duration-200 ease-[cubic-bezier(0.22,0.72,0.2,1)] group-hover:translate-x-[3px]"
+      class="w-fit gap-3 p-0 font-bold text-white transition hover:opacity-80"
+    >
+      {content.conversionBand.cta}
+    </Button>
+  </div>
+</section>
+
+<script type="module" set:html={getCompleteServiceScript()} />

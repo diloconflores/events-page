@@ -1,0 +1,337 @@
+{
+  "metadata": {
+    "title": "Decoración floral para bodas y eventos en Monterrey | Dilo con Flores",
+    "description": "Diseñamos, producimos y montamos decoración floral personalizada para bodas y eventos en Monterrey. Desde celebraciones íntimas hasta eventos de más de 500 invitados.",
+    "ogTitle": "Decoración floral para bodas y eventos en Monterrey | Dilo con Flores",
+    "ogDescription": "Diseñamos, producimos y montamos decoración floral personalizada para bodas y eventos en Monterrey."
+  },
+  "brand": {
+    "label": "Dilo con Flores",
+    "division": "Eventos",
+    "switcherLabel": "Selector de sección",
+    "events": "Eventos",
+    "occasions": "Arreglos de ocasión",
+    "menuLabel": "Selector de sección",
+    "selectedLabel": "Seleccionado"
+  },
+  "nav": {
+    "service": "Qué hacemos",
+    "inspiration": "Inspiración",
+    "whyUs": "Por qué elegirnos",
+    "process": "Proceso",
+    "quote": "Solicitar propuesta",
+    "cta": "Solicitar propuesta"
+  },
+  "hero": {
+    "kicker": "Diseño floral para eventos · Monterrey",
+    "title": "Convertimos tu evento en una experiencia que se recuerda.",
+    "text": "Diseñamos, producimos y montamos la decoración floral completa de bodas y celebraciones. Cuéntanos tu idea y te armamos una propuesta clara para cotizar, ajustar y llevar a tu evento al siguiente nivel.",
+    "primaryCta": "Quiero cotizar mi evento",
+    "secondaryCta": "Ver nuestra inspiración",
+    "trust": [
+      "Diseño personalizado",
+      "Montaje profesional",
+      "Eventos de cualquier escala"
+    ],
+    "image": {
+      "src": "https://cdn0.bodas.com.mx/vendor/3162/3_2/1280/png/img-0436_5_433162-178407484333678.webp",
+      "alt": "Decoración floral integral para boda en Monterrey"
+    }
+  },
+  "promise": {
+    "kicker": "Lo hacemos completo",
+    "title": "No solo llevamos flores. Diseñamos cómo se va a sentir tu evento.",
+    "text": "Cada celebración comienza con una conversación. Escuchamos tu idea, conocemos el espacio y entendemos la atmósfera que imaginas para crear una propuesta floral pensada especialmente para tu evento. Nos encargamos del diseño, la producción, la logística y el montaje para que tú puedas concentrarte en disfrutar.",
+    "cta": "Solicitar propuesta",
+    "proposal": {
+      "title": "Propuesta Personalizada",
+      "subtitle": "Creada de acuerdo con tu evento y presupuesto"
+    },
+    "postIt": {
+      "caption": "Atención al detalle",
+      "title": "Todo listo antes de que lleguen tus invitados",
+      "description": "Supervisamos personalmente el montaje para cuidar que cada espacio conserve la misma intención y nivel de detalle."
+    },
+    "imageAlt": "Equipo montando una composición floral completa sobre una mesa de evento",
+    "capabilities": [
+      { "number": "01", "title": "Concepto floral", "description": "Paleta, selección de flores, estilo y dirección visual pensados especialmente para tu celebración." },
+      { "number": "02", "title": "Producción completa", "description": "Ramos, centros de mesa, arcos, altares, accesos, mesas principales y cada elemento que requiera el proyecto." },
+      { "number": "03", "title": "Logística y montaje", "description": "Preparamos, transportamos e instalamos todo para que el día del evento tú solo tengas que disfrutar." }
+    ]
+  },
+  "conversionBand": {
+    "text": "Celebraciones íntimas, bodas completas y producciones para más de 500 invitados. Pide una propuesta hecha a tu medida.",
+    "cta": "Cotizar proyecto"
+  },
+  "inspiration": {
+    "kicker": "Inspiración",
+    "title": "Una muestra de lo que podemos crear contigo.",
+    "text": "Diseñamos cada proyecto desde cero. Si alguna idea te inspira, cuéntanosla y la convertimos en una propuesta real para tu evento.",
+    "album": [
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-0438_5_433162-178407484450651.webp", "alt": "Mesa principal con decoración floral de gran formato", "tag": "Boda civil", "title": "Centro lineal para boda civil", "subtitle": "Arreglo largo y sobrio para mesa central", "caption": "Este montaje fue resuelto para una boda civil en restaurante, donde la mesa pedía un gesto elegante pero contenido." },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-6454_5_433162-178407486272103.webp", "alt": "Decoración floral para ceremonia religiosa", "tag": "Ceremonias", "title": "Altar que enmarca el momento", "subtitle": "Composición frontal para una ceremonia limpia", "caption": "La prioridad aquí fue crear un marco visual que acompañara el momento principal sin saturar el entorno." },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-6453_5_433162-178407486110980.webp", "alt": "Arreglo floral adaptable a distintas mesas o rincones del evento", "tag": "Versatilidad", "title": "Montaje adaptable al espacio", "subtitle": "La propuesta se ajusta a la sede y al mobiliario", "caption": "Este montaje muestra cómo una idea puede resolverse con la escala justa según el lugar, la mesa y las necesidades del cliente." },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1126_5_433162-178407485134673.webp", "alt": "Boutonniere floral personalizado", "tag": "Detalles", "title": "Accesorios que amarran el concepto", "subtitle": "Ramo y complementos alineados a la propuesta", "caption": "Los detalles personales sirven para cerrar la historia visual del evento." },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8821_5_433162-178407486761113.webp", "alt": "Montaje floral completo para evento social", "tag": "Ambientación", "title": "Escena completa y consistente", "subtitle": "Un diseño que conecta todo el espacio", "caption": "Aquí la clave está en que la decoración no se vea fragmentada." }
+    ]
+  },
+  "whyUs": {
+    "kicker": "Por qué elegirnos",
+    "title": "La tranquilidad de saber que cada detalle está cuidado.",
+    "text": "Desde la primera conversación hasta el montaje final, te acompañamos para definir cada detalle, anticipar necesidades y llevar tu propuesta a la realidad con orden y tranquilidad.",
+    "bullets": [
+      "Una propuesta diseñada especialmente para tu evento.",
+      "Asesoría para definir flores, colores, espacios y estilo.",
+      "Comunicación directa durante toda la planeación.",
+      "Coordinación y montaje cuidadoso el día del evento."
+    ],
+    "cta": "Cuéntanos sobre tu evento",
+    "imageAlt": "Montaje floral alargado sobre mesa de evento"
+  },
+  "process": {
+    "kicker": "Así trabajamos",
+    "title": "Un proceso claro para llegar tranquilos al gran día.",
+    "text": "Te guiamos paso a paso para convertir ideas, referencias y necesidades en una propuesta ejecutable que puedas cotizar con tranquilidad.",
+    "steps": [
+      { "number": "01", "title": "Escuchamos tu visión", "description": "Nos compartes la fecha, el tipo de celebración, el estilo que te inspira, tus prioridades y el presupuesto aproximado." },
+      { "number": "02", "title": "Visitamos y medimos el lugar", "description": "Cuando aplica, conocemos el espacio del evento para revisar dimensiones, accesos, alturas, puntos de montaje, iluminación y acomodos." },
+      { "number": "03", "title": "Armamos una ruta creativa", "description": "Te proponemos colores, flores, texturas, diseños y acomodos que se sientan coherentes entre ceremonia, recepción y detalles." },
+      { "number": "04", "title": "Resolvemos dudas y ajustamos", "description": "Durante el proceso mantenemos contacto directo contigo para aclarar preguntas, afinar ideas y ajustar la propuesta si cambian prioridades." },
+      { "number": "05", "title": "Producimos, montamos y cerramos contigo", "description": "Nos encargamos de la preparación, traslado e instalación para que tengas claridad, tranquilidad y una ejecución sin sorpresas." }
+    ]
+  },
+  "alliances": {
+    "kicker": "Alianzas",
+    "title": "Relaciones que suman a cada celebración.",
+    "text": "Colaboramos con profesionales, espacios y plataformas que comparten nuestro compromiso con los detalles y una atención bien coordinada.",
+    "label": "Bodas.com.mx",
+    "copy": "Una plataforma especializada en conectar parejas con profesionales para su boda."
+  },
+  "gallery": {
+    "kicker": "Galería",
+    "title": "Nuestro trabajo, en cada escala y cada detalle, listo para inspirarte y cotizar.",
+    "text": "Explora una selección de montajes, ceremonias, centros de mesa, ramos y accesorios florales. Si ves algo que te gusta, pídelo para tu evento.",
+    "visibleCount": 10,
+    "items": [
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-0439_5_433162-178407484418081.webp", "alt": "Entrada floral para evento social", "title": "Primera impresión", "subtitle": "La entrada prepara el tono del evento", "caption": "Un acceso floral diseñado para recibir a los invitados con una sensación elegante y cálida desde el primer paso.", "tag": "Entrada" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-0605_5_433162-178407484396665.webp", "alt": "Mesa principal con flores para recepción", "title": "Mesa protagonista", "subtitle": "Composición central con mucha lectura", "caption": "La mesa principal se trabaja como un punto focal: altura medida, transición de volúmenes y una paleta que sostenga toda la escena.", "tag": "Recepción" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1119_5_433162-178407484484614.webp", "alt": "Arreglo floral orgánico con follaje", "title": "Volumen orgánico", "subtitle": "Flores con movimiento natural", "caption": "Composición pensada para sumar profundidad visual mediante follaje, curvas suaves y un ritmo menos rígido.", "tag": "Natural" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1122_5_433162-178407485049179.webp", "alt": "Decoración floral de ceremonia íntima", "title": "Altarcillo íntimo", "subtitle": "Un marco floral más cercano y cálido", "caption": "Ideal para ceremonias más contenidas, donde la prioridad es envolver el momento sin recargar el espacio.", "tag": "Ceremonia" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1126_5_433162-178407485134673.webp", "alt": "Ramo y accesorios florales", "title": "Ramo coordinado", "subtitle": "Piezas personales alineadas a la propuesta", "caption": "El ramo y los accesorios se diseñan para hablar el mismo idioma que el resto de la decoración.", "tag": "Detalle" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1138_5_433162-178407485335280.webp", "alt": "Mesa de invitados con centros florales", "title": "Centro de mesa bajo", "subtitle": "Diseño pensado para conversar alrededor", "caption": "Un arreglo contenido que aporta color y textura sin competir con la experiencia de quienes están sentados alrededor.", "tag": "Mesa" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1143_5_433162-178407485171955.webp", "alt": "Rincón floral decorativo para fotografías", "title": "Rincón escenográfico", "subtitle": "Un fondo floral para fotos y recuerdos", "caption": "Espacios diseñados para registrar momentos especiales y sumar un punto memorable dentro de la experiencia del evento.", "tag": "Escena" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2829_5_433162-178407485373117.webp", "alt": "Arreglo floral con paleta cálida", "title": "Tonos cálidos", "subtitle": "Una mezcla suave y luminosa", "caption": "La combinación de tonos ayuda a que el espacio se sienta más amable, elegante y visualmente envolvente.", "tag": "Paleta" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2832_5_433162-178407485679483.webp", "alt": "Centro floral con proporción baja", "title": "Lectura limpia", "subtitle": "Presencia floral sin saturar", "caption": "Diseño compacto para mesas donde importa mantener la vista despejada y la decoración con proporción controlada.", "tag": "Bajo" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2833_5_433162-178407485787097.webp", "alt": "Centro de mesa floral elegante", "title": "Centro elegante", "subtitle": "Un gesto floral sobrio y preciso", "caption": "La composición busca equilibrio entre volumen y ligereza para funcionar en ambientaciones más clásicas o formales.", "tag": "Elegancia" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2834_5_433162-178407485989675.webp", "alt": "Arreglo floral de impacto para evento", "title": "Punto de atención", "subtitle": "Una pieza con más carácter", "caption": "Pensado para ser visto a distancia y sumar contraste dentro de la narrativa general del evento.", "tag": "Impacto" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2870_5_433162-178407485758505.webp", "alt": "Arreglo floral de detalle y textura", "title": "Capa y movimiento", "subtitle": "Flores y follaje en una lectura cercana", "caption": "La cercanía del encuadre permite apreciar cómo se construyen las capas y cómo cambia la mezcla de texturas.", "tag": "Textura" }
+    ]
+  },
+  "form": {
+    "kicker": "Solicita tu propuesta",
+    "title": "Cada gran celebración comienza con una conversación.",
+    "text": "Antes de hablar de flores, queremos conocer tu historia, entender lo que imaginas y descubrir qué hará especial tu celebración. A partir de ahí, diseñaremos una propuesta pensada exclusivamente para ti.",
+    "progress": [
+      "Celebración",
+      "Diseño",
+      "Propuesta",
+      "Tus datos"
+    ],
+    "steps": [
+      { "legend": "Hablemos de tu celebración", "copy": "Todo gran evento comienza con una idea. Cuéntanos un poco sobre la celebración que estás imaginando." },
+      { "legend": "Sigamos con la escala", "copy": "Con esta información entendemos mejor el tamaño y la ubicación de tu celebración." },
+      { "legend": "¿Ya cuentas con un salón?", "copy": "Si ya tienes lugar, nos ayuda a revisar mejor la logística y los espacios disponibles." },
+      { "legend": "Diseñemos algo único", "copy": "Queremos conocer los espacios que quieres intervenir para empezar a imaginar una propuesta a tu medida." },
+      { "legend": "Tu estilo visual", "copy": "Ahora hablemos de la atmósfera que imaginas y qué tanto acompañamiento necesitas para definirla." },
+      { "legend": "Los colores del evento", "copy": "Si ya tienes una paleta en mente, aquí la anotamos. Si no, nosotros la podemos proponer contigo." },
+      { "legend": "Cuéntanos tu idea", "copy": "Cuéntanos cómo imaginas tu evento, qué ambiente te gustaría crear o cualquier detalle que consideres importante." },
+      { "legend": "Afinemos la propuesta", "copy": "Con esta información podremos preparar una propuesta mucho más cercana a lo que estás buscando." },
+      { "legend": "Información adicional", "copy": "Si hay algo más que debamos saber, cuéntanoslo aquí." },
+      { "legend": "Tus datos", "copy": "Ya casi terminamos. Solo necesitamos tus datos para enviarte tu propuesta personalizada." }
+    ],
+    "labels": {
+      "eventType": "¿Qué tipo de evento estás planeando? *",
+      "eventDate": "¿Cuándo será tu evento? *",
+      "guestCount": "¿Cuántos invitados esperas aproximadamente? *",
+      "municipality": "¿En qué municipio se realizará tu evento? *",
+      "municipalityOther": "Escribe el nombre del municipio *",
+      "venue": "¿Ya cuentas con un salón o lugar para tu evento? *",
+      "venueName": "¿Cuál es el nombre del salón o lugar?",
+      "spaces": "¿Qué espacios o elementos te gustaría decorar? *",
+      "integralSpaces": "Si eliges decoración integral, ¿qué espacios incluirá tu evento? *",
+      "ideaState": "¿Qué tan definida está tu idea? *",
+      "style": "¿Cómo imaginas la decoración de tu evento? *",
+      "styleOther": "Escribe cómo imaginas la decoración de tu evento *",
+      "colors": "¿Hay algún color o combinación de colores que te gustaría utilizar?",
+      "ideaText": "Cuéntanos un poco sobre lo que tienes en mente. *",
+      "inspirationUrl": "¿Tienes alguna fotografía o inspiración que quieras compartir?",
+      "budget": "¿Cuál es el presupuesto aproximado destinado a la decoración floral? *",
+      "source": "¿Cómo conociste Dilo con Flores?",
+      "additionalInfo": "¿Hay algo más que debamos saber? (Opcional)",
+      "contactName": "¿Con quién tendremos el gusto? *",
+      "contactPhone": "¿Cuál es tu teléfono o WhatsApp? *",
+      "contactEmail": "¿Cuál es tu correo electrónico? *",
+      "preferredContact": "¿Cómo prefieres que nos comuniquemos contigo? *",
+      "privacy": "Acepto que Dilo con Flores utilice esta información para contactarme sobre mi solicitud. *"
+    },
+    "placeholders": {
+      "municipalityOther": "Ej. Cadereyta Jiménez",
+      "venueName": "Opcional",
+      "styleOther": "Cuéntanos el estilo que tienes en mente",
+      "colors": "Ej. Blanco y verde, tonos pastel, terracota, vino, etc.",
+      "ideaText": "Cuéntanos cómo imaginas tu evento, qué ambiente te gustaría crear o cualquier detalle que consideres importante. Entre más nos compartas, mejor podremos preparar una propuesta pensada especialmente para ti.",
+      "inspirationUrl": "Pega aquí un enlace de Pinterest, Instagram, TikTok o cualquier otra referencia.",
+      "additionalInfo": "Si hay algún detalle importante que no hayamos preguntado, puedes escribirlo aquí.",
+      "contactName": "Nombre completo",
+      "contactPhone": "81 1234 5678",
+      "contactEmail": "nombre@dominio.com"
+    },
+    "options": {
+      "eventTypes": [
+        { "label": "💍 Boda", "value": "Boda" },
+        { "label": "👑 XV Años", "value": "XV Años" },
+        { "label": "🎉 Evento social", "value": "Evento social" },
+        { "label": "🏢 Evento corporativo", "value": "Evento corporativo" },
+        { "label": "💕 Renovación de votos", "value": "Renovación de votos" },
+        { "label": "✨ Otro", "value": "Otro" }
+      ],
+      "guestCounts": [
+        { "label": "Menos de 50", "value": "Menos de 50" },
+        { "label": "50 a 100", "value": "50 a 100" },
+        { "label": "101 a 200", "value": "101 a 200" },
+        { "label": "201 a 350", "value": "201 a 350" },
+        { "label": "Más de 350", "value": "Más de 350" }
+      ],
+      "municipalities": [
+        { "label": "Monterrey", "value": "Monterrey" },
+        { "label": "San Pedro Garza García", "value": "San Pedro Garza García" },
+        { "label": "San Nicolás de los Garza", "value": "San Nicolás de los Garza" },
+        { "label": "Guadalupe", "value": "Guadalupe" },
+        { "label": "Apodaca", "value": "Apodaca" },
+        { "label": "Escobedo", "value": "Escobedo" },
+        { "label": "Santa Catarina", "value": "Santa Catarina" },
+        { "label": "García", "value": "García" },
+        { "label": "Santiago", "value": "Santiago" },
+        { "label": "Juárez", "value": "Juárez" },
+        { "label": "Otro", "value": "Otro" }
+      ],
+      "yesNoVenue": [
+        { "label": "✅ Sí", "value": "Sí" },
+        { "label": "🕒 No, todavía no tengo salón", "value": "Buscando" }
+      ],
+      "spaces": [
+        { "label": "💐 Ramo y accesorios", "value": "Ramo y accesorios" },
+        { "label": "⛪ Ceremonia o iglesia", "value": "Ceremonia o iglesia" },
+        { "label": "🍽️ Centros de mesa", "value": "Centros de mesa" },
+        { "label": "👰 Mesa principal", "value": "Mesa principal" },
+        { "label": "🌸 Arco o estructura floral", "value": "Arco o estructura floral" },
+        { "label": "✨ Decoración integral", "value": "Decoración integral" }
+      ],
+      "integralSpaces": [
+        { "label": "Recepción", "value": "Recepción" },
+        { "label": "Ceremonia", "value": "Ceremonia" },
+        { "label": "Cóctel", "value": "Cóctel" },
+        { "label": "Banquete", "value": "Banquete" },
+        { "label": "Pista", "value": "Pista" },
+        { "label": "Mesa de novios", "value": "Mesa de novios" }
+      ],
+      "ideaStates": [
+        { "label": "🌟 Ya tengo una idea muy clara de lo que quiero.", "value": "clara" },
+        { "label": "🌿 Tengo algunas referencias, pero me gustaría recibir asesoría para definirla.", "value": "referencias" },
+        { "label": "🤍 Aún no tengo una idea; me gustaría que ustedes me orientaran y propusieran opciones.", "value": "sin_idea" }
+      ],
+      "styles": [
+        { "label": "Elegante y clásico", "value": "Elegante y clásico" },
+        { "label": "Romántico", "value": "Romántico" },
+        { "label": "Moderno y minimalista", "value": "Moderno y minimalista" },
+        { "label": "Natural y orgánico", "value": "Natural y orgánico" },
+        { "label": "Colorido", "value": "Colorido" },
+        { "label": "Lujo / Gran formato", "value": "Lujo / Gran formato" },
+        { "label": "Otro", "value": "Otro" }
+      ],
+      "budgets": [
+        { "label": "Aún no lo tengo definido; necesito orientación", "value": "Aún no lo tengo definido; necesito orientación" },
+        { "label": "Menos de $15,000 MXN", "value": "Menos de $15,000 MXN" },
+        { "label": "$15,000 a $30,000 MXN", "value": "$15,000 a $30,000 MXN" },
+        { "label": "$30,001 a $60,000 MXN", "value": "$30,001 a $60,000 MXN" },
+        { "label": "$60,001 a $100,000 MXN", "value": "$60,001 a $100,000 MXN" },
+        { "label": "Más de $100,000 MXN", "value": "Más de $100,000 MXN" }
+      ],
+      "sources": [
+        { "label": "Google", "value": "Google" },
+        { "label": "Instagram", "value": "Instagram" },
+        { "label": "Facebook", "value": "Facebook" },
+        { "label": "TikTok", "value": "TikTok" },
+        { "label": "Bodas.com.mx", "value": "Bodas.com.mx" },
+        { "label": "Recomendación de un familiar o amigo", "value": "Recomendación de un familiar o amigo" },
+        { "label": "Ya había trabajado con ustedes", "value": "Ya había trabajado con ustedes" },
+        { "label": "Otro", "value": "Otro" }
+      ],
+      "preferredContacts": [
+        { "label": "📱 WhatsApp", "value": "WhatsApp" },
+        { "label": "📞 Llamada telefónica", "value": "Llamada telefónica" },
+        { "label": "✉️ Correo electrónico", "value": "Correo electrónico" }
+      ]
+    },
+    "messages": {
+      "typeEvent": "Selecciona el tipo de evento.",
+      "dateEvent": "Selecciona la fecha del evento.",
+      "guestCount": "Selecciona un rango de invitados.",
+      "municipality": "Selecciona el municipio del evento.",
+      "municipalityOther": "Escribe el nombre del municipio.",
+      "venue": "Selecciona una opción.",
+      "spaces": "Selecciona al menos una opción.",
+      "integralSpaces": "Selecciona al menos una opción.",
+      "ideaState": "Selecciona qué tan definida está tu idea.",
+      "style": "Selecciona una opción de estilo.",
+      "styleOther": "Escribe cómo imaginas la decoración.",
+      "ideaText": "Cuéntanos un poco más; escribe al menos 20 caracteres.",
+      "inspirationUrl": "Escribe una URL válida que comience con http:// o https://.",
+      "budget": "Selecciona una opción de presupuesto.",
+      "contactName": "Escribe tu nombre completo.",
+      "contactPhone": "Escribe un teléfono de al menos 10 dígitos.",
+      "contactEmail": "Escribe un correo electrónico válido.",
+      "preferredContact": "Selecciona una forma de contacto.",
+      "privacy": "Debes aceptar para poder enviar la solicitud.",
+      "errorTitle": "No pudimos enviar tu solicitud.",
+      "errorBody": "Revisa tu conexión e inténtalo nuevamente. Tus datos permanecen en el formulario.",
+      "successKicker": "Solicitud enviada",
+      "successTitle": "Gracias por confiar en Dilo con Flores.",
+      "successText": "Recibimos la información de tu evento. La revisaremos y pronto nos pondremos en contacto contigo para conversar sobre los siguientes pasos.",
+      "successButton": "Enviar otra solicitud",
+      "submit": "Enviar solicitud de cotización",
+      "next": "Continuar",
+      "previous": "Anterior",
+      "loading": "Enviando"
+    }
+  },
+  "finalCta": {
+    "kicker": "Dilo con Flores",
+    "title": "Tú disfruta cada momento. Nosotros hacemos que las flores cuenten su historia.",
+    "cta": "Quiero comenzar mi propuesta"
+  },
+  "shop": {
+    "kicker": "Más allá de los eventos",
+    "title": "Las flores también acompañan los momentos de todos los días.",
+    "text": "Encuentra arreglos para cumpleaños, aniversarios, agradecimientos y ocasiones especiales, con entrega en Monterrey y su área metropolitana.",
+    "explore": "Explorar la tienda",
+    "products": [
+      { "url": "https://diloconflores.com/products/alegria-radiante", "title": "Alegría Radiante", "label": "PARA CELEBRAR", "image": "https://diloconflores.com/cdn/shop/products/Girasolesbouquete-1.jpg?v=1676215586", "alt": "Alegría Radiante" },
+      { "url": "https://diloconflores.com/products/amor-de-verano", "title": "Amor de verano", "label": "PARA SORPRENDER", "image": "https://diloconflores.com/cdn/shop/files/PHOTO-2024-04-20-12-16-192.jpg?v=1713926178", "alt": "Amor de verano" },
+      { "url": "https://diloconflores.com/products/dulces-caricias", "title": "Dulces caricias", "label": "PARA ACOMPAÑAR", "image": "https://diloconflores.com/cdn/shop/products/Dulcescaricias-1.jpg?v=1671202564", "alt": "Dulces caricias" },
+      { "url": "https://diloconflores.com/products/explosion-de-amor", "title": "Explosion de Amor", "label": "PARA IMPRESIONAR", "image": "https://diloconflores.com/cdn/shop/products/Caja150rosas-1-2.jpg?v=1676215703", "alt": "Explosion de Amor" }
+    ],
+    "footerText": "Arreglos florales y regalos para cada ocasión.",
+    "footerButton": "Visitar diloconflores.com"
+  },
+  "footer": {
+    "description": "Diseño floral para bodas y eventos en Monterrey.",
+    "contact": "Contacto",
+    "explore": "Explorar",
+    "email": "eventos@diloconflores.com",
+    "phone": "(81) 2542 1248",
+    "inspiration": "Inspiración",
+    "gallery": "Galería",
+    "quote": "Solicitar propuesta"
+  }
+}

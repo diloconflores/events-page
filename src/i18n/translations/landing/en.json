@@ -1,0 +1,337 @@
+{
+  "metadata": {
+    "title": "Floral decoration for weddings and events in Monterrey | Dilo con Flores",
+    "description": "We design, produce and install custom floral decoration for weddings and events in Monterrey, from intimate celebrations to events of more than 500 guests.",
+    "ogTitle": "Floral decoration for weddings and events in Monterrey | Dilo con Flores",
+    "ogDescription": "We design, produce and install custom floral decoration for weddings and events in Monterrey."
+  },
+  "brand": {
+    "label": "Dilo con Flores",
+    "division": "Events",
+    "switcherLabel": "Section selector",
+    "events": "Events",
+    "occasions": "Occasion arrangements",
+    "menuLabel": "Section selector",
+    "selectedLabel": "Selected"
+  },
+  "nav": {
+    "service": "What we do",
+    "inspiration": "Inspiration",
+    "whyUs": "Why choose us",
+    "process": "Process",
+    "quote": "Request proposal",
+    "cta": "Request proposal"
+  },
+  "hero": {
+    "kicker": "Floral design for events · Monterrey",
+    "title": "We turn your event into an experience people remember.",
+    "text": "We design, produce and install the full floral styling for weddings and celebrations. Tell us your idea and we will craft a clear proposal you can quote, refine and take to the next level.",
+    "primaryCta": "I want to quote my event",
+    "secondaryCta": "See our inspiration",
+    "trust": [
+      "Custom design",
+      "Professional installation",
+      "Events of any scale"
+    ],
+    "image": {
+      "src": "https://cdn0.bodas.com.mx/vendor/3162/3_2/1280/png/img-0436_5_433162-178407484333678.webp",
+      "alt": "Complete floral decoration for a wedding in Monterrey"
+    }
+  },
+  "promise": {
+    "kicker": "We handle it all",
+    "title": "We do more than bring flowers. We design how your event feels.",
+    "text": "Every celebration begins with a conversation. We listen to your idea, get to know the venue and understand the atmosphere you imagine so we can create a floral proposal designed especially for your event. We take care of the design, production, logistics and setup so you can focus on enjoying it.",
+    "cta": "Request proposal",
+    "proposal": {
+      "title": "Custom Proposal",
+      "subtitle": "Created according to your event and budget"
+    },
+    "postIt": {
+      "caption": "Attention to detail",
+      "title": "Everything ready before your guests arrive",
+      "description": "We personally supervise the setup to ensure every space keeps the same intention and level of detail."
+    },
+    "imageAlt": "Team assembling a complete floral composition on an event table",
+    "capabilities": [
+      { "number": "01", "title": "Floral concept", "description": "Palette, flower selection, style and visual direction designed specifically for your celebration." },
+      { "number": "02", "title": "Full production", "description": "Bouquets, centerpieces, arches, altars, entrances, head tables and every element the project needs." },
+      { "number": "03", "title": "Logistics and installation", "description": "We prepare, transport and install everything so you can enjoy the day." }
+    ]
+  },
+  "conversionBand": {
+    "text": "Intimate celebrations, full weddings and productions for more than 500 guests. Request a proposal tailored to you.",
+    "cta": "Quote project"
+  },
+  "inspiration": {
+    "kicker": "Inspiration",
+    "title": "A glimpse of what we can create with you.",
+    "text": "We design each project from scratch. If something inspires you, tell us and we will turn it into a real proposal for your event.",
+    "album": [
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-0438_5_433162-178407484450651.webp", "alt": "Large floral centerpiece for a wedding table", "tag": "Civil wedding", "title": "Linear centerpiece for a civil wedding", "subtitle": "Long, understated arrangement for the main table", "caption": "This setup was designed for a restaurant civil wedding, where the table needed an elegant but restrained gesture." },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-6454_5_433162-178407486272103.webp", "alt": "Floral decoration for a religious ceremony", "tag": "Ceremonies", "title": "An altar that frames the moment", "subtitle": "Front composition for a clean ceremony", "caption": "The priority here was to create a visual frame that accompanies the ceremony without overwhelming the space." },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-6453_5_433162-178407486110980.webp", "alt": "Floral arrangement adaptable to different tables or corners", "tag": "Versatility", "title": "Adaptable installation", "subtitle": "The proposal adjusts to the venue and furniture", "caption": "This piece shows how an idea can be resolved at the right scale for the venue, the table and the client needs." },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1126_5_433162-178407485134673.webp", "alt": "Custom floral boutonniere", "tag": "Details", "title": "Accessories that tie the concept together", "subtitle": "Bouquet and complementary pieces aligned to the proposal", "caption": "Personal details help close the visual story of the event." },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8821_5_433162-178407486761113.webp", "alt": "Full floral setup for social event", "tag": "Ambience", "title": "A complete and consistent scene", "subtitle": "A design that connects the whole space", "caption": "Here the key is to avoid fragmented decoration." }
+    ]
+  },
+  "whyUs": {
+    "kicker": "Why choose us",
+    "title": "The peace of mind that every detail is handled.",
+    "text": "From the first conversation to the final setup, we help you define every detail, anticipate needs and bring your proposal to life with order and calm.",
+    "bullets": [
+      "A proposal designed specifically for your event.",
+      "Advice to define flowers, colors, spaces and style.",
+      "Direct communication throughout the planning process.",
+      "Careful coordination and installation on event day."
+    ],
+    "cta": "Tell us about your event",
+    "imageAlt": "Long floral setup on an event table"
+  },
+  "process": {
+    "kicker": "How we work",
+    "title": "A clear process to arrive calm on the big day.",
+    "text": "We guide you step by step to turn ideas, references and needs into an executable proposal you can quote with confidence.",
+    "steps": [
+      { "number": "01", "title": "We listen to your vision", "description": "You share the date, celebration type, the style that inspires you, priorities and approximate budget." },
+      { "number": "02", "title": "We visit and measure the venue", "description": "When needed, we review dimensions, access, heights, installation points, lighting and layouts." },
+      { "number": "03", "title": "We build a creative route", "description": "We propose colors, flowers, textures and layouts that feel coherent between ceremony, reception and details." },
+      { "number": "04", "title": "We solve questions and refine", "description": "We keep direct contact to clarify questions, refine ideas and adjust the proposal if priorities change." },
+      { "number": "05", "title": "We produce, install and close with you", "description": "We take care of preparation, transport and installation so you get clarity, calm and smooth execution." }
+    ]
+  },
+  "alliances": {
+    "kicker": "Partnerships",
+    "title": "Relationships that add value to every celebration.",
+    "text": "We collaborate with professionals, venues and platforms that share our commitment to detail and well-coordinated service.",
+    "label": "Bodas.com.mx",
+    "copy": "A platform specialized in connecting couples with wedding professionals."
+  },
+  "gallery": {
+    "kicker": "Gallery",
+    "title": "Our work, in every scale and every detail, ready to inspire and quote.",
+    "text": "Explore a selection of installations, ceremonies, table centerpieces, bouquets and floral accessories. If you like something, ask for it for your event.",
+    "visibleCount": 10,
+    "items": [
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-0439_5_433162-178407484418081.webp", "alt": "Floral entry for a social event", "title": "First impression", "subtitle": "The entrance sets the tone for the event", "caption": "A floral entrance designed to welcome guests with elegance and warmth from the first step.", "tag": "Entry" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-0605_5_433162-178407484396665.webp", "alt": "Main table with flowers for reception", "title": "Statement table", "subtitle": "A central composition with strong presence", "caption": "The head table works as a focal point: measured height, volume transition and a palette that supports the whole scene.", "tag": "Reception" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1119_5_433162-178407484484614.webp", "alt": "Organic floral arrangement with foliage", "title": "Organic volume", "subtitle": "Flowers with natural movement", "caption": "A composition meant to add visual depth through foliage, soft curves and a less rigid rhythm.", "tag": "Natural" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1122_5_433162-178407485049179.webp", "alt": "Intimate ceremony floral decoration", "title": "Intimate altar", "subtitle": "A closer, warmer floral frame", "caption": "Ideal for more contained ceremonies, where the goal is to wrap the moment without overloading the space.", "tag": "Ceremony" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1126_5_433162-178407485134673.webp", "alt": "Bouquet and floral accessories", "title": "Coordinated bouquet", "subtitle": "Personal pieces aligned with the proposal", "caption": "The bouquet and accessories are designed to speak the same language as the rest of the decor.", "tag": "Detail" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1138_5_433162-178407485335280.webp", "alt": "Guest table with floral centerpieces", "title": "Low centerpiece", "subtitle": "Designed for conversation around it", "caption": "A contained arrangement that adds color and texture without competing with the seated experience.", "tag": "Table" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1143_5_433162-178407485171955.webp", "alt": "Decorative floral corner for photographs", "title": "Set piece", "subtitle": "A floral background for photos and memories", "caption": "Spaces designed to capture special moments and add a memorable point within the event experience.", "tag": "Scene" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2829_5_433162-178407485373117.webp", "alt": "Floral arrangement with warm palette", "title": "Warm tones", "subtitle": "A soft and luminous mix", "caption": "The combination of tones helps the space feel more welcoming, elegant and visually immersive.", "tag": "Palette" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2832_5_433162-178407485679483.webp", "alt": "Low proportion floral centerpiece", "title": "Clean reading", "subtitle": "Floral presence without saturation", "caption": "Compact design for tables where visual openness and controlled proportions matter.", "tag": "Low" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2833_5_433162-178407485787097.webp", "alt": "Elegant floral centerpiece", "title": "Elegant centerpiece", "subtitle": "A precise, understated floral gesture", "caption": "The composition balances volume and lightness to work in more classic or formal settings.", "tag": "Elegant" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2834_5_433162-178407485989675.webp", "alt": "High-impact floral arrangement for event", "title": "Attention point", "subtitle": "A piece with more character", "caption": "Designed to be seen from a distance and add contrast to the overall narrative of the event.", "tag": "Impact" },
+      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2870_5_433162-178407485758505.webp", "alt": "Close-up floral arrangement with texture and movement", "title": "Layer and movement", "subtitle": "Flowers and foliage in a closer reading", "caption": "The closer framing lets you appreciate how the layers are built and how the texture mix changes.", "tag": "Texture" }
+    ]
+  },
+  "form": {
+    "kicker": "Request your proposal",
+    "title": "Every great celebration starts with a conversation.",
+    "text": "Before talking about flowers, we want to know your story, understand what you imagine and discover what will make your celebration special. From there, we will design a proposal made exclusively for you.",
+    "progress": [
+      "Celebration",
+      "Design",
+      "Proposal",
+      "Your details"
+    ],
+    "steps": [
+      { "legend": "Let's talk about your celebration", "copy": "Every great event starts with an idea. Tell us a bit about the celebration you are imagining." },
+      { "legend": "Let's continue with the scale", "copy": "This information helps us understand the size and location of your celebration." },
+      { "legend": "Do you already have a venue?", "copy": "If you already have a venue, it helps us review logistics and available spaces." },
+      { "legend": "Let's design something unique", "copy": "We want to know the spaces you want to decorate so we can start imagining a proposal tailored to you." },
+      { "legend": "Your visual style", "copy": "Now let's talk about the atmosphere you imagine and how much guidance you need to define it." },
+      { "legend": "The colors of the event", "copy": "If you already have a palette in mind, we will note it here. If not, we can propose one with you." },
+      { "legend": "Tell us your idea", "copy": "Tell us how you imagine your event, what atmosphere you want to create or any detail you think is important." },
+      { "legend": "Let's refine the proposal", "copy": "With this information we can prepare a proposal much closer to what you are looking for." },
+      { "legend": "Additional information", "copy": "If there is anything else we should know, tell us here." },
+      { "legend": "Your details", "copy": "We are almost done. We just need your details to send your personalized proposal." }
+    ],
+    "labels": {
+      "eventType": "What type of event are you planning? *",
+      "eventDate": "When will your event take place? *",
+      "guestCount": "About how many guests are you expecting? *",
+      "municipality": "In which municipality will your event take place? *",
+      "municipalityOther": "Enter the municipality name *",
+      "venue": "Do you already have a venue for your event? *",
+      "venueName": "What is the venue name?",
+      "spaces": "Which spaces or elements would you like to decorate? *",
+      "integralSpaces": "If you choose full decoration, which spaces will your event include? *",
+      "ideaState": "How defined is your idea? *",
+      "style": "How do you imagine the event decor? *",
+      "styleOther": "Describe how you imagine the event decor *",
+      "colors": "Is there a color or color combination you would like to use?",
+      "ideaText": "Tell us a little about what you have in mind. *",
+      "inspirationUrl": "Do you have a photo or inspiration you want to share?",
+      "budget": "What is the approximate budget for the floral decor? *",
+      "source": "How did you hear about Dilo con Flores?",
+      "additionalInfo": "Anything else we should know? (Optional)",
+      "contactName": "Who will we have the pleasure of speaking with? *",
+      "contactPhone": "What is your phone number or WhatsApp? *",
+      "contactEmail": "What is your email address? *",
+      "preferredContact": "How do you prefer we contact you? *",
+      "privacy": "I agree that Dilo con Flores may use this information to contact me about my request. *"
+    },
+    "placeholders": {
+      "municipalityOther": "e.g. Cadereyta Jiménez",
+      "venueName": "Optional",
+      "styleOther": "Tell us the style you have in mind",
+      "colors": "e.g. White and green, pastel tones, terracotta, wine, etc.",
+      "ideaText": "Tell us how you imagine your event, what atmosphere you would like to create or any detail that matters. The more you share, the better we can prepare a proposal made especially for you.",
+      "inspirationUrl": "Paste a link from Pinterest, Instagram, TikTok or any other reference.",
+      "additionalInfo": "If there is any important detail we have not asked about, you can write it here.",
+      "contactName": "Full name",
+      "contactPhone": "81 1234 5678",
+      "contactEmail": "name@domain.com"
+    },
+    "options": {
+      "eventTypes": [
+        { "label": "💍 Wedding", "value": "Wedding" },
+        { "label": "👑 Quinceañera", "value": "Quinceañera" },
+        { "label": "🎉 Social event", "value": "Social event" },
+        { "label": "🏢 Corporate event", "value": "Corporate event" },
+        { "label": "💕 Vow renewal", "value": "Vow renewal" },
+        { "label": "✨ Other", "value": "Other" }
+      ],
+      "guestCounts": [
+        { "label": "Less than 50", "value": "Less than 50" },
+        { "label": "50 to 100", "value": "50 to 100" },
+        { "label": "101 to 200", "value": "101 to 200" },
+        { "label": "201 to 350", "value": "201 to 350" },
+        { "label": "More than 350", "value": "More than 350" }
+      ],
+      "municipalities": [
+        { "label": "Monterrey", "value": "Monterrey" },
+        { "label": "San Pedro Garza García", "value": "San Pedro Garza García" },
+        { "label": "San Nicolás de los Garza", "value": "San Nicolás de los Garza" },
+        { "label": "Guadalupe", "value": "Guadalupe" },
+        { "label": "Apodaca", "value": "Apodaca" },
+        { "label": "Escobedo", "value": "Escobedo" },
+        { "label": "Santa Catarina", "value": "Santa Catarina" },
+        { "label": "García", "value": "García" },
+        { "label": "Santiago", "value": "Santiago" },
+        { "label": "Juárez", "value": "Juárez" },
+        { "label": "Other", "value": "Other" }
+      ],
+      "yesNoVenue": [
+        { "label": "✅ Yes", "value": "Yes" },
+        { "label": "🕒 No, not yet", "value": "Looking" }
+      ],
+      "spaces": [
+        { "label": "💐 Bouquet and accessories", "value": "Bouquet and accessories" },
+        { "label": "⛪ Ceremony or church", "value": "Ceremony or church" },
+        { "label": "🍽️ Centerpieces", "value": "Centerpieces" },
+        { "label": "👰 Head table", "value": "Head table" },
+        { "label": "🌸 Arch or floral structure", "value": "Arch or floral structure" },
+        { "label": "✨ Full decoration", "value": "Full decoration" }
+      ],
+      "integralSpaces": [
+        { "label": "Reception", "value": "Reception" },
+        { "label": "Ceremony", "value": "Ceremony" },
+        { "label": "Cocktail", "value": "Cocktail" },
+        { "label": "Banquet", "value": "Banquet" },
+        { "label": "Dance floor", "value": "Dance floor" },
+        { "label": "Head table", "value": "Head table" }
+      ],
+      "ideaStates": [
+        { "label": "🌟 I already have a very clear idea of what I want.", "value": "clara" },
+        { "label": "🌿 I have some references, but I would like guidance to define it.", "value": "referencias" },
+        { "label": "🤍 I do not yet have an idea; I would like you to guide me and suggest options.", "value": "sin_idea" }
+      ],
+      "styles": [
+        { "label": "Elegant and classic", "value": "Elegant and classic" },
+        { "label": "Romantic", "value": "Romantic" },
+        { "label": "Modern and minimalist", "value": "Modern and minimalist" },
+        { "label": "Natural and organic", "value": "Natural and organic" },
+        { "label": "Colorful", "value": "Colorful" },
+        { "label": "Luxury / Large scale", "value": "Luxury / Large scale" },
+        { "label": "Other", "value": "Other" }
+      ],
+      "budgets": [
+        { "label": "Not defined yet; I need guidance", "value": "Not defined yet; I need guidance" },
+        { "label": "Less than $15,000 MXN", "value": "Less than $15,000 MXN" },
+        { "label": "$15,000 to $30,000 MXN", "value": "$15,000 to $30,000 MXN" },
+        { "label": "$30,001 to $60,000 MXN", "value": "$30,001 to $60,000 MXN" },
+        { "label": "$60,001 to $100,000 MXN", "value": "$60,001 to $100,000 MXN" },
+        { "label": "More than $100,000 MXN", "value": "More than $100,000 MXN" }
+      ],
+      "sources": [
+        { "label": "Google", "value": "Google" },
+        { "label": "Instagram", "value": "Instagram" },
+        { "label": "Facebook", "value": "Facebook" },
+        { "label": "TikTok", "value": "TikTok" },
+        { "label": "Bodas.com.mx", "value": "Bodas.com.mx" },
+        { "label": "Recommendation from family or friend", "value": "Recommendation from family or friend" },
+        { "label": "I have worked with you before", "value": "I have worked with you before" },
+        { "label": "Other", "value": "Other" }
+      ],
+      "preferredContacts": [
+        { "label": "📱 WhatsApp", "value": "WhatsApp" },
+        { "label": "📞 Phone call", "value": "Phone call" },
+        { "label": "✉️ Email", "value": "Email" }
+      ]
+    },
+    "messages": {
+      "typeEvent": "Select the type of event.",
+      "dateEvent": "Select the event date.",
+      "guestCount": "Select a guest range.",
+      "municipality": "Select the event municipality.",
+      "municipalityOther": "Enter the municipality name.",
+      "venue": "Select an option.",
+      "spaces": "Select at least one option.",
+      "integralSpaces": "Select at least one option.",
+      "ideaState": "Select how defined your idea is.",
+      "style": "Select a style option.",
+      "styleOther": "Describe how you imagine the decoration.",
+      "ideaText": "Tell us a bit more; write at least 20 characters.",
+      "inspirationUrl": "Enter a valid URL starting with http:// or https://.",
+      "budget": "Select a budget option.",
+      "contactName": "Enter your full name.",
+      "contactPhone": "Enter a phone number with at least 10 digits.",
+      "contactEmail": "Enter a valid email address.",
+      "preferredContact": "Select a contact method.",
+      "privacy": "You must accept to send the request.",
+      "errorTitle": "We could not send your request.",
+      "errorBody": "Check your connection and try again. Your data remains in the form.",
+      "successKicker": "Request sent",
+      "successTitle": "Thanks for trusting Dilo con Flores.",
+      "successText": "We received your event details. We will review them and contact you soon to discuss the next steps.",
+      "successButton": "Send another request",
+      "submit": "Send quote request",
+      "next": "Continue",
+      "previous": "Previous",
+      "loading": "Sending"
+    }
+  },
+  "finalCta": {
+    "kicker": "Dilo con Flores",
+    "title": "Enjoy every moment. We make the flowers tell their story.",
+    "cta": "I want to start my proposal"
+  },
+  "shop": {
+    "kicker": "Beyond events",
+    "title": "Flowers also accompany everyday moments.",
+    "text": "Find arrangements for birthdays, anniversaries, thank-yous and special occasions, with delivery in Monterrey and the metropolitan area.",
+    "explore": "Explore the store",
+    "products": [
+      { "url": "https://diloconflores.com/products/alegria-radiante", "title": "Radiant Joy", "label": "TO CELEBRATE", "image": "https://diloconflores.com/cdn/shop/products/Girasolesbouquete-1.jpg?v=1676215586", "alt": "Radiant Joy" },
+      { "url": "https://diloconflores.com/products/amor-de-verano", "title": "Summer Love", "label": "TO SURPRISE", "image": "https://diloconflores.com/cdn/shop/files/PHOTO-2024-04-20-12-16-192.jpg?v=1713926178", "alt": "Summer Love" },
+      { "url": "https://diloconflores.com/products/dulces-caricias", "title": "Sweet caresses", "label": "TO ACCOMPANY", "image": "https://diloconflores.com/cdn/shop/products/Dulcescaricias-1.jpg?v=1671202564", "alt": "Sweet caresses" },
+      { "url": "https://diloconflores.com/products/explosion-de-amor", "title": "Explosion of Love", "label": "TO IMPRESS", "image": "https://diloconflores.com/cdn/shop/products/Caja150rosas-1-2.jpg?v=1676215703", "alt": "Explosion of Love" }
+    ],
+    "footerText": "Floral arrangements and gifts for every occasion.",
+    "footerButton": "Visit diloconflores.com"
+  },
+  "footer": {
+    "description": "Floral design for weddings and events in Monterrey.",
+    "contact": "Contact",
+    "explore": "Explore",
+    "email": "eventos@diloconflores.com",
+    "phone": "(81) 2542 1248",
+    "inspiration": "Inspiration",
+    "gallery": "Gallery",
+    "quote": "Request proposal"
+  }
+}
