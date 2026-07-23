@@ -25,10 +25,10 @@ const attributes = getMediaCardAttributes(props);
       {...attributes}
     >
       <img
-        src={props.src}
+        src={props.thumbnail ?? props.src}
         alt={props.alt}
-        width="1280"
-        height="1600"
+        width={props.width ?? 1280}
+        height={props.height ?? 1600}
         loading={props.loading ?? "lazy"}
         class="block h-auto w-full transition duration-700 group-hover:scale-[1.05]"
       />
@@ -75,10 +75,10 @@ const attributes = getMediaCardAttributes(props);
       {...attributes}
     >
       <img
-        src={props.src}
+        src={props.thumbnail ?? props.src}
         alt={props.alt}
-        width="1280"
-        height="1600"
+        width={props.width ?? 1280}
+        height={props.height ?? 1600}
         loading={props.loading ?? "lazy"}
         class="block h-auto w-full transition duration-700 group-hover:scale-[1.05]"
       />

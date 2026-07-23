@@ -41,6 +41,9 @@ export interface CapabilityContent {
 
 export interface MediaCardContent {
   readonly src: string;
+  readonly thumbnail?: string;
+  readonly width?: number;
+  readonly height?: number;
   readonly alt: string;
   readonly title: string;
   readonly subtitle: string;

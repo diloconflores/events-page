@@ -5,6 +5,9 @@ export type MediaCardVariant = "album" | "gallery";
 export interface MediaCardProps
   extends Omit<HTMLAttributes<"button">, "class" | "type"> {
   readonly src: string;
+  readonly thumbnail?: string;
+  readonly width?: number;
+  readonly height?: number;
   readonly alt: string;
   readonly title: string;
   readonly subtitle: string;

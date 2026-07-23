@@ -34,7 +34,7 @@
       "Events of any scale"
     ],
     "image": {
-      "src": "https://cdn0.bodas.com.mx/vendor/3162/3_2/1280/png/img-0436_5_433162-178407484333678.webp",
+      "src": "/eventos/img_0436.webp",
       "alt": "Complete floral decoration for a wedding in Monterrey"
     }
   },
@@ -54,9 +54,21 @@
     },
     "imageAlt": "Team assembling a complete floral composition on an event table",
     "capabilities": [
-      { "number": "01", "title": "Floral concept", "description": "Palette, flower selection, style and visual direction designed specifically for your celebration." },
-      { "number": "02", "title": "Full production", "description": "Bouquets, centerpieces, arches, altars, entrances, head tables and every element the project needs." },
-      { "number": "03", "title": "Logistics and installation", "description": "We prepare, transport and install everything so you can enjoy the day." }
+      {
+        "number": "01",
+        "title": "Floral concept",
+        "description": "Palette, flower selection, style and visual direction designed specifically for your celebration."
+      },
+      {
+        "number": "02",
+        "title": "Full production",
+        "description": "Bouquets, centerpieces, arches, altars, entrances, head tables and every element the project needs."
+      },
+      {
+        "number": "03",
+        "title": "Logistics and installation",
+        "description": "We prepare, transport and install everything so you can enjoy the day."
+      }
     ]
   },
   "conversionBand": {
@@ -68,11 +80,61 @@
     "title": "A glimpse of what we can create with you.",
     "text": "We design each project from scratch. If something inspires you, tell us and we will turn it into a real proposal for your event.",
     "album": [
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-0438_5_433162-178407484450651.webp", "alt": "Large floral centerpiece for a wedding table", "tag": "Civil wedding", "title": "Linear centerpiece for a civil wedding", "subtitle": "Long, understated arrangement for the main table", "caption": "This setup was designed for a restaurant civil wedding, where the table needed an elegant but restrained gesture." },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-6454_5_433162-178407486272103.webp", "alt": "Floral decoration for a religious ceremony", "tag": "Ceremonies", "title": "An altar that frames the moment", "subtitle": "Front composition for a clean ceremony", "caption": "The priority here was to create a visual frame that accompanies the ceremony without overwhelming the space." },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-6453_5_433162-178407486110980.webp", "alt": "Floral arrangement adaptable to different tables or corners", "tag": "Versatility", "title": "Adaptable installation", "subtitle": "The proposal adjusts to the venue and furniture", "caption": "This piece shows how an idea can be resolved at the right scale for the venue, the table and the client needs." },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1126_5_433162-178407485134673.webp", "alt": "Custom floral boutonniere", "tag": "Details", "title": "Accessories that tie the concept together", "subtitle": "Bouquet and complementary pieces aligned to the proposal", "caption": "Personal details help close the visual story of the event." },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8821_5_433162-178407486761113.webp", "alt": "Full floral setup for social event", "tag": "Ambience", "title": "A complete and consistent scene", "subtitle": "A design that connects the whole space", "caption": "Here the key is to avoid fragmented decoration." }
+      {
+        "src": "/eventos/img_0438.webp",
+        "thumbnail": "/eventos/thumbs/img_0438.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Large floral centerpiece for a wedding table",
+        "tag": "Civil wedding",
+        "title": "Linear centerpiece for a civil wedding",
+        "subtitle": "Long, understated arrangement for the main table",
+        "caption": "This setup was designed for a restaurant civil wedding, where the table needed an elegant but restrained gesture."
+      },
+      {
+        "src": "/eventos/img_6454.webp",
+        "thumbnail": "/eventos/thumbs/img_6454.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Floral decoration for a religious ceremony",
+        "tag": "Ceremonies",
+        "title": "An altar that frames the moment",
+        "subtitle": "Front composition for a clean ceremony",
+        "caption": "The priority here was to create a visual frame that accompanies the ceremony without overwhelming the space."
+      },
+      {
+        "src": "/eventos/img_6453.webp",
+        "thumbnail": "/eventos/thumbs/img_6453.webp",
+        "width": 300,
+        "height": 400,
+        "alt": "Floral arrangement adaptable to different tables or corners",
+        "tag": "Versatility",
+        "title": "Adaptable installation",
+        "subtitle": "The proposal adjusts to the venue and furniture",
+        "caption": "This piece shows how an idea can be resolved at the right scale for the venue, the table and the client needs."
+      },
+      {
+        "src": "/eventos/img_1126.webp",
+        "thumbnail": "/eventos/thumbs/img_1126.webp",
+        "width": 400,
+        "height": 267,
+        "alt": "Custom floral boutonniere",
+        "tag": "Details",
+        "title": "Accessories that tie the concept together",
+        "subtitle": "Bouquet and complementary pieces aligned to the proposal",
+        "caption": "Personal details help close the visual story of the event."
+      },
+      {
+        "src": "/eventos/img_8821.webp",
+        "thumbnail": "/eventos/thumbs/img_8821.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Full floral setup for social event",
+        "tag": "Ambience",
+        "title": "A complete and consistent scene",
+        "subtitle": "A design that connects the whole space",
+        "caption": "Here the key is to avoid fragmented decoration."
+      }
     ]
   },
   "whyUs": {
@@ -93,11 +155,31 @@
     "title": "A clear process to arrive calm on the big day.",
     "text": "We guide you step by step to turn ideas, references and needs into an executable proposal you can quote with confidence.",
     "steps": [
-      { "number": "01", "title": "We listen to your vision", "description": "You share the date, celebration type, the style that inspires you, priorities and approximate budget." },
-      { "number": "02", "title": "We visit and measure the venue", "description": "When needed, we review dimensions, access, heights, installation points, lighting and layouts." },
-      { "number": "03", "title": "We build a creative route", "description": "We propose colors, flowers, textures and layouts that feel coherent between ceremony, reception and details." },
-      { "number": "04", "title": "We solve questions and refine", "description": "We keep direct contact to clarify questions, refine ideas and adjust the proposal if priorities change." },
-      { "number": "05", "title": "We produce, install and close with you", "description": "We take care of preparation, transport and installation so you get clarity, calm and smooth execution." }
+      {
+        "number": "01",
+        "title": "We listen to your vision",
+        "description": "You share the date, celebration type, the style that inspires you, priorities and approximate budget."
+      },
+      {
+        "number": "02",
+        "title": "We visit and measure the venue",
+        "description": "When needed, we review dimensions, access, heights, installation points, lighting and layouts."
+      },
+      {
+        "number": "03",
+        "title": "We build a creative route",
+        "description": "We propose colors, flowers, textures and layouts that feel coherent between ceremony, reception and details."
+      },
+      {
+        "number": "04",
+        "title": "We solve questions and refine",
+        "description": "We keep direct contact to clarify questions, refine ideas and adjust the proposal if priorities change."
+      },
+      {
+        "number": "05",
+        "title": "We produce, install and close with you",
+        "description": "We take care of preparation, transport and installation so you get clarity, calm and smooth execution."
+      }
     ]
   },
   "alliances": {
@@ -113,18 +195,138 @@
     "text": "Explore a selection of installations, ceremonies, table centerpieces, bouquets and floral accessories. If you like something, ask for it for your event.",
     "visibleCount": 10,
     "items": [
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-0439_5_433162-178407484418081.webp", "alt": "Floral entry for a social event", "title": "First impression", "subtitle": "The entrance sets the tone for the event", "caption": "A floral entrance designed to welcome guests with elegance and warmth from the first step.", "tag": "Entry" },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-0605_5_433162-178407484396665.webp", "alt": "Main table with flowers for reception", "title": "Statement table", "subtitle": "A central composition with strong presence", "caption": "The head table works as a focal point: measured height, volume transition and a palette that supports the whole scene.", "tag": "Reception" },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1119_5_433162-178407484484614.webp", "alt": "Organic floral arrangement with foliage", "title": "Organic volume", "subtitle": "Flowers with natural movement", "caption": "A composition meant to add visual depth through foliage, soft curves and a less rigid rhythm.", "tag": "Natural" },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1122_5_433162-178407485049179.webp", "alt": "Intimate ceremony floral decoration", "title": "Intimate altar", "subtitle": "A closer, warmer floral frame", "caption": "Ideal for more contained ceremonies, where the goal is to wrap the moment without overloading the space.", "tag": "Ceremony" },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1126_5_433162-178407485134673.webp", "alt": "Bouquet and floral accessories", "title": "Coordinated bouquet", "subtitle": "Personal pieces aligned with the proposal", "caption": "The bouquet and accessories are designed to speak the same language as the rest of the decor.", "tag": "Detail" },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1138_5_433162-178407485335280.webp", "alt": "Guest table with floral centerpieces", "title": "Low centerpiece", "subtitle": "Designed for conversation around it", "caption": "A contained arrangement that adds color and texture without competing with the seated experience.", "tag": "Table" },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-1143_5_433162-178407485171955.webp", "alt": "Decorative floral corner for photographs", "title": "Set piece", "subtitle": "A floral background for photos and memories", "caption": "Spaces designed to capture special moments and add a memorable point within the event experience.", "tag": "Scene" },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2829_5_433162-178407485373117.webp", "alt": "Floral arrangement with warm palette", "title": "Warm tones", "subtitle": "A soft and luminous mix", "caption": "The combination of tones helps the space feel more welcoming, elegant and visually immersive.", "tag": "Palette" },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2832_5_433162-178407485679483.webp", "alt": "Low proportion floral centerpiece", "title": "Clean reading", "subtitle": "Floral presence without saturation", "caption": "Compact design for tables where visual openness and controlled proportions matter.", "tag": "Low" },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2833_5_433162-178407485787097.webp", "alt": "Elegant floral centerpiece", "title": "Elegant centerpiece", "subtitle": "A precise, understated floral gesture", "caption": "The composition balances volume and lightness to work in more classic or formal settings.", "tag": "Elegant" },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2834_5_433162-178407485989675.webp", "alt": "High-impact floral arrangement for event", "title": "Attention point", "subtitle": "A piece with more character", "caption": "Designed to be seen from a distance and add contrast to the overall narrative of the event.", "tag": "Impact" },
-      { "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2870_5_433162-178407485758505.webp", "alt": "Close-up floral arrangement with texture and movement", "title": "Layer and movement", "subtitle": "Flowers and foliage in a closer reading", "caption": "The closer framing lets you appreciate how the layers are built and how the texture mix changes.", "tag": "Texture" }
+      {
+        "src": "/eventos/img_0439.webp",
+        "thumbnail": "/eventos/thumbs/img_0439.webp",
+        "width": 300,
+        "height": 400,
+        "alt": "Floral entry for a social event",
+        "title": "First impression",
+        "subtitle": "The entrance sets the tone for the event",
+        "caption": "A floral entrance designed to welcome guests with elegance and warmth from the first step.",
+        "tag": "Entry"
+      },
+      {
+        "src": "/eventos/img_0605.webp",
+        "thumbnail": "/eventos/thumbs/img_0605.webp",
+        "width": 354,
+        "height": 400,
+        "alt": "Main table with flowers for reception",
+        "title": "Statement table",
+        "subtitle": "A central composition with strong presence",
+        "caption": "The head table works as a focal point: measured height, volume transition and a palette that supports the whole scene.",
+        "tag": "Reception"
+      },
+      {
+        "src": "/eventos/img_1119.webp",
+        "thumbnail": "/eventos/thumbs/img_1119.webp",
+        "width": 400,
+        "height": 266,
+        "alt": "Organic floral arrangement with foliage",
+        "title": "Organic volume",
+        "subtitle": "Flowers with natural movement",
+        "caption": "A composition meant to add visual depth through foliage, soft curves and a less rigid rhythm.",
+        "tag": "Natural"
+      },
+      {
+        "src": "/eventos/img_1122.webp",
+        "thumbnail": "/eventos/thumbs/img_1122.webp",
+        "width": 266,
+        "height": 400,
+        "alt": "Intimate ceremony floral decoration",
+        "title": "Intimate altar",
+        "subtitle": "A closer, warmer floral frame",
+        "caption": "Ideal for more contained ceremonies, where the goal is to wrap the moment without overloading the space.",
+        "tag": "Ceremony"
+      },
+      {
+        "src": "/eventos/img_1126.webp",
+        "thumbnail": "/eventos/thumbs/img_1126.webp",
+        "width": 400,
+        "height": 267,
+        "alt": "Bouquet and floral accessories",
+        "title": "Coordinated bouquet",
+        "subtitle": "Personal pieces aligned with the proposal",
+        "caption": "The bouquet and accessories are designed to speak the same language as the rest of the decor.",
+        "tag": "Detail"
+      },
+      {
+        "src": "/eventos/img_1138.webp",
+        "thumbnail": "/eventos/thumbs/img_1138.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Guest table with floral centerpieces",
+        "title": "Low centerpiece",
+        "subtitle": "Designed for conversation around it",
+        "caption": "A contained arrangement that adds color and texture without competing with the seated experience.",
+        "tag": "Table"
+      },
+      {
+        "src": "/eventos/img_1143.webp",
+        "thumbnail": "/eventos/thumbs/img_1143.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Decorative floral corner for photographs",
+        "title": "Set piece",
+        "subtitle": "A floral background for photos and memories",
+        "caption": "Spaces designed to capture special moments and add a memorable point within the event experience.",
+        "tag": "Scene"
+      },
+      {
+        "src": "/eventos/img_2829.webp",
+        "thumbnail": "/eventos/thumbs/img_2829.webp",
+        "width": 400,
+        "height": 400,
+        "alt": "Floral arrangement with warm palette",
+        "title": "Warm tones",
+        "subtitle": "A soft and luminous mix",
+        "caption": "The combination of tones helps the space feel more welcoming, elegant and visually immersive.",
+        "tag": "Palette"
+      },
+      {
+        "src": "/eventos/img_2832.webp",
+        "thumbnail": "/eventos/thumbs/img_2832.webp",
+        "width": 300,
+        "height": 400,
+        "alt": "Low proportion floral centerpiece",
+        "title": "Clean reading",
+        "subtitle": "Floral presence without saturation",
+        "caption": "Compact design for tables where visual openness and controlled proportions matter.",
+        "tag": "Low"
+      },
+      {
+        "src": "/eventos/img_2833.webp",
+        "thumbnail": "/eventos/thumbs/img_2833.webp",
+        "width": 400,
+        "height": 400,
+        "alt": "Elegant floral centerpiece",
+        "title": "Elegant centerpiece",
+        "subtitle": "A precise, understated floral gesture",
+        "caption": "The composition balances volume and lightness to work in more classic or formal settings.",
+        "tag": "Elegant"
+      },
+      {
+        "src": "/eventos/img_2834.webp",
+        "thumbnail": "/eventos/thumbs/img_2834.webp",
+        "width": 400,
+        "height": 400,
+        "alt": "High-impact floral arrangement for event",
+        "title": "Attention point",
+        "subtitle": "A piece with more character",
+        "caption": "Designed to be seen from a distance and add contrast to the overall narrative of the event.",
+        "tag": "Impact"
+      },
+      {
+        "src": "/eventos/img_2870.webp",
+        "thumbnail": "/eventos/thumbs/img_2870.webp",
+        "width": 400,
+        "height": 320,
+        "alt": "Close-up floral arrangement with texture and movement",
+        "title": "Layer and movement",
+        "subtitle": "Flowers and foliage in a closer reading",
+        "caption": "The closer framing lets you appreciate how the layers are built and how the texture mix changes.",
+        "tag": "Texture"
+      }
     ]
   },
   "form": {
@@ -138,16 +340,46 @@
       "Your details"
     ],
     "steps": [
-      { "legend": "Let's talk about your celebration", "copy": "Every great event starts with an idea. Tell us a bit about the celebration you are imagining." },
-      { "legend": "Let's continue with the scale", "copy": "This information helps us understand the size and location of your celebration." },
-      { "legend": "Do you already have a venue?", "copy": "If you already have a venue, it helps us review logistics and available spaces." },
-      { "legend": "Let's design something unique", "copy": "We want to know the spaces you want to decorate so we can start imagining a proposal tailored to you." },
-      { "legend": "Your visual style", "copy": "Now let's talk about the atmosphere you imagine and how much guidance you need to define it." },
-      { "legend": "The colors of the event", "copy": "If you already have a palette in mind, we will note it here. If not, we can propose one with you." },
-      { "legend": "Tell us your idea", "copy": "Tell us how you imagine your event, what atmosphere you want to create or any detail you think is important." },
-      { "legend": "Let's refine the proposal", "copy": "With this information we can prepare a proposal much closer to what you are looking for." },
-      { "legend": "Additional information", "copy": "If there is anything else we should know, tell us here." },
-      { "legend": "Your details", "copy": "We are almost done. We just need your details to send your personalized proposal." }
+      {
+        "legend": "Let's talk about your celebration",
+        "copy": "Every great event starts with an idea. Tell us a bit about the celebration you are imagining."
+      },
+      {
+        "legend": "Let's continue with the scale",
+        "copy": "This information helps us understand the size and location of your celebration."
+      },
+      {
+        "legend": "Do you already have a venue?",
+        "copy": "If you already have a venue, it helps us review logistics and available spaces."
+      },
+      {
+        "legend": "Let's design something unique",
+        "copy": "We want to know the spaces you want to decorate so we can start imagining a proposal tailored to you."
+      },
+      {
+        "legend": "Your visual style",
+        "copy": "Now let's talk about the atmosphere you imagine and how much guidance you need to define it."
+      },
+      {
+        "legend": "The colors of the event",
+        "copy": "If you already have a palette in mind, we will note it here. If not, we can propose one with you."
+      },
+      {
+        "legend": "Tell us your idea",
+        "copy": "Tell us how you imagine your event, what atmosphere you want to create or any detail you think is important."
+      },
+      {
+        "legend": "Let's refine the proposal",
+        "copy": "With this information we can prepare a proposal much closer to what you are looking for."
+      },
+      {
+        "legend": "Additional information",
+        "copy": "If there is anything else we should know, tell us here."
+      },
+      {
+        "legend": "Your details",
+        "copy": "We are almost done. We just need your details to send your personalized proposal."
+      }
     ],
     "labels": {
       "eventType": "What type of event are you planning? *",
@@ -188,89 +420,278 @@
     },
     "options": {
       "eventTypes": [
-        { "label": "💍 Wedding", "value": "Wedding" },
-        { "label": "👑 Quinceañera", "value": "Quinceañera" },
-        { "label": "🎉 Social event", "value": "Social event" },
-        { "label": "🏢 Corporate event", "value": "Corporate event" },
-        { "label": "💕 Vow renewal", "value": "Vow renewal" },
-        { "label": "✨ Other", "value": "Other" }
+        {
+          "label": "💍 Wedding",
+          "value": "Wedding"
+        },
+        {
+          "label": "👑 Quinceañera",
+          "value": "Quinceañera"
+        },
+        {
+          "label": "🎉 Social event",
+          "value": "Social event"
+        },
+        {
+          "label": "🏢 Corporate event",
+          "value": "Corporate event"
+        },
+        {
+          "label": "💕 Vow renewal",
+          "value": "Vow renewal"
+        },
+        {
+          "label": "✨ Other",
+          "value": "Other"
+        }
       ],
       "guestCounts": [
-        { "label": "Less than 50", "value": "Less than 50" },
-        { "label": "50 to 100", "value": "50 to 100" },
-        { "label": "101 to 200", "value": "101 to 200" },
-        { "label": "201 to 350", "value": "201 to 350" },
-        { "label": "More than 350", "value": "More than 350" }
+        {
+          "label": "Less than 50",
+          "value": "Less than 50"
+        },
+        {
+          "label": "50 to 100",
+          "value": "50 to 100"
+        },
+        {
+          "label": "101 to 200",
+          "value": "101 to 200"
+        },
+        {
+          "label": "201 to 350",
+          "value": "201 to 350"
+        },
+        {
+          "label": "More than 350",
+          "value": "More than 350"
+        }
       ],
       "municipalities": [
-        { "label": "Monterrey", "value": "Monterrey" },
-        { "label": "San Pedro Garza García", "value": "San Pedro Garza García" },
-        { "label": "San Nicolás de los Garza", "value": "San Nicolás de los Garza" },
-        { "label": "Guadalupe", "value": "Guadalupe" },
-        { "label": "Apodaca", "value": "Apodaca" },
-        { "label": "Escobedo", "value": "Escobedo" },
-        { "label": "Santa Catarina", "value": "Santa Catarina" },
-        { "label": "García", "value": "García" },
-        { "label": "Santiago", "value": "Santiago" },
-        { "label": "Juárez", "value": "Juárez" },
-        { "label": "Other", "value": "Other" }
+        {
+          "label": "Monterrey",
+          "value": "Monterrey"
+        },
+        {
+          "label": "San Pedro Garza García",
+          "value": "San Pedro Garza García"
+        },
+        {
+          "label": "San Nicolás de los Garza",
+          "value": "San Nicolás de los Garza"
+        },
+        {
+          "label": "Guadalupe",
+          "value": "Guadalupe"
+        },
+        {
+          "label": "Apodaca",
+          "value": "Apodaca"
+        },
+        {
+          "label": "Escobedo",
+          "value": "Escobedo"
+        },
+        {
+          "label": "Santa Catarina",
+          "value": "Santa Catarina"
+        },
+        {
+          "label": "García",
+          "value": "García"
+        },
+        {
+          "label": "Santiago",
+          "value": "Santiago"
+        },
+        {
+          "label": "Juárez",
+          "value": "Juárez"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
       ],
       "yesNoVenue": [
-        { "label": "✅ Yes", "value": "Yes" },
-        { "label": "🕒 No, not yet", "value": "Looking" }
+        {
+          "label": "✅ Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "🕒 No, not yet",
+          "value": "Looking"
+        }
       ],
       "spaces": [
-        { "label": "💐 Bouquet and accessories", "value": "Bouquet and accessories" },
-        { "label": "⛪ Ceremony or church", "value": "Ceremony or church" },
-        { "label": "🍽️ Centerpieces", "value": "Centerpieces" },
-        { "label": "👰 Head table", "value": "Head table" },
-        { "label": "🌸 Arch or floral structure", "value": "Arch or floral structure" },
-        { "label": "✨ Full decoration", "value": "Full decoration" }
+        {
+          "label": "💐 Bouquet and accessories",
+          "value": "Bouquet and accessories"
+        },
+        {
+          "label": "⛪ Ceremony or church",
+          "value": "Ceremony or church"
+        },
+        {
+          "label": "🍽️ Centerpieces",
+          "value": "Centerpieces"
+        },
+        {
+          "label": "👰 Head table",
+          "value": "Head table"
+        },
+        {
+          "label": "🌸 Arch or floral structure",
+          "value": "Arch or floral structure"
+        },
+        {
+          "label": "✨ Full decoration",
+          "value": "Full decoration"
+        }
       ],
       "integralSpaces": [
-        { "label": "Reception", "value": "Reception" },
-        { "label": "Ceremony", "value": "Ceremony" },
-        { "label": "Cocktail", "value": "Cocktail" },
-        { "label": "Banquet", "value": "Banquet" },
-        { "label": "Dance floor", "value": "Dance floor" },
-        { "label": "Head table", "value": "Head table" }
+        {
+          "label": "Reception",
+          "value": "Reception"
+        },
+        {
+          "label": "Ceremony",
+          "value": "Ceremony"
+        },
+        {
+          "label": "Cocktail",
+          "value": "Cocktail"
+        },
+        {
+          "label": "Banquet",
+          "value": "Banquet"
+        },
+        {
+          "label": "Dance floor",
+          "value": "Dance floor"
+        },
+        {
+          "label": "Head table",
+          "value": "Head table"
+        }
       ],
       "ideaStates": [
-        { "label": "🌟 I already have a very clear idea of what I want.", "value": "clara" },
-        { "label": "🌿 I have some references, but I would like guidance to define it.", "value": "referencias" },
-        { "label": "🤍 I do not yet have an idea; I would like you to guide me and suggest options.", "value": "sin_idea" }
+        {
+          "label": "🌟 I already have a very clear idea of what I want.",
+          "value": "clara"
+        },
+        {
+          "label": "🌿 I have some references, but I would like guidance to define it.",
+          "value": "referencias"
+        },
+        {
+          "label": "🤍 I do not yet have an idea; I would like you to guide me and suggest options.",
+          "value": "sin_idea"
+        }
       ],
       "styles": [
-        { "label": "Elegant and classic", "value": "Elegant and classic" },
-        { "label": "Romantic", "value": "Romantic" },
-        { "label": "Modern and minimalist", "value": "Modern and minimalist" },
-        { "label": "Natural and organic", "value": "Natural and organic" },
-        { "label": "Colorful", "value": "Colorful" },
-        { "label": "Luxury / Large scale", "value": "Luxury / Large scale" },
-        { "label": "Other", "value": "Other" }
+        {
+          "label": "Elegant and classic",
+          "value": "Elegant and classic"
+        },
+        {
+          "label": "Romantic",
+          "value": "Romantic"
+        },
+        {
+          "label": "Modern and minimalist",
+          "value": "Modern and minimalist"
+        },
+        {
+          "label": "Natural and organic",
+          "value": "Natural and organic"
+        },
+        {
+          "label": "Colorful",
+          "value": "Colorful"
+        },
+        {
+          "label": "Luxury / Large scale",
+          "value": "Luxury / Large scale"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
       ],
       "budgets": [
-        { "label": "Not defined yet; I need guidance", "value": "Not defined yet; I need guidance" },
-        { "label": "Less than $15,000 MXN", "value": "Less than $15,000 MXN" },
-        { "label": "$15,000 to $30,000 MXN", "value": "$15,000 to $30,000 MXN" },
-        { "label": "$30,001 to $60,000 MXN", "value": "$30,001 to $60,000 MXN" },
-        { "label": "$60,001 to $100,000 MXN", "value": "$60,001 to $100,000 MXN" },
-        { "label": "More than $100,000 MXN", "value": "More than $100,000 MXN" }
+        {
+          "label": "Not defined yet; I need guidance",
+          "value": "Not defined yet; I need guidance"
+        },
+        {
+          "label": "Less than $15,000 MXN",
+          "value": "Less than $15,000 MXN"
+        },
+        {
+          "label": "$15,000 to $30,000 MXN",
+          "value": "$15,000 to $30,000 MXN"
+        },
+        {
+          "label": "$30,001 to $60,000 MXN",
+          "value": "$30,001 to $60,000 MXN"
+        },
+        {
+          "label": "$60,001 to $100,000 MXN",
+          "value": "$60,001 to $100,000 MXN"
+        },
+        {
+          "label": "More than $100,000 MXN",
+          "value": "More than $100,000 MXN"
+        }
       ],
       "sources": [
-        { "label": "Google", "value": "Google" },
-        { "label": "Instagram", "value": "Instagram" },
-        { "label": "Facebook", "value": "Facebook" },
-        { "label": "TikTok", "value": "TikTok" },
-        { "label": "Bodas.com.mx", "value": "Bodas.com.mx" },
-        { "label": "Recommendation from family or friend", "value": "Recommendation from family or friend" },
-        { "label": "I have worked with you before", "value": "I have worked with you before" },
-        { "label": "Other", "value": "Other" }
+        {
+          "label": "Google",
+          "value": "Google"
+        },
+        {
+          "label": "Instagram",
+          "value": "Instagram"
+        },
+        {
+          "label": "Facebook",
+          "value": "Facebook"
+        },
+        {
+          "label": "TikTok",
+          "value": "TikTok"
+        },
+        {
+          "label": "Bodas.com.mx",
+          "value": "Bodas.com.mx"
+        },
+        {
+          "label": "Recommendation from family or friend",
+          "value": "Recommendation from family or friend"
+        },
+        {
+          "label": "I have worked with you before",
+          "value": "I have worked with you before"
+        },
+        {
+          "label": "Other",
+          "value": "Other"
+        }
       ],
       "preferredContacts": [
-        { "label": "📱 WhatsApp", "value": "WhatsApp" },
-        { "label": "📞 Phone call", "value": "Phone call" },
-        { "label": "✉️ Email", "value": "Email" }
+        {
+          "label": "📱 WhatsApp",
+          "value": "WhatsApp"
+        },
+        {
+          "label": "📞 Phone call",
+          "value": "Phone call"
+        },
+        {
+          "label": "✉️ Email",
+          "value": "Email"
+        }
       ]
     },
     "messages": {
@@ -316,10 +737,34 @@
     "text": "Find arrangements for birthdays, anniversaries, thank-yous and special occasions, with delivery in Monterrey and the metropolitan area.",
     "explore": "Explore the store",
     "products": [
-      { "url": "https://diloconflores.com/products/alegria-radiante", "title": "Radiant Joy", "label": "TO CELEBRATE", "image": "https://diloconflores.com/cdn/shop/products/Girasolesbouquete-1.jpg?v=1676215586", "alt": "Radiant Joy" },
-      { "url": "https://diloconflores.com/products/amor-de-verano", "title": "Summer Love", "label": "TO SURPRISE", "image": "https://diloconflores.com/cdn/shop/files/PHOTO-2024-04-20-12-16-192.jpg?v=1713926178", "alt": "Summer Love" },
-      { "url": "https://diloconflores.com/products/dulces-caricias", "title": "Sweet caresses", "label": "TO ACCOMPANY", "image": "https://diloconflores.com/cdn/shop/products/Dulcescaricias-1.jpg?v=1671202564", "alt": "Sweet caresses" },
-      { "url": "https://diloconflores.com/products/explosion-de-amor", "title": "Explosion of Love", "label": "TO IMPRESS", "image": "https://diloconflores.com/cdn/shop/products/Caja150rosas-1-2.jpg?v=1676215703", "alt": "Explosion of Love" }
+      {
+        "url": "https://diloconflores.com/products/alegria-radiante",
+        "title": "Radiant Joy",
+        "label": "TO CELEBRATE",
+        "image": "https://diloconflores.com/cdn/shop/products/Girasolesbouquete-1.jpg?v=1676215586",
+        "alt": "Radiant Joy"
+      },
+      {
+        "url": "https://diloconflores.com/products/amor-de-verano",
+        "title": "Summer Love",
+        "label": "TO SURPRISE",
+        "image": "https://diloconflores.com/cdn/shop/files/PHOTO-2024-04-20-12-16-192.jpg?v=1713926178",
+        "alt": "Summer Love"
+      },
+      {
+        "url": "https://diloconflores.com/products/dulces-caricias",
+        "title": "Sweet caresses",
+        "label": "TO ACCOMPANY",
+        "image": "https://diloconflores.com/cdn/shop/products/Dulcescaricias-1.jpg?v=1671202564",
+        "alt": "Sweet caresses"
+      },
+      {
+        "url": "https://diloconflores.com/products/explosion-de-amor",
+        "title": "Explosion of Love",
+        "label": "TO IMPRESS",
+        "image": "https://diloconflores.com/cdn/shop/products/Caja150rosas-1-2.jpg?v=1676215703",
+        "alt": "Explosion of Love"
+      }
     ],
     "footerText": "Floral arrangements and gifts for every occasion.",
     "footerButton": "Visit diloconflores.com"
