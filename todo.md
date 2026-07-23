@@ -18,7 +18,7 @@
 
 [x] Integrar Google Analitycs y configuar los eventos en los clics y formularios.
 [x] Agregar boton de whatsapp, replicar el boton tal cual se ve en `diloconflores.com`.
-[ ] En la sección `Inspiración` hay que definir el alto y ancho de las imagenes, ya que antes de que carguen, con el lazy load, se comprimen los altos y causa conflictos de layout
+[x] En la sección `Inspiración` hay que definir el alto y ancho de las imagenes, ya que antes de que carguen, con el lazy load, se comprimen los altos y causa conflictos de layout
 [ ] Hay que mover las imagenes desde `/Users/raymundo.salazar/Desktop/Dilo con Flores/Eventos fotos/` hasta `/public/` de este proyecto pasando cada imagen por un proceso de optimización en donde bajemos el peso de cada imagen a menos de `200kb`, sin perdida de calidad y las convirtamos a `webp`.
 [ ] De cada imagen hay que hacer un thumbnail de la misma imagen, de menor tamaño, respetando proporcion real de la imagen original. Cada thumbnail debe tener un ancho maximo de 400px y un alto maximo de 400px, pero recuerda que debes respetar la proporción real de la imagen original.
 [ ] para hacer la transferencia hay que revisar las imagenes que actualmente existen en el proyecto y usando solo la parte del nombre de la imagen de la url, dividir por guión bajo `_`, tomar la primer parte de eso, y cambiar el guión medio por un guión bajo
