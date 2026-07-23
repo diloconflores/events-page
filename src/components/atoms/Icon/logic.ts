@@ -11,6 +11,7 @@ import {
   Send,
   Sparkles,
   Star,
+  X,
   type IconNode,
 } from "lucide";
 
@@ -29,6 +30,7 @@ const ICONS: Record<IconName, IconNode> = {
   send: Send,
   sparkles: Sparkles,
   star: Star,
+  x: X,
 };
 
 function escapeHtml(value: string | number | undefined): string {

@@ -264,7 +264,7 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
         }
 
         if (header.contains(event.target)) {
-          if (event.target instanceof Element && event.target.closest("[data-dropdown-trigger], [data-dropdown-item]")) {
+          if (event.target instanceof Element && event.target.closest("[data-dropdown-item]")) {
             closeMobileNav();
           }
           return;
