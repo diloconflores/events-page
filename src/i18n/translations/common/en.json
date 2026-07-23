@@ -7,6 +7,8 @@
   "languageEnglish": "English",
   "skipLink": "Skip to content",
   "homeLabel": "Go to home",
+  "whatsappPrompt": "Can I help you with something?",
+  "whatsappLabel": "Message us on WhatsApp",
   "openMenuLabel": "Open menu",
   "closeMenuLabel": "Close menu",
   "primaryNavLabel": "Primary navigation"

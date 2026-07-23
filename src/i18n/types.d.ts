@@ -19,6 +19,8 @@ export interface CommonTranslations {
   readonly languageEnglish: string;
   readonly skipLink: string;
   readonly homeLabel: string;
+  readonly whatsappPrompt: string;
+  readonly whatsappLabel: string;
   readonly openMenuLabel: string;
   readonly closeMenuLabel: string;
   readonly primaryNavLabel: string;

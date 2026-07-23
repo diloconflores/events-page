@@ -1,0 +1,37 @@
+---
+import Button from "../../atoms/Button/index.astro";
+import { cn } from "../../../utils/cn";
+import { WHATSAPP_URL } from "./constants";
+import type { WhatsAppButtonProps } from "./types";
+
+const props = Astro.props as WhatsAppButtonProps;
+const href = props.href ?? WHATSAPP_URL;
+const ariaLabel = props.ariaLabel ?? props.label;
+---
+
+<Button
+  href={href}
+  target={props.target ?? "_blank"}
+  rel={props.rel ?? "noopener noreferrer"}
+  variant="ghost"
+  rounded
+  leadingIcon="message-circle"
+  leadingIconClass="h-5 w-5"
+  class={cn(
+    "fixed bottom-4 right-4 z-[110] max-w-[min(calc(100vw-2rem),22rem)] items-start gap-3 bg-[#25D366] px-5 py-4 text-left text-white shadow-[0_18px_40px_rgba(37,211,102,0.35)] transition hover:-translate-y-1 hover:bg-[#1fb95b] focus-visible:ring-2 focus-visible:ring-[#25D366]/35 sm:max-w-[22.5rem]",
+    props.class,
+  )}
+  aria-label={ariaLabel}
+  data-analytics-event="whatsapp_click"
+  data-analytics-name={props.analyticsName ?? "floating_whatsapp"}
+  data-analytics-location={props.analyticsLocation ?? "floating_button"}
+>
+  <span class="grid gap-0.5 leading-tight">
+    <span class="text-[11px] font-semibold tracking-[0.18em] text-white/82 uppercase">
+      {props.prompt}
+    </span>
+    <span class="text-[14px] font-extrabold tracking-tight text-white sm:text-[15px]">
+      {props.label}
+    </span>
+  </span>
+</Button>

@@ -5,6 +5,7 @@ import MediaCard from "../../atoms/MediaCard/index.astro";
 import CompleteService from "../../organisms/CompleteService/index.astro";
 import Hero from "../../organisms/Hero/index.astro";
 import Header from "../../organisms/Header/index.astro";
+import WhatsAppButton from "../../organisms/WhatsAppButton/index.astro";
 import ShopProductCard from "../../molecules/ShopProductCard/index.astro";
 import { getEventLandingScript } from "./scripts";
 import type { EventLandingProps } from "./types";
@@ -518,6 +519,13 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
   </section>
 </main>
 
+<WhatsAppButton
+  prompt={common.whatsappPrompt}
+  label={common.whatsappLabel}
+  analyticsName="floating_whatsapp"
+  analyticsLocation="floating_button"
+/>
+
 <footer id="contact" class="border-t border-brand-line bg-brand-cream py-14">
   <div class="mx-auto grid w-full max-w-[1240px] gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr_0.9fr] lg:px-8">
     <div class="max-w-2xl">
@@ -558,7 +566,7 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
   href="#quote"
   variant="primary"
   trailingIcon="arrow-right"
-  class="fixed bottom-4 right-4 z-40 md:hidden"
+  class="fixed bottom-20 right-4 z-40 md:hidden"
   data-analytics-event="cta_click"
   data-analytics-name="mobile_quote"
   data-analytics-location="mobile_fab"
