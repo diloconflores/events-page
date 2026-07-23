@@ -12,6 +12,9 @@ export interface DropdownItem {
   readonly rel?: string;
   readonly trailingIcon?: IconName;
   readonly trailingIconClass?: string;
+  readonly analyticsEvent?: string;
+  readonly analyticsName?: string;
+  readonly analyticsLocation?: string;
 }
 
 export interface DropdownProps {

@@ -3,6 +3,7 @@ import {
   DEFAULT_GTAG_CONFIG,
   GOOGLE_ANALYTICS_SCRIPT_URL,
 } from './constants';
+import { getAnalyticsTrackingScript } from "./script";
 
 const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 
@@ -37,6 +38,11 @@ const isEnabled =
 
         window.gtag('config', measurementId, config);
       </script>
+
+      <script
+        type="module"
+        set:html={getAnalyticsTrackingScript()}
+      />
     </>
   )
 }

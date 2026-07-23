@@ -16,6 +16,9 @@ const brandMenuItems = [
     label: content.brand.events,
     href: "#hero",
     selected: true,
+    analyticsEvent: "cta_click",
+    analyticsName: "events",
+    analyticsLocation: "header_brand_switcher",
   },
   {
     id: "occasions",
@@ -25,6 +28,9 @@ const brandMenuItems = [
     rel: "nofollow",
     title: content.brand.occasions,
     trailingIcon: "external-link",
+    analyticsEvent: "cta_click",
+    analyticsName: "occasions",
+    analyticsLocation: "header_brand_switcher",
   },
 ] as const;
 ---
@@ -109,27 +115,49 @@ const brandMenuItems = [
       href="#service"
       ghost
       class="border-b border-white/10 py-4 text-[18px] font-medium tracking-tight text-white transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      data-analytics-event="cta_click"
+      data-analytics-name="service"
+      data-analytics-location="header_nav"
       data-header-nav-link>{content.nav.service}</Button
     >
     <Button
       href="#inspiration"
       ghost
       class="border-b border-white/10 py-4 text-[18px] font-medium tracking-tight text-white transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      data-analytics-event="cta_click"
+      data-analytics-name="inspiration"
+      data-analytics-location="header_nav"
       data-header-nav-link>{content.nav.inspiration}</Button
     >
     <Button
       href="#why-us"
       ghost
       class="border-b border-white/10 py-4 text-[18px] font-medium tracking-tight text-white transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      data-analytics-event="cta_click"
+      data-analytics-name="why_us"
+      data-analytics-location="header_nav"
       data-header-nav-link>{content.nav.whyUs}</Button
     >
     <Button
       href="#process"
       ghost
       class="border-b border-white/10 py-4 text-[18px] font-medium tracking-tight text-white transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      data-analytics-event="cta_click"
+      data-analytics-name="process"
+      data-analytics-location="header_nav"
       data-header-nav-link>{content.nav.process}</Button
     >
-    <Button href="#quote" variant="primary" sharped class="w-full justify-center min-[980px]:w-auto">{content.nav.cta}</Button>
+    <Button
+      href="#quote"
+      variant="primary"
+      sharped
+      class="w-full justify-center min-[980px]:w-auto"
+      data-analytics-event="cta_click"
+      data-analytics-name="quote"
+      data-analytics-location="header_nav"
+    >
+      {content.nav.cta}
+    </Button>
   </nav>
 </header>
 

@@ -2,6 +2,7 @@
 import { defaultLocale, getAlternateLocalePaths, getLocaleConfig, getLocalizedPath } from "../../i18n";
 import { SITE_NAME, DEFAULT_THEME_COLOR } from "./constants";
 import type { BaseLayoutProps } from "./types";
+import GoogleAnalytics from "../../integrations/GoogleAnalytics/index.astro";
 import "../../styles/global.css";
 
 const {
@@ -56,6 +57,7 @@ const ogLocale = localeConfig.code === "es" ? "es_ES" : "en_US";
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <GoogleAnalytics />
   </head>
   <body class="min-h-screen overflow-x-hidden bg-cream font-sans antialiased selection:bg-pink/20 selection:text-ink">
     <slot />

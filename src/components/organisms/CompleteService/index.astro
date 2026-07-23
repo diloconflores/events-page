@@ -40,6 +40,9 @@ const { content } = Astro.props as CompleteServiceProps;
             variant="primary"
             trailingIcon="arrow-right"
             class="w-fit shrink-0 self-center"
+            data-analytics-event="cta_click"
+            data-analytics-name="complete_service_quote"
+            data-analytics-location="complete_service"
           >
             {content.promise.cta}
           </Button>
@@ -97,6 +100,9 @@ const { content } = Astro.props as CompleteServiceProps;
       trailingIcon="arrow-right"
       trailingIconClass="h-4 w-4 transition-transform duration-200 ease-[cubic-bezier(0.22,0.72,0.2,1)] group-hover:translate-x-[3px]"
       class="w-fit gap-3 p-0 font-bold text-white transition hover:opacity-80"
+      data-analytics-event="cta_click"
+      data-analytics-name="conversion_band_quote"
+      data-analytics-location="conversion_band"
     >
       {content.conversionBand.cta}
     </Button>

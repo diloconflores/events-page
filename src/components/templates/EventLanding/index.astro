@@ -61,6 +61,9 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
             caption={item.caption}
             ariaLabel={`Abrir ${item.title}`}
             class="mb-4 break-inside-avoid"
+            data-analytics-event="cta_click"
+            data-analytics-name={item.title}
+            data-analytics-location="inspiration_gallery"
           />
         ))}
       </div>
@@ -98,7 +101,15 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
           ))}
         </ul>
 
-        <Button href="#quote" variant="light" trailingIcon="arrow-right" class="mt-8 border-0">
+        <Button
+          href="#quote"
+          variant="light"
+          trailingIcon="arrow-right"
+          class="mt-8 border-0"
+          data-analytics-event="cta_click"
+          data-analytics-name="why_us_quote"
+          data-analytics-location="why_us"
+        >
           {content.whyUs.cta}
         </Button>
       </div>
@@ -163,6 +174,9 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
           target="_blank"
           rel="nofollow noopener noreferrer"
           class="group rounded-[2rem] border border-brand-line bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-glow"
+          data-analytics-event="cta_click"
+          data-analytics-name="bodas_com_mx"
+          data-analytics-location="alliances"
         >
           <div class="flex items-center justify-between gap-4">
             <div>
@@ -209,6 +223,9 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
             subtitle={item.subtitle}
             ariaLabel={`Abrir ${item.title}`}
             overflowCount={index === visibleGalleryItems.length - 1 ? galleryOverflowCount : undefined}
+            data-analytics-event="cta_click"
+            data-analytics-name={item.title}
+            data-analytics-location="gallery"
           />
         ))}
       </div>
@@ -238,7 +255,14 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
         </div>
       </div>
 
-      <form action={EVENT_FORM_ACTION} method="POST" class="rounded-[2rem] border border-brand-line bg-brand-surface p-6 shadow-soft sm:p-8">
+      <form
+        id="event-form"
+        action={EVENT_FORM_ACTION}
+        method="POST"
+        class="form-card rounded-[2rem] border border-brand-line bg-brand-surface p-6 shadow-soft sm:p-8"
+        data-analytics-form="event_quote"
+        data-analytics-location="quote"
+      >
         <input type="hidden" name="_subject" value={`${content.brand.label} — ${content.nav.cta}`} />
         <input type="hidden" name="_language" value={locale} />
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" />
@@ -426,7 +450,15 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
           {content.finalCta.title}
         </h2>
       </div>
-      <Button href="#quote" variant="light" trailingIcon="arrow-right" class="border-0">
+      <Button
+        href="#quote"
+        variant="light"
+        trailingIcon="arrow-right"
+        class="border-0"
+        data-analytics-event="cta_click"
+        data-analytics-name="final_quote"
+        data-analytics-location="final_cta"
+      >
         {content.finalCta.cta}
       </Button>
     </div>
@@ -458,6 +490,9 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
             alt={product.alt}
             label={product.label}
             title={product.title}
+            data-analytics-event="cta_click"
+            data-analytics-name={product.title}
+            data-analytics-location="shop_products"
           />
         ))}
       </div>
@@ -466,7 +501,16 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
         <p class="max-w-2xl text-sm leading-7 text-brand-ink">
           {content.shop.footerText}
         </p>
-        <Button href={SHOP_URL} target="_blank" rel="noopener noreferrer" variant="primary" trailingIcon="arrow-right">
+        <Button
+          href={SHOP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="primary"
+          trailingIcon="arrow-right"
+          data-analytics-event="cta_click"
+          data-analytics-name="shop_footer"
+          data-analytics-location="shop"
+        >
           {content.shop.footerButton}
         </Button>
       </div>
@@ -502,15 +546,23 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
         {content.footer.explore}
       </p>
       <nav class="mt-5 grid gap-3 text-sm font-semibold text-brand-ink">
-        <a class="transition hover:text-brand-pink" href="#inspiration">{content.footer.inspiration}</a>
-        <a class="transition hover:text-brand-pink" href="#gallery">{content.footer.gallery}</a>
-        <a class="transition hover:text-brand-pink" href="#quote">{content.footer.quote}</a>
+        <a class="transition hover:text-brand-pink" href="#inspiration" data-analytics-event="cta_click" data-analytics-name="footer_inspiration" data-analytics-location="footer">{content.footer.inspiration}</a>
+        <a class="transition hover:text-brand-pink" href="#gallery" data-analytics-event="cta_click" data-analytics-name="footer_gallery" data-analytics-location="footer">{content.footer.gallery}</a>
+        <a class="transition hover:text-brand-pink" href="#quote" data-analytics-event="cta_click" data-analytics-name="footer_quote" data-analytics-location="footer">{content.footer.quote}</a>
       </nav>
     </div>
   </div>
 </footer>
 
-<Button href="#quote" variant="primary" trailingIcon="arrow-right" class="fixed bottom-4 right-4 z-40 md:hidden">
+<Button
+  href="#quote"
+  variant="primary"
+  trailingIcon="arrow-right"
+  class="fixed bottom-4 right-4 z-40 md:hidden"
+  data-analytics-event="cta_click"
+  data-analytics-name="mobile_quote"
+  data-analytics-location="mobile_fab"
+>
   {content.nav.quote}
 </Button>
 

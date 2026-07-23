@@ -64,6 +64,9 @@ const props = Astro.props as DropdownProps;
           role="menuitem"
           aria-current={item.selected ? "page" : undefined}
           data-dropdown-item={item.id}
+          data-analytics-event={item.analyticsEvent}
+          data-analytics-name={item.analyticsName}
+          data-analytics-location={item.analyticsLocation}
         >
           <span>{item.label}</span>
           {item.trailingIcon ? (

@@ -27,8 +27,25 @@ const { content } = Astro.props as HeroProps;
       </p>
 
       <div class="mt-8 flex flex-col items-start gap-3 min-[700px]:flex-row">
-        <Button href="#quote" variant="primary" rounded>{content.primaryCta}</Button>
-        <Button href="#inspiration" variant="secondary" rounded glass>
+        <Button
+          href="#quote"
+          variant="primary"
+          rounded
+          data-analytics-event="cta_click"
+          data-analytics-name="hero_quote"
+          data-analytics-location="hero"
+        >
+          {content.primaryCta}
+        </Button>
+        <Button
+          href="#inspiration"
+          variant="secondary"
+          rounded
+          glass
+          data-analytics-event="cta_click"
+          data-analytics-name="hero_inspiration"
+          data-analytics-location="hero"
+        >
           {content.secondaryCta}
         </Button>
       </div>
