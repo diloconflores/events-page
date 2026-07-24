@@ -1,0 +1,54 @@
+---
+import type { ProcessSectionProps } from "./types";
+import { getProcessSectionScript } from "./scripts";
+
+const props = Astro.props as ProcessSectionProps;
+---
+
+<section id="process" class="bg-white py-[72px]" data-process-section>
+  <div class="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[830px]">
+      <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-pink">
+        {props.content.kicker}
+      </p>
+      <h2 class="mt-4 font-sans text-[clamp(24px,2.6vw,34px)] font-bold leading-[1.12] tracking-tight text-black">
+        {props.content.title}
+      </h2>
+      <p class="mt-6 max-w-[62ch] text-base leading-8 text-brand-muted">
+        {props.content.text}
+      </p>
+    </div>
+
+    <ol class="relative mt-12 list-none p-0">
+      <div class="absolute left-[17px] top-0 bottom-0 w-px bg-[rgba(33,29,31,.14)]"></div>
+      {props.content.steps.map((step, index) => (
+        <li
+          data-process-item
+          data-active={index === 0 ? "true" : "false"}
+          class="group relative pl-11 pb-10"
+        >
+          <span
+            class="absolute left-0 top-0 flex h-[34px] w-[34px] items-center justify-center rounded-full border border-[rgba(0,0,0,.12)] bg-[rgba(236,232,231,.95)] text-[10px] font-bold uppercase tracking-[0.18em] text-white transition-[transform,background-color,border-color,color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-data-[active=true]:animate-pulse group-data-[active=true]:border-brand-pink group-data-[active=true]:bg-brand-pink group-data-[active=true]:text-white group-data-[active=true]:shadow-[0_0_0_6px_rgba(231,35,113,.1)]"
+          >
+            <span class="h-[7px] w-[7px] rounded-full bg-[rgba(94,89,91,.72)] transition-opacity duration-200 group-data-[active=true]:opacity-0"></span>
+            <span class="absolute inset-0 grid place-items-center opacity-0 transition-opacity duration-200 group-data-[active=true]:opacity-100">
+              {step.number}
+            </span>
+          </span>
+
+          <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-pink">
+            {step.number}
+          </p>
+          <h3 class="mt-2 font-sans text-[clamp(24px,2.6vw,34px)] font-bold leading-[1.12] tracking-tight text-black">
+            {step.title}
+          </h3>
+          <p class="mt-3 max-w-[66ch] text-base leading-8 text-brand-muted">
+            {step.description}
+          </p>
+        </li>
+      ))}
+    </ol>
+  </div>
+
+  <script type="module" set:html={getProcessSectionScript()}></script>
+</section>

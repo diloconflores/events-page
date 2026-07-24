@@ -1,0 +1,53 @@
+---
+import Button from "../../atoms/Button/index.astro";
+import Icon from "../../atoms/Icon/index.astro";
+import type { WhyUsSectionProps } from "./types";
+
+const props = Astro.props as WhyUsSectionProps;
+---
+
+<section id="why-us" class="relative isolate overflow-hidden bg-brand-ink py-[72px] text-white">
+  <img
+    src="/why-dilo-flores.webp"
+    alt={props.content.imageAlt}
+    loading="lazy"
+    class="absolute inset-0 h-full w-full object-cover object-center"
+  />
+  <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(14,10,12,0.16)_0%,rgba(14,10,12,0.46)_18%,rgba(14,10,12,0.9)_60%,rgba(14,10,12,0.98)_100%)]"></div>
+
+  <div class="relative mx-auto grid w-full max-w-[1240px] gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_minmax(0,760px)] lg:items-center lg:px-8">
+    <div></div>
+    <div class="ml-auto w-full max-w-[760px]">
+      <p class="text-[12px] font-bold uppercase tracking-[0.18em] text-white/72">
+        {props.content.kicker}
+      </p>
+      <h2 class="mt-4 max-w-[18ch] font-sans text-[clamp(2rem,5vw,3.45rem)] font-medium leading-[1.02] tracking-tight text-white">
+        {props.content.title}
+      </h2>
+      <p class="mt-6 max-w-[62ch] text-base leading-8 text-white">
+        {props.content.text}
+      </p>
+
+      <ul class="m-0 mt-[30px] list-none p-0">
+        {props.content.bullets.map((bullet) => (
+          <li class="relative border-t border-white/16 py-[15px] pl-[28px] text-sm leading-7 text-white/90 before:absolute before:left-0 before:top-1/2 before:h-[7px] before:w-[7px] before:-translate-y-1/2 before:rounded-full before:bg-brand-pink">
+            {bullet}
+          </li>
+        ))}
+      </ul>
+
+      <Button
+        href="#quote"
+        variant="light"
+        rounded
+        trailingIcon="arrow-right"
+        class="mt-8 border-0"
+        data-analytics-event="cta_click"
+        data-analytics-name="why_us_quote"
+        data-analytics-location="why_us"
+      >
+        {props.content.cta}
+      </Button>
+    </div>
+  </div>
+</section>

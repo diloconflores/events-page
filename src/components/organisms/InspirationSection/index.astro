@@ -1,8 +1,20 @@
 ---
-import MediaCard from "../../atoms/MediaCard/index.astro";
+import BentoGrid from "../BentoGrid/index.astro";
 import type { InspirationSectionProps } from "./types";
 
 const props = Astro.props as InspirationSectionProps;
+const items = props.content.album.map((item) => ({
+  src: item.src,
+  thumbnail: item.thumbnail ?? item.src,
+  width: item.width ?? 1280,
+  height: item.height ?? 1600,
+  alt: item.alt,
+  caption: item.caption,
+  title: item.title,
+  subtitle: item.subtitle,
+  description: item.caption,
+  tags: item.tag ? [item.tag] : [],
+}));
 ---
 
 <section id="inspiration" class="bg-brand-cream py-20 sm:py-24">
@@ -19,29 +31,11 @@ const props = Astro.props as InspirationSectionProps;
       </p>
     </div>
 
-    <div class="mt-10 columns-1 gap-4 space-y-4 sm:columns-2 xl:columns-3">
-      {props.content.album.map((item) => (
-        <MediaCard
-          href={item.src}
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="album"
-          src={item.src}
-          thumbnail={item.thumbnail}
-          width={item.width}
-          height={item.height}
-          alt={item.alt}
-          tag={item.tag}
-          title={item.title}
-          subtitle={item.subtitle}
-          caption={item.caption}
-          ariaLabel={`Abrir ${item.title}`}
-          class="mb-4 break-inside-avoid"
-          data-analytics-event="cta_click"
-          data-analytics-name={item.title}
-          data-analytics-location="inspiration_gallery"
-        />
-      ))}
-    </div>
+    <BentoGrid
+      items={items}
+      maxColumns={3}
+      maxVisibleItems={items.length}
+      class="mt-10"
+    />
   </div>
 </section>
