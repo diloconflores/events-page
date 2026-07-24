@@ -29,7 +29,7 @@ const hasOverflow = overflowCount > 0;
         return (
           <button
             type="button"
-            class="group relative block overflow-hidden rounded-[2rem] bg-[#ddd] shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/20"
+            class="group mb-4 block w-full break-inside-avoid overflow-hidden rounded-[2rem] bg-[#ddd] shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/20"
             data-bento-trigger
             data-bento-index={index}
             data-bento-src={item.src}
@@ -50,7 +50,7 @@ const hasOverflow = overflowCount > 0;
               width={item.width}
               height={item.height}
               loading="lazy"
-              class="block h-auto w-full transition duration-700 group-hover:scale-[1.05]"
+              class="block h-auto w-full transition duration-700 group-hover:scale-[1.03]"
             />
 
             {
