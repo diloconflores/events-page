@@ -568,18 +568,6 @@ const galleryOverflowCount = getGalleryOverflowCount(content);
   </div>
 </footer>
 
-<Button
-  href="#quote"
-  variant="primary"
-  trailingIcon="arrow-right"
-  class="fixed bottom-20 right-4 z-40 md:hidden"
-  data-analytics-event="cta_click"
-  data-analytics-name="mobile_quote"
-  data-analytics-location="mobile_fab"
->
-  {content.nav.quote}
-</Button>
-
 <script type="module" set:html={getEventLandingScript({
   submitLabel: content.form.messages.submit,
   loadingLabel: content.form.messages.loading,
