@@ -86,10 +86,20 @@
         "width": 400,
         "height": 300,
         "alt": "Mesa principal con decoración floral de gran formato",
-        "tag": "Boda civil",
-        "title": "Centro lineal para boda civil",
-        "subtitle": "Arreglo largo y sobrio para mesa central",
-        "caption": "Este montaje fue resuelto para una boda civil en restaurante, donde la mesa pedía un gesto elegante pero contenido."
+        "tag": "Inspiración",
+        "title": "Todo comienza con una idea.",
+        "subtitle": "Escuchamos cómo imaginas tu evento antes de pensar en las flores.",
+        "caption": "INSPIRACIÓN",
+        "description": "Cada proyecto inicia con una conversación. Nos interesa conocer el estilo que buscas, el espacio donde sucederá y la atmósfera que quieres crear. A partir de esa idea comenzamos a diseñar una propuesta pensada exclusivamente para tu celebración.",
+        "tags": [
+          "Decoración para boda civil",
+          "Centro de mesa para boda",
+          "Arreglo floral para boda",
+          "Diseño floral personalizado",
+          "Decoración de eventos Monterrey",
+          "Flores para boda",
+          "Wedding flowers Mexico"
+        ]
       },
       {
         "src": "/eventos/img_6454.webp",
@@ -97,10 +107,20 @@
         "width": 400,
         "height": 300,
         "alt": "Decoración floral para ceremonia religiosa",
-        "tag": "Ceremonias",
-        "title": "Altar que enmarca el momento",
-        "subtitle": "Composición frontal para una ceremonia limpia",
-        "caption": "La prioridad aquí fue crear un marco visual que acompañara el momento principal sin saturar el entorno."
+        "tag": "Diseño",
+        "title": "Cada espacio nos habla de una solución distinta.",
+        "subtitle": "La propuesta nace considerando arquitectura, iluminación y recorrido.",
+        "caption": "DISEÑO",
+        "description": "No diseñamos arreglos aislados. Analizamos el lugar, las dimensiones y la forma en que vivirán el evento tus invitados para que cada elemento floral se sienta integrado de manera natural.",
+        "tags": [
+          "Decoración para ceremonia",
+          "Decoración de iglesia para boda",
+          "Altar floral para boda",
+          "Flores para ceremonia religiosa",
+          "Decoración floral elegante",
+          "Diseño de ceremonia",
+          "Wedding ceremony flowers"
+        ]
       },
       {
         "src": "/eventos/img_6453.webp",
@@ -108,10 +128,20 @@
         "width": 300,
         "height": 400,
         "alt": "Arreglo floral adaptable a distintas mesas o rincones del evento",
-        "tag": "Versatilidad",
-        "title": "Montaje adaptable al espacio",
-        "subtitle": "La propuesta se ajusta a la sede y al mobiliario",
-        "caption": "Este montaje muestra cómo una idea puede resolverse con la escala justa según el lugar, la mesa y las necesidades del cliente."
+        "tag": "Adaptación",
+        "title": "Cada montaje evoluciona hasta encontrar su lugar.",
+        "subtitle": "Adaptamos proporciones, alturas y composición para lograr equilibrio.",
+        "caption": "ADAPTACIÓN",
+        "description": "Un mismo concepto puede transformarse dependiendo del salón, la iglesia o el mobiliario disponible. Ajustamos cada pieza para mantener la esencia del diseño sin perder funcionalidad ni armonía visual.",
+        "tags": [
+          "Centro de mesa elegante",
+          "Arreglo floral alto",
+          "Decoración floral para salón",
+          "Decoración de eventos sociales",
+          "Centros de mesa para boda",
+          "Diseño floral moderno",
+          "Wedding centerpiece"
+        ]
       },
       {
         "src": "/eventos/img_1126.webp",
@@ -120,9 +150,19 @@
         "height": 267,
         "alt": "Boutonniere floral personalizado",
         "tag": "Detalles",
-        "title": "Accesorios que amarran el concepto",
-        "subtitle": "Ramo y complementos alineados a la propuesta",
-        "caption": "Los detalles personales sirven para cerrar la historia visual del evento."
+        "title": "Los pequeños elementos también cuentan la historia.",
+        "subtitle": "Ramos, accesorios y complementos refuerzan la identidad del evento.",
+        "caption": "DETALLES",
+        "description": "Los detalles unen cada parte del diseño. Desde un boutonniere hasta un ramo o un accesorio floral, buscamos que todo mantenga una misma línea estética para que el resultado se perciba coherente y elegante.",
+        "tags": [
+          "Boutonniere para novio",
+          "Flor para solapa",
+          "Ramo para novio",
+          "Accesorios florales para boda",
+          "Flores para novio",
+          "Wedding boutonniere",
+          "Flores naturales para boda"
+        ]
       },
       {
         "src": "/eventos/img_8821.webp",
@@ -130,10 +170,20 @@
         "width": 400,
         "height": 300,
         "alt": "Montaje floral completo para evento social",
-        "tag": "Ambientación",
-        "title": "Escena completa y consistente",
-        "subtitle": "Un diseño que conecta todo el espacio",
-        "caption": "Aquí la clave está en que la decoración no se vea fragmentada."
+        "tag": "Resultado",
+        "title": "Cuando todo conecta, el evento cobra vida.",
+        "subtitle": "Cada elemento forma parte de una experiencia completa.",
+        "caption": "RESULTADO",
+        "description": "El objetivo nunca es llenar un espacio de flores, sino crear una atmósfera donde cada detalle tenga sentido. Cuando la decoración, el color y la composición trabajan juntos, el resultado transmite exactamente la emoción que imaginaste desde el inicio.",
+        "tags": [
+          "Decoración integral para boda",
+          "Ambientación de eventos",
+          "Decoración floral elegante",
+          "Decoración para recepción",
+          "Diseño floral para eventos",
+          "Wedding decoration",
+          "Decoración de bodas Monterrey"
+        ]
       }
     ]
   },
@@ -247,7 +297,7 @@
         "alt": "Ramo y accesorios florales",
         "title": "Ramo coordinado",
         "subtitle": "Piezas personales alineadas a la propuesta",
-        "caption": "El ramo y los accesorios se diseñan para hablar el mismo idioma que el resto de la decoración.",
+        "caption": "El ramo y los accesorios se diseñan para hablar el mismo idioma que el resto de la decoración, no como piezas aisladas.",
         "tag": "Detalle"
       },
       {
@@ -326,6 +376,116 @@
         "subtitle": "Flores y follaje en una lectura cercana",
         "caption": "La cercanía del encuadre permite apreciar cómo se construyen las capas y cómo cambia la mezcla de texturas.",
         "tag": "Textura"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2887_5_433162-178407485823076.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2887_5_433162-178407485823076.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Camino floral para pasillo o mesa larga",
+        "title": "Camino floral",
+        "subtitle": "Ritmo visual a lo largo del espacio",
+        "caption": "Útil para pasillos, mesas largas o superficies donde la repetición de elementos ayuda a guiar la vista.",
+        "tag": "Recorrido"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2942_5_433162-178407485986416.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2942_5_433162-178407485986416.webp",
+        "width": 320,
+        "height": 400,
+        "alt": "Composición floral vertical",
+        "title": "Composición vertical",
+        "subtitle": "Más presencia sin perder ligereza",
+        "caption": "Cuando el espacio lo permite, la altura crea dramatismo y eleva la experiencia sin necesidad de llenar todo el plano.",
+        "tag": "Altura"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2950_5_433162-178407486149234.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2950_5_433162-178407486149234.webp",
+        "width": 400,
+        "height": 267,
+        "alt": "Detalle floral para mesa de invitados",
+        "title": "Mesa acompañada",
+        "subtitle": "Un gesto pequeño que termina de vestirla",
+        "caption": "Piezas discretas que complementan la mesa y suman sensación de cuidado sin robar protagonismo.",
+        "tag": "Detalle"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-6456_5_433162-178407486349571.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-6456_5_433162-178407486349571.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Decoración floral integral para evento",
+        "title": "Una sola narrativa",
+        "subtitle": "Todo el proyecto conectado",
+        "caption": "La intención es que cada espacio se sienta relacionado con el siguiente y que la decoración no parezca fragmentada.",
+        "tag": "Integral"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8173_5_433162-178407486433608.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8173_5_433162-178407486433608.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Montaje floral en transición de espacios",
+        "title": "Paso entre ambientes",
+        "subtitle": "El recorrido también se diseña",
+        "caption": "Los espacios de transición ayudan a que el evento se sienta continuo y no como una suma de piezas aisladas.",
+        "tag": "Transición"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8181_5_433162-178407486732842.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8181_5_433162-178407486732842.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Fondo floral para fotografías del evento",
+        "title": "Cierre escenográfico",
+        "subtitle": "Un fondo pensado para recordar el evento",
+        "caption": "La composición actúa como un remate visual para fotos, brindis o momentos clave dentro de la celebración.",
+        "tag": "Escena"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8816_5_433162-178407486587003.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8816_5_433162-178407486587003.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Composición floral sofisticada para mesa principal",
+        "title": "Mesa con carácter",
+        "subtitle": "Una lectura más sofisticada y profunda",
+        "caption": "Pensada para proyectos donde la mesa principal debe ser uno de los grandes protagonistas del evento.",
+        "tag": "Mesa principal"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8819_5_433162-178407486697255.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8819_5_433162-178407486697255.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Arreglo floral elegante de recepción",
+        "title": "Recibimiento floral",
+        "subtitle": "La experiencia empieza desde la llegada",
+        "caption": "Un gesto visual que ayuda a marcar desde la entrada el tono del ambiente y la atención al detalle.",
+        "tag": "Recepción"
+      },
+      {
+        "src": "/eventos/img_8821.webp",
+        "thumbnail": "/eventos/thumbs/img_8821.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Decoración floral integral para evento social",
+        "title": "Paisaje completo",
+        "subtitle": "Flores que unifican todo el espacio",
+        "caption": "Una propuesta de lectura más amplia, útil cuando el evento requiere unir distintas áreas con una misma paleta.",
+        "tag": "Ambientación"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8908_5_433162-178407486845512.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8908_5_433162-178407486845512.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Decoración floral elegante para evento",
+        "title": "Final de impacto",
+        "subtitle": "Una imagen que cierra con presencia",
+        "caption": "Composición final con fuerza visual para rematar el recorrido del evento y dejar una última impresión memorable.",
+        "tag": "Gran formato"
       }
     ]
   },

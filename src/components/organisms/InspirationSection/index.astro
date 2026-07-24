@@ -1,5 +1,6 @@
 ---
 import BentoGrid from "../BentoGrid/index.astro";
+import { getBentoGridSeoTags } from "../BentoGrid/logic";
 import type { InspirationSectionProps } from "./types";
 
 const props = Astro.props as InspirationSectionProps;
@@ -12,8 +13,9 @@ const items = props.content.album.map((item) => ({
   caption: item.caption,
   title: item.title,
   subtitle: item.subtitle,
-  description: item.caption,
-  tags: item.tag ? [item.tag] : [],
+  description: item.description ?? item.caption,
+  tag: item.tag ?? item.caption,
+  tags: item.tags ?? getBentoGridSeoTags(props.locale, item),
 }));
 ---
 

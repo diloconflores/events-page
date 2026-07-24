@@ -86,10 +86,20 @@
         "width": 400,
         "height": 300,
         "alt": "Large floral centerpiece for a wedding table",
-        "tag": "Civil wedding",
-        "title": "Linear centerpiece for a civil wedding",
-        "subtitle": "Long, understated arrangement for the main table",
-        "caption": "This setup was designed for a restaurant civil wedding, where the table needed an elegant but restrained gesture."
+        "tag": "Inspiration",
+        "title": "It all starts with an idea.",
+        "subtitle": "We listen to how you imagine your event before thinking about the flowers.",
+        "caption": "INSPIRATION",
+        "description": "Every project starts with a conversation. We want to understand the style you're looking for, the space where it will happen and the atmosphere you want to create. From that idea we begin designing a proposal made exclusively for your celebration.",
+        "tags": [
+          "Wedding decor for civil ceremony",
+          "Wedding table centerpiece",
+          "Wedding floral arrangement",
+          "Custom floral design",
+          "Event decor Monterrey",
+          "Flowers for wedding",
+          "Wedding flowers Mexico"
+        ]
       },
       {
         "src": "/eventos/img_6454.webp",
@@ -97,10 +107,20 @@
         "width": 400,
         "height": 300,
         "alt": "Floral decoration for a religious ceremony",
-        "tag": "Ceremonies",
-        "title": "An altar that frames the moment",
-        "subtitle": "Front composition for a clean ceremony",
-        "caption": "The priority here was to create a visual frame that accompanies the ceremony without overwhelming the space."
+        "tag": "Design",
+        "title": "Every space speaks to a different solution.",
+        "subtitle": "The proposal is shaped by architecture, lighting and the path through the venue.",
+        "caption": "DESIGN",
+        "description": "We do not design isolated arrangements. We study the venue, the dimensions and the way your guests will experience the event so every floral element feels naturally integrated.",
+        "tags": [
+          "Ceremony decor",
+          "Church wedding decor",
+          "Wedding altar flowers",
+          "Flowers for religious ceremony",
+          "Elegant floral decor",
+          "Ceremony design",
+          "Wedding ceremony flowers"
+        ]
       },
       {
         "src": "/eventos/img_6453.webp",
@@ -108,10 +128,20 @@
         "width": 300,
         "height": 400,
         "alt": "Floral arrangement adaptable to different tables or corners",
-        "tag": "Versatility",
-        "title": "Adaptable installation",
-        "subtitle": "The proposal adjusts to the venue and furniture",
-        "caption": "This piece shows how an idea can be resolved at the right scale for the venue, the table and the client needs."
+        "tag": "Adaptation",
+        "title": "Each installation evolves until it finds its place.",
+        "subtitle": "We adapt proportions, heights and composition to achieve balance.",
+        "caption": "ADAPTATION",
+        "description": "The same concept can change depending on the hall, the church or the available furniture. We adjust every piece to preserve the design essence without losing functionality or visual harmony.",
+        "tags": [
+          "Elegant centerpiece",
+          "Tall floral arrangement",
+          "Floral decor for venue",
+          "Social event decor",
+          "Wedding centerpieces",
+          "Modern floral design",
+          "Wedding centerpiece"
+        ]
       },
       {
         "src": "/eventos/img_1126.webp",
@@ -120,9 +150,19 @@
         "height": 267,
         "alt": "Custom floral boutonniere",
         "tag": "Details",
-        "title": "Accessories that tie the concept together",
-        "subtitle": "Bouquet and complementary pieces aligned to the proposal",
-        "caption": "Personal details help close the visual story of the event."
+        "title": "The small elements also tell the story.",
+        "subtitle": "Bouquets, accessories and complementary pieces reinforce the event identity.",
+        "caption": "DETAILS",
+        "description": "Details connect every part of the design. From a boutonniere to a bouquet or a floral accessory, we look for a single aesthetic line so the result feels coherent and elegant.",
+        "tags": [
+          "Boutonniere for groom",
+          "Lapel flower",
+          "Groom boutonniere",
+          "Wedding floral accessories",
+          "Flowers for groom",
+          "Wedding boutonniere",
+          "Fresh flowers for wedding"
+        ]
       },
       {
         "src": "/eventos/img_8821.webp",
@@ -130,10 +170,20 @@
         "width": 400,
         "height": 300,
         "alt": "Full floral setup for social event",
-        "tag": "Ambience",
-        "title": "A complete and consistent scene",
-        "subtitle": "A design that connects the whole space",
-        "caption": "Here the key is to avoid fragmented decoration."
+        "tag": "Result",
+        "title": "When everything connects, the event comes alive.",
+        "subtitle": "Each element becomes part of a complete experience.",
+        "caption": "RESULT",
+        "description": "The goal is never to fill a space with flowers, but to create an atmosphere where every detail makes sense. When decor, color and composition work together, the result reflects exactly the emotion you imagined from the start.",
+        "tags": [
+          "Full wedding decor",
+          "Event ambiance",
+          "Elegant floral decor",
+          "Reception decor",
+          "Floral design for events",
+          "Wedding decoration",
+          "Wedding decor Monterrey"
+        ]
       }
     ]
   },
@@ -247,7 +297,7 @@
         "alt": "Bouquet and floral accessories",
         "title": "Coordinated bouquet",
         "subtitle": "Personal pieces aligned with the proposal",
-        "caption": "The bouquet and accessories are designed to speak the same language as the rest of the decor.",
+        "caption": "The bouquet and accessories are designed to speak the same language as the rest of the decor, not as isolated pieces.",
         "tag": "Detail"
       },
       {
@@ -326,6 +376,116 @@
         "subtitle": "Flowers and foliage in a closer reading",
         "caption": "The closer framing lets you appreciate how the layers are built and how the texture mix changes.",
         "tag": "Texture"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2887_5_433162-178407485823076.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2887_5_433162-178407485823076.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Floral pathway for an aisle or long table",
+        "title": "Floral pathway",
+        "subtitle": "Visual rhythm לאורך the space",
+        "caption": "Useful for aisles, long tables or surfaces where repeating elements help guide the eye.",
+        "tag": "Pathway"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2942_5_433162-178407485986416.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2942_5_433162-178407485986416.webp",
+        "width": 320,
+        "height": 400,
+        "alt": "Vertical floral composition",
+        "title": "Vertical composition",
+        "subtitle": "More presence without losing lightness",
+        "caption": "When the space allows it, height creates drama and elevates the experience without filling the whole room.",
+        "tag": "Height"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2950_5_433162-178407486149234.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-2950_5_433162-178407486149234.webp",
+        "width": 400,
+        "height": 267,
+        "alt": "Floral detail for guest table",
+        "title": "Table accompanied",
+        "subtitle": "A small gesture that finishes dressing it",
+        "caption": "Discrete pieces that complement the table and add a sense of care without stealing focus.",
+        "tag": "Detail"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-6456_5_433162-178407486349571.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-6456_5_433162-178407486349571.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Integral floral decor for event",
+        "title": "One narrative",
+        "subtitle": "The whole project connected",
+        "caption": "The intention is for each space to feel related to the next and for the decor not to look fragmented.",
+        "tag": "Integral"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8173_5_433162-178407486433608.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8173_5_433162-178407486433608.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Floral installation in transition spaces",
+        "title": "Transition between settings",
+        "subtitle": "The route is designed too",
+        "caption": "Transition spaces help the event feel continuous rather than a sum of isolated pieces.",
+        "tag": "Transition"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8181_5_433162-178407486732842.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8181_5_433162-178407486732842.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Floral background for event photos",
+        "title": "Scenic ending",
+        "subtitle": "A backdrop designed to remember the event",
+        "caption": "The composition works as a visual finale for photos, toasts or key moments within the celebration.",
+        "tag": "Scene"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8816_5_433162-178407486587003.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8816_5_433162-178407486587003.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Sophisticated floral composition for head table",
+        "title": "Table with character",
+        "subtitle": "A more sophisticated and deeper reading",
+        "caption": "Designed for projects where the head table must be one of the main protagonists of the event.",
+        "tag": "Head table"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8819_5_433162-178407486697255.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8819_5_433162-178407486697255.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Elegant floral arrangement for reception",
+        "title": "Floral welcome",
+        "subtitle": "The experience starts as you arrive",
+        "caption": "A visual gesture that helps set the tone of the atmosphere and attention to detail from the entrance.",
+        "tag": "Reception"
+      },
+      {
+        "src": "/eventos/img_8821.webp",
+        "thumbnail": "/eventos/thumbs/img_8821.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Integral floral decoration for social event",
+        "title": "Complete landscape",
+        "subtitle": "Flowers that unify the whole space",
+        "caption": "A broader-reading proposal, useful when the event needs different areas tied together by a single palette.",
+        "tag": "Ambience"
+      },
+      {
+        "src": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8908_5_433162-178407486845512.webp",
+        "thumbnail": "https://cdn0.bodas.com.mx/vendor/3162/original/1280/png/img-8908_5_433162-178407486845512.webp",
+        "width": 400,
+        "height": 300,
+        "alt": "Elegant floral decoration for event",
+        "title": "Impactful ending",
+        "subtitle": "An image that closes with presence",
+        "caption": "A final composition with visual strength to wrap up the event journey and leave a memorable last impression.",
+        "tag": "Large scale"
       }
     ]
   },

@@ -10,6 +10,7 @@ import ProcessSection from "../../organisms/ProcessSection/index.astro";
 import WhyUsSection from "../../organisms/WhyUsSection/index.astro";
 import WhatsAppButton from "../../organisms/WhatsAppButton/index.astro";
 import ShopProductCard from "../../molecules/ShopProductCard/index.astro";
+import { getBentoGridSeoTags } from "../../organisms/BentoGrid/logic";
 import { getEventLandingScript } from "./scripts";
 import type { EventLandingProps } from "./types";
 import { EVENT_FORM_ACTION, OCCASIONS_URL, SHOP_URL } from "./constants";
@@ -25,7 +26,7 @@ const galleryItems = content.gallery.items.map((item) => ({
   title: item.title,
   subtitle: item.subtitle,
   description: item.caption,
-  tags: item.tag ? [item.tag] : [],
+  tags: getBentoGridSeoTags(locale, item),
 }));
 ---
 
@@ -42,7 +43,7 @@ const galleryItems = content.gallery.items.map((item) => ({
   <Hero content={content.hero} />
 
   <CompleteService content={{ promise: content.promise, conversionBand: content.conversionBand }} />
-  <InspirationSection content={content.inspiration} />
+  <InspirationSection locale={locale} content={content.inspiration} />
 
   <WhyUsSection content={content.whyUs} />
 

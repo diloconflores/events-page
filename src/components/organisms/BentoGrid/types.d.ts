@@ -9,8 +9,18 @@ export interface BentoGridItem {
   readonly caption: string;
   readonly title: string;
   readonly subtitle: string;
-  readonly description: string;
+  readonly description?: string;
+  readonly details?: string;
+  readonly tag?: string;
   readonly tags: readonly string[];
+}
+
+export interface BentoGridSeoTagSource {
+  readonly title: string;
+  readonly subtitle: string;
+  readonly caption: string;
+  readonly tag?: string;
+  readonly tags?: readonly string[];
 }
 
 export interface BentoGridProps extends Omit<HTMLAttributes<"div">, "class"> {

@@ -38,3 +38,17 @@
 
   --radius-panel: 1.75rem;
 }
+
+html {
+  scrollbar-gutter: stable;
+}
+
+html.modal-open,
+body.modal-open {
+  scrollbar-width: none;
+}
+
+html.modal-open::-webkit-scrollbar,
+body.modal-open::-webkit-scrollbar {
+  display: none;
+}

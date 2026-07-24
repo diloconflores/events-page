@@ -48,7 +48,9 @@ export interface MediaCardContent {
   readonly title: string;
   readonly subtitle: string;
   readonly caption: string;
+  readonly description?: string;
   readonly tag?: string;
+  readonly tags?: readonly string[];
 }
 
 export interface ProcessStepContent {
