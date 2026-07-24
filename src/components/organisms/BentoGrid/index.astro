@@ -90,7 +90,7 @@ const variant = props.variant ?? "album";
     aria-hidden="true"
     data-open="false"
     data-closing="false"
-    class="fixed inset-0 z-[120] m-auto grid h-[94vh] w-[96vw] max-w-[1280px] place-items-center border-0 bg-transparent p-0 opacity-0 scale-[0.985] transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] data-[open=true]:opacity-100 data-[open=true]:scale-100 data-[closing=true]:opacity-0 data-[closing=true]:scale-[0.985] [&::backdrop]:bg-[rgba(10,7,9,.94)] [&::backdrop]:backdrop-blur-[7px]"
+    class="fixed inset-0 z-[120] m-auto hidden h-[94vh] w-[96vw] max-w-[1280px] place-items-center border-0 bg-transparent p-0 opacity-0 scale-[0.985] transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] data-[open=true]:grid data-[closing=true]:grid data-[open=true]:opacity-100 data-[open=true]:scale-100 data-[closing=true]:opacity-0 data-[closing=true]:scale-[0.985] data-[open=true]:pointer-events-auto data-[closing=true]:pointer-events-auto [&::backdrop]:bg-[rgba(10,7,9,.94)] [&::backdrop]:backdrop-blur-[7px]"
   >
     <button
       type="button"
