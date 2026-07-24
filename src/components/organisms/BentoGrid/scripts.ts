@@ -1,5 +1,12 @@
 export function getBentoGridScript(): string {
   return `
+    const syncScrollbarWidth = () => {
+      const scrollbarWidth = Math.max(window.innerWidth - document.documentElement.clientWidth, 0);
+      document.documentElement.style.setProperty("--scrollbar-width", \`\${scrollbarWidth}px\`);
+    };
+
+    syncScrollbarWidth();
+
     const lockScroll = (locked) => {
       document.documentElement.style.overflow = locked ? "hidden" : "";
       document.body.style.overflow = locked ? "hidden" : "";
@@ -63,11 +70,11 @@ export function getBentoGridScript(): string {
       const lightboxDescription = root.querySelector("[data-lightbox-description]");
       const lightboxCaption = root.querySelector("[data-lightbox-caption]");
       const lightboxTags = root.querySelector("[data-lightbox-tags]");
-      const lightboxCounter = root.querySelector("[data-lightbox-counter]");
+      const lightboxCounters = Array.from(root.querySelectorAll("[data-lightbox-counter]"));
       const lightboxDots = root.querySelector("[data-lightbox-dots]");
-      const lightboxPrev = root.querySelector("[data-lightbox-prev]");
-      const lightboxNext = root.querySelector("[data-lightbox-next]");
-      const lightboxClose = root.querySelector("[data-lightbox-close]");
+      const lightboxPrevButtons = Array.from(root.querySelectorAll("[data-lightbox-prev]"));
+      const lightboxNextButtons = Array.from(root.querySelectorAll("[data-lightbox-next]"));
+      const lightboxCloseButtons = Array.from(root.querySelectorAll("[data-lightbox-close]"));
 
       const items = cards.map((trigger, index) => ({
         index,
@@ -98,6 +105,9 @@ export function getBentoGridScript(): string {
       let currentGroup = gridVariant;
       let currentIndex = 0;
       let closeTimer = null;
+      let swipeStartX = 0;
+      let swipeStartY = 0;
+      let swipeActive = false;
 
       const setLightboxState = (state) => {
         const { open, closing, entered } = state;
@@ -126,7 +136,7 @@ export function getBentoGridScript(): string {
       const updateLightboxMediaSize = () => {
         if (!lightboxMedia || !lightboxImage) return;
 
-        if (!window.matchMedia("(min-width: 700px)").matches) {
+        if (!window.matchMedia("(min-width: 900px)").matches) {
           lightboxMedia.style.width = "100%";
           lightboxMedia.style.justifySelf = "";
           lightboxMedia.style.marginInline = "";
@@ -198,10 +208,16 @@ export function getBentoGridScript(): string {
           summarizeText(fullDescription);
         lightboxDescription.textContent = fullDescription;
         renderLightboxTags();
-        lightboxCounter.textContent = \`\${String(currentIndex + 1).padStart(2, "0")} / \${String(itemsForGroup.length).padStart(2, "0")}\`;
+        lightboxCounters.forEach((counter) => {
+          counter.textContent = \`\${String(currentIndex + 1).padStart(2, "0")} / \${String(itemsForGroup.length).padStart(2, "0")}\`;
+        });
         renderLightboxDots();
-        lightboxPrev?.setAttribute("aria-disabled", String(itemsForGroup.length < 2));
-        lightboxNext?.setAttribute("aria-disabled", String(itemsForGroup.length < 2));
+        lightboxPrevButtons.forEach((button) => {
+          button.setAttribute("aria-disabled", String(itemsForGroup.length < 2));
+        });
+        lightboxNextButtons.forEach((button) => {
+          button.setAttribute("aria-disabled", String(itemsForGroup.length < 2));
+        });
 
         if (lightboxImage.complete && lightboxImage.naturalWidth) {
           updateLightboxMediaSize();
@@ -246,6 +262,43 @@ export function getBentoGridScript(): string {
         renderLightbox();
       };
 
+      const handleSwipeStart = (event) => {
+        if (!lightbox?.open || event.touches.length !== 1) {
+          return;
+        }
+
+        const touch = event.touches[0];
+        swipeStartX = touch.clientX;
+        swipeStartY = touch.clientY;
+        swipeActive = true;
+      };
+
+      const handleSwipeEnd = (event) => {
+        if (!swipeActive || event.changedTouches.length !== 1) {
+          swipeActive = false;
+          return;
+        }
+
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - swipeStartX;
+        const deltaY = touch.clientY - swipeStartY;
+        const absDeltaX = Math.abs(deltaX);
+        const absDeltaY = Math.abs(deltaY);
+        const swipeThreshold = 50;
+
+        swipeActive = false;
+
+        if (absDeltaX < swipeThreshold || absDeltaX <= absDeltaY) {
+          return;
+        }
+
+        moveLightbox(deltaX < 0 ? 1 : -1);
+      };
+
+      const handleSwipeCancel = () => {
+        swipeActive = false;
+      };
+
       cards.forEach((button) => {
         button.addEventListener("click", () => {
           const group = button.dataset.mediaGroup ?? gridVariant;
@@ -254,16 +307,28 @@ export function getBentoGridScript(): string {
         });
       });
 
-      lightboxPrev?.addEventListener("click", () => moveLightbox(-1));
-      lightboxNext?.addEventListener("click", () => moveLightbox(1));
+      lightboxPrevButtons.forEach((button) => {
+        button.addEventListener("click", () => moveLightbox(-1));
+      });
+      lightboxNextButtons.forEach((button) => {
+        button.addEventListener("click", () => moveLightbox(1));
+      });
       lightboxDots?.addEventListener("click", (event) => {
         const dot = event.target.closest("[data-lightbox-dot]");
         if (!dot) return;
         currentIndex = Number(dot.dataset.lightboxDot);
         renderLightbox();
       });
-      lightboxClose?.addEventListener("click", closeLightbox);
+      lightboxCloseButtons.forEach((button) => {
+        button.addEventListener("click", closeLightbox);
+      });
       lightboxOverlay?.addEventListener("click", closeLightbox);
+      lightbox?.addEventListener("touchstart", handleSwipeStart, { passive: true });
+      lightbox?.addEventListener("touchend", handleSwipeEnd, { passive: true });
+      lightbox?.addEventListener("touchcancel", handleSwipeCancel, { passive: true });
+      lightboxOverlay?.addEventListener("touchstart", handleSwipeStart, { passive: true });
+      lightboxOverlay?.addEventListener("touchend", handleSwipeEnd, { passive: true });
+      lightboxOverlay?.addEventListener("touchcancel", handleSwipeCancel, { passive: true });
 
       lightbox?.addEventListener("click", (event) => {
         if (event.target === lightbox) closeLightbox();
@@ -285,6 +350,7 @@ export function getBentoGridScript(): string {
       });
 
       window.addEventListener("resize", () => {
+        syncScrollbarWidth();
         if (!lightbox?.open) return;
         updateLightboxMediaSize();
         renderLightboxDots();
