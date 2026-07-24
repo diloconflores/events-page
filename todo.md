@@ -27,9 +27,9 @@
 
 ### Menu
 
-[ ] El nav, ahora tiene un fondo en modo escritorio. No debería tenerlo. En modo mobile si.
-[ ] En modo mobile debe ocupar el 80% de la pantalla y el 100% del alto de la pantalla, el fondo debe ser el mismo color que el fondo del header cuando tiene fondo.
-[ ] El boton para cerrar o abrir el menu en modo mobile no debe tener ningun fondo, ni backdrop blur. Debe ser totalmente transparente
+[x] El nav, ahora tiene un fondo en modo escritorio. No debería tenerlo. En modo mobile si.
+[x] En modo mobile debe ocupar el 80% de la pantalla y el 100% del alto de la pantalla, el fondo debe ser el mismo color que el fondo del header cuando tiene fondo.
+[x] El boton para cerrar o abrir el menu en modo mobile no debe tener ningun fondo, ni backdrop blur. Debe ser totalmente transparente
 
 ### Inpiración
 

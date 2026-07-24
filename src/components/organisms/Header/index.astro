@@ -73,7 +73,7 @@ const brandMenuItems = [
   </div>
 
   <button
-    class="group relative z-[2] flex h-[46px] w-[46px] items-center justify-center overflow-hidden rounded-full border border-current/15 bg-[rgba(255,255,255,0.12)] text-current shadow-[0_10px_24px_rgba(0,0,0,0.08)] backdrop-blur-[12px] transition-[background-color,border-color,color,box-shadow] duration-200 min-[980px]:hidden data-[scrolled=true]:border-line data-[scrolled=true]:bg-white/85 data-[scrolled=true]:text-ink data-[open=true]:border-white/15 data-[open=true]:bg-white/15 data-[open=true]:text-white"
+    class="group relative z-[2] flex h-[46px] w-[46px] items-center justify-center overflow-hidden rounded-full border-0 bg-transparent text-white shadow-none backdrop-blur-0 transition-colors duration-200 min-[980px]:hidden hover:text-brand-pink data-[scrolled=true]:text-ink data-[open=true]:text-ink"
     type="button"
     aria-expanded="false"
     aria-controls={mobileMenuId}
@@ -94,7 +94,7 @@ const brandMenuItems = [
 
   <nav
     id={mobileMenuId}
-    class="fixed inset-y-0 right-0 flex w-[min(280px,calc(100vw-24px))] translate-x-full flex-col gap-3 rounded-l-[32px] border-l border-white/10 bg-[rgba(18,12,15,0.96)] px-5 pb-8 pt-[110px] text-white shadow-[-24px_0_40px_rgba(0,0,0,0.18)] backdrop-blur-[18px] transition-transform duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] data-[open=true]:translate-x-0 min-[980px]:static min-[980px]:inset-auto min-[980px]:ml-auto min-[980px]:w-auto min-[980px]:translate-x-0 min-[980px]:flex-row min-[980px]:items-center min-[980px]:gap-6 min-[980px]:border-0 min-[980px]:bg-transparent min-[980px]:px-0 min-[980px]:py-0 min-[980px]:text-inherit"
+    class="fixed inset-y-0 right-0 flex h-dvh w-[80vw] translate-x-full flex-col gap-3 rounded-l-[32px] border-l border-line bg-[rgba(251,248,246,0.96)] px-5 pb-8 pt-[110px] text-ink shadow-[-24px_0_40px_rgba(0,0,0,0.08)] transition-transform duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] data-[open=true]:translate-x-0 min-[980px]:static min-[980px]:inset-auto min-[980px]:ml-auto min-[980px]:h-auto min-[980px]:w-auto min-[980px]:translate-x-0 min-[980px]:flex-row min-[980px]:items-center min-[980px]:gap-6 min-[980px]:border-0 min-[980px]:bg-transparent min-[980px]:px-0 min-[980px]:py-0 min-[980px]:text-inherit"
     data-nav
     data-open="false"
     aria-label={common.primaryNavLabel}
@@ -106,15 +106,15 @@ const brandMenuItems = [
       menuLabel={content.brand.switcherLabel}
       items={brandMenuItems}
       class="w-full min-[980px]:hidden"
-      triggerClass="w-full justify-between border-white/15 bg-white/5 px-0 py-3 text-[11px] font-semibold tracking-[0.24em] text-white hover:opacity-100"
-      menuClass="left-0 right-0 top-[calc(100%+10px)] w-full min-w-0 border-white/10 bg-[rgba(255,255,255,0.08)] shadow-[0_18px_40px_rgba(0,0,0,0.18)]"
-      itemClass="text-white hover:bg-white/10 hover:text-white"
-      selectedItemClass="bg-white/15 text-white"
+      triggerClass="w-full justify-between border-brand-line bg-white px-0 py-3 text-[11px] font-semibold tracking-[0.24em] text-ink hover:opacity-100"
+      menuClass="left-0 right-0 top-[calc(100%+10px)] w-full min-w-0 border-brand-line bg-white shadow-[0_18px_40px_rgba(0,0,0,0.08)]"
+      itemClass="text-ink hover:bg-brand-pink-soft hover:text-brand-ink"
+      selectedItemClass="bg-brand-pink-soft text-brand-pink"
     />
     <Button
       href="#service"
       ghost
-      class="border-b border-white/10 py-4 text-[18px] font-medium tracking-tight text-white transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="service"
       data-analytics-location="header_nav"
@@ -123,7 +123,7 @@ const brandMenuItems = [
     <Button
       href="#inspiration"
       ghost
-      class="border-b border-white/10 py-4 text-[18px] font-medium tracking-tight text-white transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="inspiration"
       data-analytics-location="header_nav"
@@ -132,7 +132,7 @@ const brandMenuItems = [
     <Button
       href="#why-us"
       ghost
-      class="border-b border-white/10 py-4 text-[18px] font-medium tracking-tight text-white transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="why_us"
       data-analytics-location="header_nav"
@@ -141,7 +141,7 @@ const brandMenuItems = [
     <Button
       href="#process"
       ghost
-      class="border-b border-white/10 py-4 text-[18px] font-medium tracking-tight text-white transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="process"
       data-analytics-location="header_nav"
