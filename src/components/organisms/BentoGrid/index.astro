@@ -19,6 +19,7 @@ const variant = props.variant ?? "album";
 
 <div
   data-bento-grid
+  data-bento-variant={variant}
   class={cn("relative", props.class)}
   aria-live="polite"
 >
@@ -84,115 +85,125 @@ const variant = props.variant ?? "album";
     }
   </div>
 
-  <div
+  <dialog
     data-bento-modal
     aria-hidden="true"
     data-open="false"
-    class="fixed inset-0 z-[120] flex items-center justify-center overflow-y-auto bg-[rgba(10,7,9,0.82)] px-4 py-4 opacity-0 backdrop-blur-[16px] transition-[opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] pointer-events-none data-[open=true]:pointer-events-auto data-[open=true]:opacity-100"
+    data-closing="false"
+    class="fixed inset-0 z-[120] m-auto grid h-[94vh] w-[96vw] max-w-[1280px] place-items-center border-0 bg-transparent p-0 opacity-0 scale-[0.985] transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] data-[open=true]:opacity-100 data-[open=true]:scale-100 data-[closing=true]:opacity-0 data-[closing=true]:scale-[0.985] [&::backdrop]:bg-[rgba(10,7,9,.94)] [&::backdrop]:backdrop-blur-[7px]"
   >
-    <div
-      data-bento-modal-panel
-      data-open="false"
-      class="relative flex w-full max-w-[min(1400px,calc(100vw-2rem))] flex-col overflow-hidden text-white transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] scale-[0.8] data-[open=true]:scale-100 lg:h-[calc(100dvh-4rem)] lg:flex-row lg:items-stretch lg:overflow-hidden"
+    <button
+      type="button"
+      data-bento-close
+      class="absolute right-[14px] top-[14px] z-30 flex h-[46px] w-[46px] items-center justify-center rounded-full border border-white/45 bg-[rgba(0,0,0,.25)] text-[28px] leading-none text-white transition hover:bg-[rgba(0,0,0,.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+      aria-label="Cerrar"
     >
-      <div class="order-2 flex flex-col gap-6 px-0 pt-6 lg:order-1 lg:h-full lg:w-1/3 lg:pr-8 lg:pt-0">
-        <div class="flex-1 overflow-y-auto pr-1">
-          <p data-bento-modal-caption class="text-[10px] font-bold uppercase tracking-[0.18em] text-white/72">
-            {props.items[0]?.caption}
-          </p>
-          <h3 data-bento-modal-title class="mt-3 font-sans text-[clamp(2rem,5vw,3.45rem)] leading-[1.04] text-white">
-            {props.items[0]?.title}
-          </h3>
-          <p data-bento-modal-subtitle class="mt-4 text-[12px] font-normal leading-[1.35] text-white/78">
-            {props.items[0]?.subtitle}
-          </p>
-          <p data-bento-modal-description class="mt-6 max-w-xl text-base leading-8 text-white/92">
-            {props.items[0]?.description}
-          </p>
-          <div data-bento-modal-tags class="mt-6 flex flex-wrap gap-2">
-            {props.items[0]?.tags.map((tag) => (
-              <span class="inline-flex items-center rounded-full border border-white/14 bg-white/10 px-3 py-1 text-[11px] font-semibold tracking-[0.18em] text-white uppercase">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
+      ×
+    </button>
 
-      <div class="order-1 flex flex-col gap-4 lg:order-2 lg:h-full lg:w-2/3 lg:min-w-0">
-        <div
-          data-bento-modal-viewport
-          class="relative flex-1 touch-pan-y"
+    <div class="grid w-[min(100%,1360px)] gap-7 grid-cols-1 min-[700px]:grid-cols-[72px_minmax(0,1fr)_72px] min-[700px]:items-center min-[700px]:justify-items-center">
+      <button
+        type="button"
+        data-bento-prev
+        class="order-2 flex h-12 w-12 items-center justify-center justify-self-center rounded-full border border-white/18 bg-[rgba(255,255,255,.08)] text-white shadow-[0_12px_28px_rgba(0,0,0,.24)] transition hover:scale-110 hover:bg-[rgba(255,255,255,.16)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 min-[700px]:order-none min-[700px]:h-[54px] min-[700px]:w-[54px]"
+        aria-label="Imagen anterior"
+      >
+        <Icon name="chevron-left" class="h-5 w-5" decorative />
+      </button>
+
+      <div
+        data-bento-modal-content
+        class="order-1 flex w-full min-w-0 flex-col gap-4 min-[700px]:order-none min-[700px]:flex-row min-[700px]:items-start min-[700px]:gap-[30px]"
+      >
+        <figure
+          data-bento-modal-stage
+          class="m-0 inline-grid w-full min-w-0 gap-[14px] self-start min-[700px]:w-fit min-[700px]:flex-none"
         >
-          <img
-            data-bento-modal-image
-            src={props.items[0]?.src}
-            alt={props.items[0]?.alt}
-            width={props.items[0]?.width}
-            height={props.items[0]?.height}
-            class="h-auto max-h-[72vh] w-full rounded-[2rem] object-contain lg:h-full lg:max-h-none"
-          />
-
-          <div class="absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-4">
-            <button
-              type="button"
-              data-bento-prev
-              class="flex h-[54px] w-[54px] items-center justify-center rounded-full border border-white/18 bg-[rgba(255,255,255,0.08)] text-white transition hover:scale-110 hover:bg-[rgba(255,255,255,0.16)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-              aria-label="Anterior"
+          <div
+            data-bento-modal-media
+            class="relative overflow-hidden rounded-[40px] bg-transparent w-full max-w-full"
+          >
+            <img
+              data-bento-modal-image
+              src={props.items[0]?.src}
+              alt={props.items[0]?.alt}
+              width={props.items[0]?.width}
+              height={props.items[0]?.height}
+              class="h-auto w-full max-w-full max-h-[min(84vh,900px)] rounded-[40px] object-contain"
+            />
+            <p
+              data-bento-modal-caption
+              class="absolute left-[18px] bottom-[18px] z-20 m-0 max-w-[min(70%,420px)] rounded-full bg-[rgba(0,0,0,.5)] px-3 py-2 text-[11px] font-semibold leading-[1.35] text-white backdrop-blur-[10px]"
             >
-              <Icon name="chevron-left" class="h-5 w-5" decorative />
-            </button>
-
+              {props.items[0]?.caption}
+            </p>
             <div
               data-bento-modal-counter
-              class="rounded-full border border-white/18 bg-[rgba(255,255,255,0.08)] px-3 py-2 text-[11px] font-semibold tracking-[0.22em] text-white backdrop-blur-[16px]"
+              class="absolute right-[18px] top-[18px] z-20 min-w-[92px] rounded-full bg-[rgba(0,0,0,.5)] px-3 py-2 text-right font-bold tracking-[0.08em] text-white/76 backdrop-blur-[10px]"
             >
               01 / 01
             </div>
-
-            <button
-              type="button"
-              data-bento-next
-              class="flex h-[54px] w-[54px] items-center justify-center rounded-full border border-white/18 bg-[rgba(255,255,255,0.08)] text-white transition hover:scale-110 hover:bg-[rgba(255,255,255,0.16)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-              aria-label="Siguiente"
-            >
-              <Icon name="chevron-right" class="h-5 w-5" decorative />
-            </button>
           </div>
-
-          <button
-            type="button"
-            data-bento-close
-            class="absolute right-4 top-4 z-30 flex h-[54px] w-[54px] items-center justify-center rounded-full border border-white/18 bg-[rgba(255,255,255,0.08)] text-white transition hover:scale-110 hover:bg-[rgba(255,255,255,0.16)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-            aria-label="Cerrar"
-          >
-            <Icon name="x" class="h-5 w-5" decorative />
-          </button>
 
           <div
-            data-bento-modal-counter
-            class="absolute bottom-4 right-4 z-20 rounded-full border border-white/18 bg-[rgba(255,255,255,0.08)] px-3 py-2 text-[11px] font-semibold tracking-[0.22em] text-white backdrop-blur-[16px]"
+            data-bento-modal-dots
+            class="flex w-full flex-wrap justify-center gap-2 pt-[2px]"
           >
-            01 / 01
-          </div>
-
-          <div class="mt-4 flex items-center justify-center gap-2">
             {props.items.map((item, index) => (
               <button
                 type="button"
                 data-bento-dot
                 data-bento-index={index}
-                aria-label={`Ir al elemento ${index + 1}`}
+                aria-label={`Ver imagen ${index + 1}`}
                 aria-pressed={index === 0 ? "true" : "false"}
                 data-active={index === 0 ? "true" : "false"}
-                class="h-[9px] w-[9px] rounded-full bg-white/28 transition-[width,background-color,transform] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] data-[active=true]:w-[28px] data-[active=true]:rounded-full data-[active=true]:bg-[#e72371]"
+                class="h-[9px] w-[9px] rounded-full border-0 bg-white/28 p-0 transition-[width,background-color,transform] duration-200 data-[active=true]:w-[28px] data-[active=true]:bg-[#e72371]"
               />
             ))}
           </div>
-        </div>
+        </figure>
+
+        <figcaption
+          data-bento-modal-panel
+          class="order-2 grid w-full min-w-0 gap-3 pt-0 text-white min-[700px]:order-none min-[700px]:max-w-[360px] min-[700px]:pt-[10px]"
+        >
+          <h3
+            data-bento-modal-title
+            class="m-0 font-sans text-[clamp(1.15rem,2.1vw,1.55rem)] leading-[1.04] text-white"
+          >
+            {props.items[0]?.title}
+          </h3>
+          <p
+            data-bento-modal-subtitle
+            class="m-0 text-[1rem] font-semibold leading-[1.55] text-white/90"
+          >
+            {props.items[0]?.subtitle}
+          </p>
+          <p
+            data-bento-modal-description
+            class="m-0 text-[.95rem] leading-[1.55] text-white/76"
+          >
+            {props.items[0]?.description}
+          </p>
+          <a
+            class="button button-primary lightbox-cta justify-self-start mt-1"
+            href="#quote"
+          >
+            Quiero una propuesta así
+          </a>
+        </figcaption>
       </div>
+
+      <button
+        type="button"
+        data-bento-next
+        class="order-3 flex h-12 w-12 items-center justify-center justify-self-center rounded-full border border-white/18 bg-[rgba(255,255,255,.08)] text-white shadow-[0_12px_28px_rgba(0,0,0,.24)] transition hover:scale-110 hover:bg-[rgba(255,255,255,.16)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 min-[700px]:order-none min-[700px]:h-[54px] min-[700px]:w-[54px]"
+        aria-label="Imagen siguiente"
+      >
+        <Icon name="chevron-right" class="h-5 w-5" decorative />
+      </button>
     </div>
-  </div>
+  </dialog>
 
   <script type="module" set:html={getBentoGridScript()}></script>
 </div>

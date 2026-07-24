@@ -3,6 +3,7 @@ export function getBentoGridScript(): string {
     const lockScroll = (locked) => {
       document.documentElement.style.overflow = locked ? "hidden" : "";
       document.body.style.overflow = locked ? "hidden" : "";
+      document.body.classList.toggle("modal-open", locked);
     };
 
     const clampIndex = (index, length) => {
@@ -13,6 +14,23 @@ export function getBentoGridScript(): string {
       return ((index % length) + length) % length;
     };
 
+    const summarizeText = (text, maxWords = 12) => {
+      const cleaned = (text || "").replace(/\\s+/g, " ").trim();
+
+      if (!cleaned) {
+        return "";
+      }
+
+      const sentence = cleaned.split(/(?<=[.!?])\\s+/)[0] || cleaned;
+      const words = sentence.split(" ");
+
+      if (words.length <= maxWords) {
+        return sentence.replace(/[.!?]+$/, "");
+      }
+
+      return \`\${words.slice(0, maxWords).join(" ")}…\`;
+    };
+
     const formatCounter = (value) => String(value).padStart(2, "0");
 
     const setNodeText = (node, value) => {
@@ -21,41 +39,29 @@ export function getBentoGridScript(): string {
       }
     };
 
-    const setTags = (root, tagsNode, tags) => {
-      if (!(tagsNode instanceof HTMLElement)) {
-        return;
-      }
-
-      tagsNode.replaceChildren();
-
-      tags.forEach((tag) => {
-        const pill = document.createElement("span");
-        pill.className = "inline-flex items-center rounded-full border border-white/14 bg-white/10 px-3 py-1 text-[11px] font-semibold tracking-[0.18em] text-white uppercase";
-        pill.textContent = tag;
-        tagsNode.appendChild(pill);
-      });
-    };
-
     document.querySelectorAll("[data-bento-grid]").forEach((root) => {
       if (!(root instanceof HTMLElement)) {
         return;
       }
 
       const triggers = Array.from(root.querySelectorAll("[data-bento-trigger]")).filter((item) => item instanceof HTMLButtonElement);
-      const modal = root.querySelector("[data-bento-modal]");
-      const panel = root.querySelector("[data-bento-modal-panel]");
-      const viewport = root.querySelector("[data-bento-modal-viewport]");
-      const image = root.querySelector("[data-bento-modal-image]");
-      const counter = root.querySelector("[data-bento-modal-counter]");
-      const title = root.querySelector("[data-bento-modal-title]");
-      const subtitle = root.querySelector("[data-bento-modal-subtitle]");
-      const caption = root.querySelector("[data-bento-modal-caption]");
-      const description = root.querySelector("[data-bento-modal-description]");
-      const tags = root.querySelector("[data-bento-modal-tags]");
-      const closeButton = root.querySelector("[data-bento-close]");
-      const prevButton = root.querySelector("[data-bento-prev]");
-      const nextButton = root.querySelector("[data-bento-next]");
-      const dots = Array.from(root.querySelectorAll("[data-bento-dot]")).filter((item) => item instanceof HTMLButtonElement);
+      const gridVariant = root.dataset.bentoVariant === "gallery" ? "gallery" : "album";
+      const lightbox = root.querySelector("[data-bento-modal]");
+      const lightboxContent = root.querySelector("[data-bento-modal-content]");
+      const lightboxStage = root.querySelector("[data-bento-modal-stage]");
+      const lightboxMedia = root.querySelector("[data-bento-modal-media]");
+      const lightboxPanel = root.querySelector("[data-bento-modal-panel]");
+      const lightboxImage = root.querySelector("[data-bento-modal-image]");
+      const lightboxTitle = root.querySelector("[data-bento-modal-title]");
+      const lightboxSubtitle = root.querySelector("[data-bento-modal-subtitle]");
+      const lightboxDescription = root.querySelector("[data-bento-modal-description]");
+      const lightboxCaption = root.querySelector("[data-bento-modal-caption]");
+      const lightboxCounter = root.querySelector("[data-bento-modal-counter]");
+      const lightboxDots = root.querySelector("[data-bento-modal-dots]");
+      const lightboxPrev = root.querySelector("[data-bento-prev]");
+      const lightboxNext = root.querySelector("[data-bento-next]");
+      const lightboxClose = root.querySelector("[data-bento-close]");
+      const dotButtons = Array.from(root.querySelectorAll("[data-bento-dot]")).filter((item) => item instanceof HTMLButtonElement);
 
       const items = triggers.map((trigger, index) => ({
         index,
@@ -78,141 +84,221 @@ export function getBentoGridScript(): string {
         return;
       }
 
-      let activeIndex = 0;
-      let isOpen = false;
+      let currentIndex = 0;
+      let currentGroup = gridVariant;
+      let closeTimer = null;
       let lastFocusedTrigger = null;
       let pointerStartX = null;
 
-      const getItem = (index) => items[clampIndex(index, items.length)];
+      const getItems = () => items;
+
+      const updateLightboxMediaSize = () => {
+        if (!(lightboxMedia instanceof HTMLElement) || !(lightboxImage instanceof HTMLImageElement)) {
+          return;
+        }
+
+        if (!window.matchMedia("(min-width: 700px)").matches) {
+          lightboxMedia.style.width = "100%";
+          return;
+        }
+
+        const naturalWidth = lightboxImage.naturalWidth || 1;
+        const naturalHeight = lightboxImage.naturalHeight || 1;
+        const ratio = naturalWidth / naturalHeight;
+        const contentWidth = lightboxContent instanceof HTMLElement ? lightboxContent.getBoundingClientRect().width : window.innerWidth;
+        const panelWidth = lightboxPanel instanceof HTMLElement ? lightboxPanel.getBoundingClientRect().width : Math.min(Math.max(window.innerWidth * 0.27, 260), 340);
+        const stageWidth = lightboxStage instanceof HTMLElement ? lightboxStage.getBoundingClientRect().width : contentWidth;
+        const availableForImage = Math.max(Math.min(stageWidth, contentWidth - panelWidth - 24), 240);
+        const maxViewportHeight = Math.min(window.innerHeight * 0.84, 900);
+        const targetWidth = Math.min(availableForImage, maxViewportHeight * ratio);
+
+        lightboxMedia.style.width = \`\${Math.max(220, targetWidth)}px\`;
+      };
+
+      const renderLightboxDots = () => {
+        if (!(lightboxDots instanceof HTMLElement)) {
+          return;
+        }
+
+        const itemsForGroup = getItems();
+        lightboxDots.replaceChildren();
+
+        itemsForGroup.forEach((_, index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "h-[9px] w-[9px] rounded-full border-0 bg-white/28 p-0 transition-[width,background-color,transform] duration-200 data-[active=true]:w-[28px] data-[active=true]:bg-[#e72371]";
+          button.dataset.bentoDot = String(index);
+          button.dataset.active = String(index === currentIndex);
+          button.setAttribute("aria-label", \`Ver imagen \${index + 1}\`);
+          button.setAttribute("aria-pressed", String(index === currentIndex));
+
+          button.addEventListener("click", () => {
+            currentIndex = clampIndex(index, itemsForGroup.length);
+            renderLightbox();
+          });
+
+          lightboxDots.appendChild(button);
+        });
+      };
 
       const setDotsState = () => {
-        dots.forEach((dot, index) => {
-          const active = index === activeIndex;
+        if (!(lightboxDots instanceof HTMLElement)) {
+          return;
+        }
+
+        Array.from(lightboxDots.querySelectorAll("[data-bento-dot]")).forEach((dot, index) => {
+          if (!(dot instanceof HTMLButtonElement)) {
+            return;
+          }
+
+          const active = index === currentIndex;
+          dot.dataset.active = String(active);
+          dot.setAttribute("aria-pressed", String(active));
+        });
+
+        dotButtons.forEach((dot, index) => {
+          const active = index === currentIndex;
           dot.dataset.active = String(active);
           dot.setAttribute("aria-pressed", String(active));
         });
       };
 
-      const setModalContent = () => {
-        const item = getItem(activeIndex);
+      const renderLightbox = () => {
+        const itemsForGroup = getItems();
+        const item = itemsForGroup[currentIndex];
 
         if (!item) {
           return;
         }
 
-        if (image instanceof HTMLImageElement) {
-          image.src = item.src;
-          image.alt = item.alt;
-          image.width = item.width;
-          image.height = item.height;
+        if (lightboxImage instanceof HTMLImageElement) {
+          lightboxImage.src = item.src;
+          lightboxImage.alt = item.alt;
+          lightboxImage.width = item.width;
+          lightboxImage.height = item.height;
+          lightboxImage.onload = updateLightboxMediaSize;
         }
 
-        if (counter instanceof HTMLElement) {
-          counter.textContent = \`\${formatCounter(activeIndex + 1)} / \${formatCounter(items.length)}\`;
+        setNodeText(lightboxTitle, item.title);
+        setNodeText(lightboxSubtitle, item.subtitle);
+        setNodeText(lightboxDescription, item.description);
+        setNodeText(lightboxCaption, item.caption ? summarizeText(item.caption) : summarizeText(item.description));
+
+        if (lightboxCounter instanceof HTMLElement) {
+          lightboxCounter.textContent = \`\${formatCounter(currentIndex + 1)} / \${formatCounter(itemsForGroup.length)}\`;
         }
 
-        setNodeText(title, item.title);
-        setNodeText(subtitle, item.subtitle);
-        setNodeText(caption, item.caption);
-        setNodeText(description, item.description);
-        setTags(root, tags, item.tags);
+        renderLightboxDots();
         setDotsState();
+
+        if (lightboxImage instanceof HTMLImageElement && lightboxImage.complete && lightboxImage.naturalWidth) {
+          updateLightboxMediaSize();
+        }
       };
 
-      const openModal = (index, trigger) => {
-        activeIndex = clampIndex(index, items.length);
+      const openLightbox = (group, index, trigger) => {
+        if (!(lightbox instanceof HTMLDialogElement)) {
+          return;
+        }
+
+        if (closeTimer) {
+          window.clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+
+        currentGroup = group;
+        currentIndex = clampIndex(index, getItems(group).length);
         lastFocusedTrigger = trigger instanceof HTMLElement ? trigger : null;
-        isOpen = true;
 
-        if (modal instanceof HTMLElement) {
-          modal.dataset.open = "true";
-          modal.setAttribute("aria-hidden", "false");
-        }
-
-        if (panel instanceof HTMLElement) {
-          panel.dataset.open = "true";
-        }
-
-        setModalContent();
+        renderLightbox();
+        lightbox.dataset.open = "true";
+        lightbox.dataset.closing = "false";
+        lightbox.showModal();
         lockScroll(true);
 
         window.requestAnimationFrame(() => {
-          if (closeButton instanceof HTMLButtonElement) {
-            closeButton.focus();
+          if (lightboxClose instanceof HTMLButtonElement) {
+            lightboxClose.focus({ preventScroll: true });
           }
         });
       };
 
-      const closeModal = () => {
-        isOpen = false;
-
-        if (modal instanceof HTMLElement) {
-          modal.dataset.open = "false";
-          modal.setAttribute("aria-hidden", "true");
+      const closeLightbox = () => {
+        if (!(lightbox instanceof HTMLDialogElement) || !lightbox.open || lightbox.dataset.closing === "true") {
+          return;
         }
 
-        if (panel instanceof HTMLElement) {
-          panel.dataset.open = "false";
-        }
+        lightbox.dataset.closing = "true";
+        lightbox.dataset.open = "false";
+
+        closeTimer = window.setTimeout(() => {
+          lightbox.close();
+          closeTimer = null;
+        }, 240);
 
         lockScroll(false);
 
         if (lastFocusedTrigger instanceof HTMLElement) {
-          lastFocusedTrigger.focus();
+          lastFocusedTrigger.focus({ preventScroll: true });
         }
       };
 
-      const goNext = () => {
-        activeIndex = clampIndex(activeIndex + 1, items.length);
-        setModalContent();
-      };
-
-      const goPrevious = () => {
-        activeIndex = clampIndex(activeIndex - 1, items.length);
-        setModalContent();
+      const moveLightbox = (direction) => {
+        const itemsForGroup = getItems();
+        currentIndex = clampIndex(currentIndex + direction, itemsForGroup.length);
+        renderLightbox();
       };
 
       triggers.forEach((trigger) => {
         trigger.addEventListener("click", () => {
           const index = Number(trigger.dataset.bentoIndex ?? "0");
-          openModal(index, trigger);
+          openLightbox(gridVariant, index, trigger);
         });
       });
 
-      dots.forEach((dot) => {
-        dot.addEventListener("click", () => {
-          const index = Number(dot.dataset.bentoIndex ?? "0");
-          activeIndex = clampIndex(index, items.length);
-          setModalContent();
+      if (lightboxClose instanceof HTMLButtonElement) {
+        lightboxClose.addEventListener("click", closeLightbox);
+      }
+
+      if (lightboxPrev instanceof HTMLButtonElement) {
+        lightboxPrev.addEventListener("click", () => moveLightbox(-1));
+      }
+
+      if (lightboxNext instanceof HTMLButtonElement) {
+        lightboxNext.addEventListener("click", () => moveLightbox(1));
+      }
+
+      if (lightbox instanceof HTMLDialogElement) {
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
         });
-      });
 
-      if (closeButton instanceof HTMLButtonElement) {
-        closeButton.addEventListener("click", closeModal);
-      }
+        lightbox.addEventListener("cancel", (event) => {
+          event.preventDefault();
+          closeLightbox();
+        });
 
-      if (prevButton instanceof HTMLButtonElement) {
-        prevButton.addEventListener("click", goPrevious);
-      }
+        lightbox.addEventListener("close", () => {
+          lightbox.classList.remove("is-visible", "is-closing");
+          lightbox.dataset.open = "false";
+          lightbox.dataset.closing = "false";
+          lockScroll(false);
 
-      if (nextButton instanceof HTMLButtonElement) {
-        nextButton.addEventListener("click", goNext);
-      }
-
-      if (modal instanceof HTMLElement) {
-        modal.addEventListener("click", (event) => {
-          if (event.target === modal) {
-            closeModal();
+          if (closeTimer) {
+            window.clearTimeout(closeTimer);
+            closeTimer = null;
           }
         });
       }
 
-      if (viewport instanceof HTMLElement) {
-        viewport.addEventListener("pointerdown", (event) => {
+      if (lightboxMedia instanceof HTMLElement) {
+        lightboxMedia.addEventListener("pointerdown", (event) => {
           pointerStartX = event.clientX;
         });
 
-        viewport.addEventListener("pointerup", (event) => {
+        lightboxMedia.addEventListener("pointerup", (event) => {
           if (pointerStartX === null) {
             return;
           }
@@ -225,39 +311,40 @@ export function getBentoGridScript(): string {
           }
 
           if (deltaX < 0) {
-            goNext();
+            moveLightbox(1);
             return;
           }
 
-          goPrevious();
+          moveLightbox(-1);
         });
 
-        viewport.addEventListener("pointercancel", () => {
+        lightboxMedia.addEventListener("pointercancel", () => {
           pointerStartX = null;
         });
       }
 
       window.addEventListener("keydown", (event) => {
-        if (!isOpen) {
-          return;
-        }
-
-        if (event.key === "Escape") {
-          closeModal();
-          return;
-        }
-
-        if (event.key === "ArrowRight") {
-          goNext();
+        if (!(lightbox instanceof HTMLDialogElement) || !lightbox.open) {
           return;
         }
 
         if (event.key === "ArrowLeft") {
-          goPrevious();
+          event.preventDefault();
+          moveLightbox(-1);
+          return;
+        }
+
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          moveLightbox(1);
         }
       });
 
-      setModalContent();
+      window.addEventListener("resize", () => {
+        if (lightbox instanceof HTMLDialogElement && lightbox.open) {
+          updateLightboxMediaSize();
+        }
+      });
     });
   `;
 }
