@@ -14,6 +14,7 @@ const visibleItems = getBentoGridVisibleItems(props.items, props.maxVisibleItems
 const overflowCount = getBentoGridOverflowCount(props.items, props.maxVisibleItems);
 const gridClass = getBentoGridColumnClass(props.maxColumns);
 const hasOverflow = overflowCount > 0;
+const variant = props.variant ?? "album";
 ---
 
 <div
@@ -25,11 +26,12 @@ const hasOverflow = overflowCount > 0;
     {
       visibleItems.map((item, index) => {
         const isOverflowItem = hasOverflow && index === visibleItems.length - 1;
+        const leadTag = item.tags[0];
 
         return (
           <button
             type="button"
-            class="group mb-4 block w-full break-inside-avoid overflow-hidden rounded-[2rem] bg-[#ddd] shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/20"
+            class="group relative mb-[14px] block w-full break-inside-avoid overflow-hidden rounded-[28px] bg-[#ddd] text-left shadow-[0_18px_42px_rgba(32,16,22,.08)] isolate focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/20"
             data-bento-trigger
             data-bento-index={index}
             data-bento-src={item.src}
@@ -50,20 +52,24 @@ const hasOverflow = overflowCount > 0;
               width={item.width}
               height={item.height}
               loading="lazy"
-              class="block h-auto w-full transition duration-700 group-hover:scale-[1.03]"
+              class="block h-auto w-full scale-[1.01] transform-gpu transition-transform duration-[800ms] ease-[cubic-bezier(0.22,0.72,0.2,1)] group-hover:scale-[1.05]"
             />
+
+            <span class="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(180deg,transparent_25%,rgba(10,7,9,.82))]"></span>
 
             {
               isOverflowItem ? (
-                <span class="absolute inset-0 z-20 grid place-items-center bg-[rgba(6,4,5,0.72)] text-[clamp(2rem,4vw,4.2rem)] font-extrabold tracking-[-0.04em] text-white">
+                <span class="absolute inset-0 z-20 grid place-items-center rounded-[inherit] bg-[rgba(6,4,5,.72)] text-[clamp(2rem,4vw,4.2rem)] font-extrabold tracking-[-0.04em] text-white backdrop-blur-[8px]">
                   +{overflowCount}
                 </span>
               ) : (
-                <span class="absolute inset-x-0 bottom-0 grid gap-[3px] bg-[linear-gradient(180deg,transparent_25%,rgba(10,7,9,.82))] px-4 pb-4 pt-10 text-white">
-                  <small class="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/72">
-                    {item.caption}
-                  </small>
-                  <strong class="text-[clamp(1rem,1.2vw,1.2rem)] font-bold leading-[1.05] text-white">
+                <span class="absolute inset-x-[18px] bottom-[18px] z-20 grid gap-[3px] text-white">
+                  {variant === "album" && leadTag ? (
+                    <small class="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/72">
+                      {leadTag}
+                    </small>
+                  ) : null}
+                  <strong class="text-[clamp(1rem,1.4vw,1.25rem)] font-bold leading-[1.05] text-white">
                     {item.title}
                   </strong>
                   <em class="text-[12px] not-italic leading-[1.35] text-white/78">

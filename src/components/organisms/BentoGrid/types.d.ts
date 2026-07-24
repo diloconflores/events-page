@@ -17,5 +17,6 @@ export interface BentoGridProps extends Omit<HTMLAttributes<"div">, "class"> {
   readonly items: readonly BentoGridItem[];
   readonly maxVisibleItems?: number;
   readonly maxColumns?: 1 | 2 | 3 | 4;
+  readonly variant?: "album" | "gallery";
   readonly class?: string;
 }

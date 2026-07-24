@@ -18,16 +18,16 @@ export function getBentoGridOverflowCount(items: readonly BentoGridItem[], maxVi
 
 export function getBentoGridColumnClass(maxColumns?: 1 | 2 | 3 | 4): string {
   if (maxColumns === 1) {
-    return "columns-1 [column-gap:1rem]";
+    return "columns-1 [column-gap:14px]";
   }
 
   if (maxColumns === 2) {
-    return "columns-1 [column-gap:1rem] sm:columns-2";
+    return "columns-1 [column-gap:14px] min-[700px]:columns-2";
   }
 
   if (maxColumns === 4) {
-    return "columns-1 [column-gap:1rem] sm:columns-2 lg:columns-3 xl:columns-4";
+    return "columns-1 [column-gap:14px] min-[700px]:columns-2 min-[980px]:columns-3 min-[1280px]:columns-4";
   }
 
-  return "columns-1 [column-gap:1rem] sm:columns-2 xl:columns-3";
+  return "columns-1 [column-gap:14px] min-[700px]:columns-2 min-[980px]:columns-3";
 }
