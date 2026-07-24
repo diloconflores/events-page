@@ -1,0 +1,47 @@
+---
+import MediaCard from "../../atoms/MediaCard/index.astro";
+import type { InspirationSectionProps } from "./types";
+
+const props = Astro.props as InspirationSectionProps;
+---
+
+<section id="inspiration" class="bg-brand-cream py-20 sm:py-24">
+  <div class="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[830px]">
+      <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
+        {props.content.kicker}
+      </p>
+      <h2 class="font-sans text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
+        {props.content.title}
+      </h2>
+      <p class="mt-6 max-w-2xl text-base leading-8 text-brand-muted sm:text-lg">
+        {props.content.text}
+      </p>
+    </div>
+
+    <div class="mt-10 columns-1 gap-4 space-y-4 sm:columns-2 xl:columns-3">
+      {props.content.album.map((item) => (
+        <MediaCard
+          href={item.src}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="album"
+          src={item.src}
+          thumbnail={item.thumbnail}
+          width={item.width}
+          height={item.height}
+          alt={item.alt}
+          tag={item.tag}
+          title={item.title}
+          subtitle={item.subtitle}
+          caption={item.caption}
+          ariaLabel={`Abrir ${item.title}`}
+          class="mb-4 break-inside-avoid"
+          data-analytics-event="cta_click"
+          data-analytics-name={item.title}
+          data-analytics-location="inspiration_gallery"
+        />
+      ))}
+    </div>
+  </div>
+</section>

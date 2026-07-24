@@ -33,8 +33,8 @@
 
 ### Inpiración
 
-[ ] Esta sección deberá estar separada del template siendo un organismo separado.
-[ ] La distribución del header de esta sección deberá ser caption, titulo y descripción. Todo hacia abajo ocupando el 100% del ancho de la pantalla/contenedor con un `max-width` de `830px`
+[x] Esta sección deberá estar separada del template siendo un organismo separado.
+[x] La distribución del header de esta sección deberá ser caption, titulo y descripción. Todo hacia abajo ocupando el 100% del ancho de la pantalla/contenedor con un `max-width` de `830px`
 
 ### Bento grid
 
