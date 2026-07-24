@@ -32,7 +32,7 @@ const galleryItems = content.gallery.items.map((item) => ({
 
 <a
   href="#content"
-  class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand-ink focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+  class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-full focus:bg-brand-ink focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
 >
   {common.skipLink}
 </a>
@@ -49,8 +49,8 @@ const galleryItems = content.gallery.items.map((item) => ({
 
   <ProcessSection content={content.process} />
 
-  <section id="alliances" class="bg-brand-pink-soft py-20 sm:py-24">
-    <div class="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
+<section id="alliances" class="bg-brand-pink-soft py-20 sm:py-24">
+    <div class="mx-auto w-full max-w-310 px-4 sm:px-6 lg:px-8">
       <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-end">
         <div>
           <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
@@ -70,7 +70,7 @@ const galleryItems = content.gallery.items.map((item) => ({
           href={OCCASIONS_URL}
           target="_blank"
           rel="nofollow noopener noreferrer"
-          class="group rounded-[2rem] border border-brand-line bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-glow"
+          class="group rounded-4xl border border-brand-line bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-glow"
           data-analytics-event="cta_click"
           data-analytics-name="bodas_com_mx"
           data-analytics-location="alliances"
@@ -91,8 +91,8 @@ const galleryItems = content.gallery.items.map((item) => ({
     </div>
   </section>
 
-  <section id="gallery" class="bg-brand-cream py-20 sm:py-24">
-    <div class="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
+<section id="gallery" class="bg-brand-cream py-20 sm:py-24">
+    <div class="mx-auto w-full max-w-310 px-4 sm:px-6 lg:px-8">
       <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-end">
         <div>
           <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
@@ -112,7 +112,7 @@ const galleryItems = content.gallery.items.map((item) => ({
   </section>
 
   <section id="quote" class="bg-white py-20 sm:py-24">
-    <div class="mx-auto grid w-full max-w-[1240px] gap-8 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+    <div class="mx-auto grid w-full max-w-310 gap-8 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
       <div class="max-w-2xl">
         <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
           {content.form.kicker}
@@ -124,7 +124,7 @@ const galleryItems = content.gallery.items.map((item) => ({
           {content.form.text}
         </p>
 
-        <div class="mt-8 rounded-[2rem] border border-brand-line bg-brand-pink-soft p-6">
+        <div class="mt-8 rounded-4xl border border-brand-line bg-brand-pink-soft p-6">
           <p class="text-sm font-extrabold uppercase tracking-[0.22em] text-brand-pink">
             {content.form.progress[0]}
           </p>
@@ -138,7 +138,7 @@ const galleryItems = content.gallery.items.map((item) => ({
         id="event-form"
         action={EVENT_FORM_ACTION}
         method="POST"
-        class="form-card rounded-[2rem] border border-brand-line bg-brand-surface p-6 shadow-soft sm:p-8"
+        class="form-card rounded-4xl border border-brand-line bg-brand-surface p-6 shadow-soft sm:p-8"
         data-analytics-form="event_quote"
         data-analytics-location="quote"
       >
@@ -300,7 +300,7 @@ const galleryItems = content.gallery.items.map((item) => ({
             </div>
           </fieldset>
         </div>
-        <div class="hidden rounded-[2rem] border border-brand-line bg-brand-surface p-8 text-center shadow-soft" data-success>
+        <div class="hidden rounded-4xl border border-brand-line bg-brand-surface p-8 text-center shadow-soft" data-success>
           <p class="text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
             {content.form.messages.successKicker}
           </p>
@@ -320,7 +320,7 @@ const galleryItems = content.gallery.items.map((item) => ({
 
   <section class="relative isolate overflow-hidden bg-brand-pink py-20 text-white sm:py-24">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.1),transparent_30%)]"></div>
-    <div class="relative mx-auto grid w-full max-w-[1240px] gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+    <div class="relative mx-auto grid w-full max-w-310 gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
       <div class="max-w-4xl">
         <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink-soft/90">
           {content.finalCta.kicker}
@@ -343,8 +343,8 @@ const galleryItems = content.gallery.items.map((item) => ({
     </div>
   </section>
 
-  <section id="shop" class="bg-white py-20 sm:py-24">
-    <div class="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
+<section id="shop" class="bg-white py-20 sm:py-24">
+    <div class="mx-auto w-full max-w-310 px-4 sm:px-6 lg:px-8">
       <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-end">
         <div>
           <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
@@ -376,7 +376,7 @@ const galleryItems = content.gallery.items.map((item) => ({
         ))}
       </div>
 
-      <div class="mt-10 flex flex-col items-start justify-between gap-4 rounded-[2rem] border border-brand-line bg-brand-pink-soft p-6 sm:flex-row sm:items-center">
+      <div class="mt-10 flex flex-col items-start justify-between gap-4 rounded-4xl border border-brand-line bg-brand-pink-soft p-6 sm:flex-row sm:items-center">
         <p class="max-w-2xl text-sm leading-7 text-brand-ink">
           {content.shop.footerText}
         </p>
@@ -405,7 +405,7 @@ const galleryItems = content.gallery.items.map((item) => ({
 />
 
 <footer id="contact" class="border-t border-brand-line bg-brand-cream py-14">
-  <div class="mx-auto grid w-full max-w-[1240px] gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr_0.9fr] lg:px-8">
+  <div class="mx-auto grid w-full max-w-310 gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr_0.9fr] lg:px-8">
     <div class="max-w-2xl">
       <img src="/brand/logo-horz-color.svg" alt={content.brand.label} class="h-8 w-auto" />
       <p class="mt-6 max-w-xl text-sm leading-7 text-brand-muted">

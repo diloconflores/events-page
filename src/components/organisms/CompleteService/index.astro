@@ -14,25 +14,25 @@ const { content } = Astro.props as CompleteServiceProps;
 
 <section
   id={COMPLETE_SERVICE_SECTION_ID}
-  class="bg-white pt-[92px] pb-20"
+  class="bg-white pt-23 pb-20"
   data-complete-service
 >
   <div
-    class="mx-auto grid w-[min(calc(100%-32px),1240px)] gap-10 min-[700px]:w-[min(calc(100%-64px),1240px)] lg:grid-cols-[1.08fr_0.92fr] lg:items-center"
+    class="mx-auto grid w-[min(calc(100%-32px),1240px)] max-w-310 gap-10 min-[700px]:w-[min(calc(100%-64px),1240px)] min-[700px]:max-w-310 lg:grid-cols-[1.08fr_0.92fr] lg:items-center"
   >
     <div class="reveal text-left">
       <p
-        class="mb-[14px] text-xs font-bold uppercase tracking-[0.18em] text-brand-pink"
+        class="mb-3.5 text-xs font-bold uppercase tracking-[0.18em] text-brand-pink"
       >
         {content.promise.kicker}
       </p>
       <h2
-        class="max-w-[850px] font-sans text-[clamp(1.8rem,4.4vw,3.1rem)] font-bold leading-[1.05] tracking-[-0.05em] text-brand-ink"
+        class="max-w-212.5 font-sans text-[clamp(1.8rem,4.4vw,3.1rem)] font-bold leading-[1.05] tracking-tighter text-brand-ink"
       >
         {content.promise.title}
       </h2>
 
-      <div class="mt-6 max-w-[720px] text-[1.08rem] leading-8 text-brand-muted">
+      <div class="mt-6 max-w-180 text-[1.08rem] leading-8 text-brand-muted">
         <p class="m-0">{content.promise.text}</p>
         <div class="mt-6 flex flex-col gap-4 min-[720px]:flex-row min-[720px]:items-center">
           <Button
@@ -59,8 +59,8 @@ const { content } = Astro.props as CompleteServiceProps;
     </div>
 
     <div class="reveal lg:justify-self-end">
-      <div class="relative overflow-visible rounded-[2rem] bg-brand-surface shadow-soft">
-        <div class="overflow-hidden rounded-[2rem]">
+      <div class="relative overflow-visible rounded-4xl bg-brand-surface shadow-soft">
+        <div class="overflow-hidden rounded-4xl">
           <Image
             src={completeServiceImage}
             alt={content.promise.imageAlt}
@@ -70,7 +70,7 @@ const { content } = Astro.props as CompleteServiceProps;
             format="webp"
           />
         </div>
-        <div class="absolute bottom-[-18px] left-[-10px] z-10 max-w-[min(90%,17rem)] -rotate-2 bg-white px-4 py-3 text-left text-brand-ink shadow-[0_18px_45px_rgba(0,0,0,0.16)] ring-1 ring-black/5 sm:bottom-[-22px] sm:left-[-18px] sm:max-w-[18rem] sm:px-5 sm:py-4">
+        <div class="absolute -bottom-4.5 -left-2.5 z-10 max-w-[min(90%,17rem)] -rotate-2 bg-white px-4 py-3 text-left text-brand-ink shadow-[0_18px_45px_rgba(0,0,0,0.16)] ring-1 ring-black/5 sm:-bottom-5.5 sm:-left-4.5 sm:max-w-[18rem] sm:px-5 sm:py-4">
           <p class="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-brand-pink">
             {content.promise.postIt.caption}
           </p>
@@ -88,7 +88,7 @@ const { content } = Astro.props as CompleteServiceProps;
 
 <section class="bg-brand-pink text-white">
   <div
-    class="mx-auto flex w-[min(calc(100%-32px),1240px)] flex-col justify-center gap-2 py-[22px] min-[700px]:w-[min(calc(100%-64px),1240px)] min-[700px]:flex-row min-[700px]:items-center min-[700px]:justify-between"
+    class="mx-auto flex w-[min(calc(100%-32px),1240px)] max-w-310 flex-col justify-center gap-2 py-5.5 min-[700px]:w-[min(calc(100%-64px),1240px)] min-[700px]:max-w-310 min-[700px]:flex-row min-[700px]:items-center min-[700px]:justify-between"
   >
     <p class="m-0 text-base font-bold leading-[1.2]">
       {content.conversionBand.text}
