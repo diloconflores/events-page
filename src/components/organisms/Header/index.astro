@@ -36,11 +36,11 @@ const brandMenuItems = [
 ---
 
 <header
-  class="fixed inset-x-0 top-0 z-[100] flex h-[78px] items-center justify-between px-4 text-white transition-[height,color,background-color,border-color,backdrop-filter] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] data-[scrolled=true]:h-[68px] data-[scrolled=true]:border-b data-[scrolled=true]:border-line data-[scrolled=true]:bg-[rgba(251,248,246,0.94)] data-[scrolled=true]:text-ink data-[scrolled=true]:backdrop-blur-[16px] min-[980px]:h-[88px] min-[980px]:px-8"
+  class="[--header-height:78px] fixed inset-x-0 top-0 z-100 flex h-19.5 items-center justify-between px-4 text-white transition-[height,color,background-color,border-color,backdrop-filter] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] data-[scrolled=true]:h-[68px] data-[scrolled=true]:border-b data-[scrolled=true]:border-line data-[scrolled=true]:bg-[rgba(251,248,246,0.94)] data-[scrolled=true]:text-ink data-[scrolled=true]:backdrop-blur-[16px] min-[980px]:h-[88px] min-[980px]:px-8 min-[980px]:[--header-height:88px]"
   data-header
   data-scrolled="false"
 >
-  <div class="relative z-[2] flex min-w-0 items-center gap-3">
+  <div class="relative z-2 flex min-w-0 items-center gap-3">
     <a
       class="relative flex min-w-0 items-center gap-2.5"
       href="#hero"
@@ -67,13 +67,14 @@ const brandMenuItems = [
       triggerText={content.brand.division}
       menuLabel={content.brand.switcherLabel}
       items={brandMenuItems}
-      class="hidden min-[980px]:flex data-[scrolled=true]:text-ink!"
+      class="data-[scrolled=true]:text-ink!"
       triggerClass="data-[scrolled=true]:text-ink!"
+      menuClass="left-0!"
     />
   </div>
 
   <button
-    class="group relative z-[2] flex h-[46px] w-[46px] items-center justify-center overflow-hidden rounded-full border-0 bg-transparent text-white shadow-none backdrop-blur-0 transition-colors duration-200 min-[980px]:hidden hover:text-brand-pink data-[scrolled=true]:text-ink data-[open=true]:text-ink"
+    class="group relative z-2 flex h-[46px] w-[46px] items-center justify-center overflow-hidden rounded-full border-0 bg-transparent text-white shadow-none backdrop-blur-0 transition-colors duration-200 min-[980px]:hidden hover:text-brand-pink data-[scrolled=true]:text-ink data-[open=true]:text-ink"
     type="button"
     aria-expanded="false"
     aria-controls={mobileMenuId}
@@ -94,27 +95,16 @@ const brandMenuItems = [
 
   <nav
     id={mobileMenuId}
-    class="fixed inset-y-0 right-0 flex h-dvh w-[80vw] translate-x-full flex-col gap-3 rounded-l-[32px] border-l border-line bg-[rgba(251,248,246,0.96)] px-5 pb-8 pt-[110px] text-ink shadow-[-24px_0_40px_rgba(0,0,0,0.08)] transition-transform duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] data-[open=true]:translate-x-0 min-[980px]:static min-[980px]:inset-auto min-[980px]:ml-auto min-[980px]:h-auto min-[980px]:w-auto min-[980px]:translate-x-0 min-[980px]:flex-row min-[980px]:items-center min-[980px]:gap-6 min-[980px]:border-0 min-[980px]:bg-transparent min-[980px]:px-0 min-[980px]:py-0 min-[980px]:text-inherit"
+    class="fixed right-0 top-[var(--header-height,78px)] z-95 flex h-[calc(100dvh-var(--header-height,78px))] w-[90vw] translate-x-full flex-col gap-3 border-0 bg-transparent px-5 pb-8 pt-6 text-ink shadow-none backdrop-blur-0 opacity-0 transition-[transform,translate,opacity] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] data-[open=true]:translate-x-0 data-[open=true]:opacity-100 data-[closing=true]:translate-x-full data-[closing=true]:opacity-0 max-[979px]:border-l max-[979px]:border-line max-[979px]:bg-[rgba(251,248,246,0.96)] max-[979px]:backdrop-blur-[18px] min-[980px]:static min-[980px]:inset-auto min-[980px]:ml-auto min-[980px]:h-auto min-[980px]:w-auto min-[980px]:translate-x-0 min-[980px]:flex-row min-[980px]:items-center min-[980px]:gap-6 min-[980px]:px-0 min-[980px]:py-0 min-[980px]:text-inherit min-[980px]:opacity-100"
     data-nav
     data-open="false"
+    data-closing="false"
     aria-label={common.primaryNavLabel}
   >
-    <Dropdown
-      id={`${brandMenuId}-mobile`}
-      triggerLabel={content.brand.switcherLabel}
-      triggerText={content.brand.division}
-      menuLabel={content.brand.switcherLabel}
-      items={brandMenuItems}
-      class="w-full min-[980px]:hidden"
-      triggerClass="w-full justify-between border-brand-line bg-white px-0 py-3 text-[11px] font-semibold tracking-[0.24em] text-ink hover:opacity-100"
-      menuClass="left-0 right-0 top-[calc(100%+10px)] w-full min-w-0 border-brand-line bg-white shadow-[0_18px_40px_rgba(0,0,0,0.08)]"
-      itemClass="text-ink hover:bg-brand-pink-soft hover:text-brand-ink"
-      selectedItemClass="bg-brand-pink-soft text-brand-pink"
-    />
     <Button
       href="#service"
       ghost
-      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="service"
       data-analytics-location="header_nav"
@@ -123,7 +113,7 @@ const brandMenuItems = [
     <Button
       href="#inspiration"
       ghost
-      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="inspiration"
       data-analytics-location="header_nav"
@@ -132,7 +122,7 @@ const brandMenuItems = [
     <Button
       href="#why-us"
       ghost
-      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="why_us"
       data-analytics-location="header_nav"
@@ -141,7 +131,7 @@ const brandMenuItems = [
     <Button
       href="#process"
       ghost
-      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:tracking-[0.2em] min-[980px]:text-inherit"
+      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="process"
       data-analytics-location="header_nav"
@@ -160,6 +150,15 @@ const brandMenuItems = [
     </Button>
   </nav>
 </header>
+
+<div
+  class="fixed inset-0 z-90 bg-[rgba(0,0,0,0.52)] opacity-0 backdrop-blur-[12px] transition-[opacity,backdrop-filter] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] pointer-events-none data-[open=true]:opacity-100 data-[open=true]:pointer-events-auto data-[closing=true]:opacity-0 min-[980px]:hidden"
+  data-nav-overlay
+  data-open="false"
+  data-closing="false"
+  aria-hidden="true"
+>
+</div>
 
 <script
   type="module"

@@ -8,11 +8,17 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
       const headerBrandWhite = header.querySelector('[data-brand-logo="white"]');
       const headerBrandColor = header.querySelector('[data-brand-logo="color"]');
       const menuButton = header.querySelector("[data-menu-button]");
+      const navOverlay = document.querySelector("[data-nav-overlay]");
       const nav = header.querySelector("[data-nav]");
       const navIndicator = header.querySelector("[data-header-nav-indicator]");
       const navLinks = Array.from(header.querySelectorAll("[data-header-nav-link]"));
       const openMenuLabel = ${JSON.stringify(options.openMenuLabel)};
       const closeMenuLabel = ${JSON.stringify(options.closeMenuLabel)};
+      const lockScroll = (locked) => {
+        document.documentElement.style.overflow = locked ? "hidden" : "";
+        document.body.style.overflow = locked ? "hidden" : "";
+        document.body.style.overscrollBehavior = locked ? "none" : "";
+      };
       const normalizePath = (value) => {
         if (value === "/") {
           return "/";
@@ -59,9 +65,11 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
         .filter((entry) => entry !== null);
 
       const setHeaderState = () => {
-        const scrolled = window.scrollY > 24;
+        const menuOpen = nav instanceof HTMLElement && nav.dataset.open === "true";
+        const scrolled = menuOpen || window.scrollY > 24;
 
         header.dataset.scrolled = String(scrolled);
+        header.style.setProperty("--header-height", scrolled ? "68px" : "78px");
 
         header.querySelectorAll("[data-dropdown]").forEach((dropdown) => {
           if (dropdown instanceof HTMLElement) {
@@ -71,6 +79,10 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
 
         if (menuButton instanceof HTMLElement) {
           menuButton.dataset.scrolled = String(scrolled);
+        }
+
+        if (navOverlay instanceof HTMLElement) {
+          navOverlay.dataset.scrolled = String(scrolled);
         }
 
         header.querySelectorAll("[data-dropdown-trigger]").forEach((trigger) => {
@@ -188,6 +200,7 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
       let activeNavKey = "";
       let activeNavPath = "";
       let rafId = 0;
+      let closeTimer = 0;
 
       const updateActiveNavState = () => {
         rafId = 0;
@@ -216,10 +229,33 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
           return;
         }
 
+        if (closeTimer) {
+          window.clearTimeout(closeTimer);
+          closeTimer = 0;
+        }
+
+        nav.dataset.closing = "true";
+        if (navOverlay instanceof HTMLElement) {
+          navOverlay.dataset.closing = "true";
+        }
+
         menuButton.dataset.open = "false";
         menuButton.setAttribute("aria-expanded", "false");
         menuButton.setAttribute("aria-label", openMenuLabel);
-        nav.dataset.open = "false";
+
+        closeTimer = window.setTimeout(() => {
+          nav.dataset.open = "false";
+          nav.dataset.closing = "false";
+
+          if (navOverlay instanceof HTMLElement) {
+            navOverlay.dataset.open = "false";
+            navOverlay.dataset.closing = "false";
+          }
+
+          lockScroll(false);
+          setHeaderState();
+          closeTimer = 0;
+        }, 300);
       };
 
       const openMobileNav = () => {
@@ -227,10 +263,27 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
           return;
         }
 
+        if (closeTimer) {
+          window.clearTimeout(closeTimer);
+          closeTimer = 0;
+        }
+
+        nav.dataset.closing = "false";
+        if (navOverlay instanceof HTMLElement) {
+          navOverlay.dataset.closing = "false";
+        }
+
         menuButton.dataset.open = "true";
         menuButton.setAttribute("aria-expanded", "true");
         menuButton.setAttribute("aria-label", closeMenuLabel);
         nav.dataset.open = "true";
+
+        if (navOverlay instanceof HTMLElement) {
+          navOverlay.dataset.open = "true";
+        }
+
+        lockScroll(true);
+        setHeaderState();
       };
 
       setHeaderState();
@@ -256,6 +309,10 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
             closeMobileNav();
           });
         });
+      }
+
+      if (navOverlay instanceof HTMLElement) {
+        navOverlay.addEventListener("click", closeMobileNav);
       }
 
       document.addEventListener("click", (event) => {
