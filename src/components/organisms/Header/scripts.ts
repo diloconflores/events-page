@@ -14,11 +14,13 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
       const navLinks = Array.from(header.querySelectorAll("[data-header-nav-link]"));
       const openMenuLabel = ${JSON.stringify(options.openMenuLabel)};
       const closeMenuLabel = ${JSON.stringify(options.closeMenuLabel)};
+      const mobileMediaQuery = window.matchMedia("(max-width: 979px)");
       const lockScroll = (locked) => {
         document.documentElement.style.overflow = locked ? "hidden" : "";
         document.body.style.overflow = locked ? "hidden" : "";
         document.body.style.overscrollBehavior = locked ? "none" : "";
       };
+      const isMobileNavMode = () => mobileMediaQuery.matches;
       const normalizePath = (value) => {
         if (value === "/") {
           return "/";
@@ -65,7 +67,7 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
         .filter((entry) => entry !== null);
 
       const setHeaderState = () => {
-        const menuOpen = nav instanceof HTMLElement && nav.dataset.open === "true";
+        const menuOpen = isMobileNavMode() && nav instanceof HTMLElement && nav.dataset.open === "true";
         const scrolled = menuOpen || window.scrollY > 24;
 
         header.dataset.scrolled = String(scrolled);
@@ -229,6 +231,10 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
           return;
         }
 
+        if (!isMobileNavMode()) {
+          return;
+        }
+
         if (closeTimer) {
           window.clearTimeout(closeTimer);
           closeTimer = 0;
@@ -263,6 +269,10 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
           return;
         }
 
+        if (!isMobileNavMode()) {
+          return;
+        }
+
         if (closeTimer) {
           window.clearTimeout(closeTimer);
           closeTimer = 0;
@@ -290,12 +300,37 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
       updateActiveNavState();
       window.addEventListener("scroll", setHeaderState, { passive: true });
       window.addEventListener("scroll", scheduleActiveNavUpdate, { passive: true });
-      window.addEventListener("resize", scheduleActiveNavUpdate);
+      window.addEventListener("resize", () => {
+        if (!isMobileNavMode() && nav instanceof HTMLElement && nav.dataset.open === "true") {
+          nav.dataset.open = "false";
+          nav.dataset.closing = "false";
+
+          if (navOverlay instanceof HTMLElement) {
+            navOverlay.dataset.open = "false";
+            navOverlay.dataset.closing = "false";
+          }
+
+          if (menuButton instanceof HTMLButtonElement) {
+            menuButton.dataset.open = "false";
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", openMenuLabel);
+          }
+
+          lockScroll(false);
+        }
+
+        setHeaderState();
+        scheduleActiveNavUpdate();
+      });
       window.addEventListener("hashchange", scheduleActiveNavUpdate);
       window.addEventListener("load", scheduleActiveNavUpdate);
 
       if (menuButton instanceof HTMLButtonElement && nav instanceof HTMLElement) {
         menuButton.addEventListener("click", () => {
+          if (!isMobileNavMode()) {
+            return;
+          }
+
           if (nav.dataset.open === "true") {
             closeMobileNav();
             return;
@@ -316,6 +351,10 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
       }
 
       document.addEventListener("click", (event) => {
+        if (!isMobileNavMode()) {
+          return;
+        }
+
         if (!(event.target instanceof Node)) {
           return;
         }
@@ -331,6 +370,10 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
       });
 
       document.addEventListener("keydown", (event) => {
+        if (!isMobileNavMode()) {
+          return;
+        }
+
         if (event.key !== "Escape") {
           return;
         }
