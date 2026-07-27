@@ -12,28 +12,66 @@ export function getProcessSectionScript(): string {
       return;
     }
 
-    const activateItem = (item) => {
-      if (item instanceof HTMLElement) {
-        item.dataset.active = "true";
-      }
-    };
+    let rafId = 0;
 
-    if (typeof IntersectionObserver === "undefined") {
-      items.forEach(activateItem);
-      return;
-    }
+    const getActiveIndex = () => {
+      const activationLine = Math.max(window.innerHeight * 0.35, 180);
+      let activeIndex = -1;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
+      items.forEach((item, index) => {
+        if (!(item instanceof HTMLElement)) {
           return;
         }
 
-        activateItem(entry.target);
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0.45, rootMargin: "0px 0px -12% 0px" });
+        const rect = item.getBoundingClientRect();
 
-    items.forEach((item) => observer.observe(item));
+        if (rect.top <= activationLine) {
+          activeIndex = index;
+        }
+      });
+
+      return activeIndex;
+    };
+
+    const syncItemStates = () => {
+      rafId = 0;
+
+      const activeIndex = getActiveIndex();
+
+      items.forEach((item, index) => {
+        if (!(item instanceof HTMLElement)) {
+          return;
+        }
+
+        if (activeIndex < 0) {
+          item.dataset.state = "inactive";
+          return;
+        }
+
+        if (index < activeIndex) {
+          item.dataset.state = "past";
+          return;
+        }
+
+        if (index === activeIndex) {
+          item.dataset.state = "active";
+          return;
+        }
+
+        item.dataset.state = "inactive";
+      });
+    };
+
+    const scheduleSync = () => {
+      if (rafId) {
+        return;
+      }
+
+      rafId = window.requestAnimationFrame(syncItemStates);
+    };
+
+    syncItemStates();
+    window.addEventListener("scroll", scheduleSync, { passive: true });
+    window.addEventListener("resize", scheduleSync);
   `;
 }

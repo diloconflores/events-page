@@ -101,3 +101,40 @@ En la plataforma hay dos bento grids, estas acciones aplicarán para ambos.
 [x] El titilo será negro con un `font-size: clamp(24px, 2.6vw, 34px)`, `font-weight: 700`, `line-height: 1.12`
 [x] Cada item debe tener un estado inactive, conforme vayamos avanzando con el scroll se deberá ir mostrando activo cada item.
 [x] A la izquierda de cada item debe haber un dot color gris dentro de un circulo color gris. Solo cuando el item este activo se verá el dot completamente rosa con el numero del item dentro del dot y debe estar pulsando.
+[x] Cada item debera tener la misma estructura:
+
+- Un circulo a la izquierda del todo sobre la linea de tiempo, es circulo deberá estar en color gris y deberá estar dentro de otro circulo solo de linea, sin fondo, del mismo gris. Todo debe estar pequeño. Este será el estado `inactive`
+- Debera tener el numero `XX.` seguido del caption. Debe ser color rosa dilo, en mayusuclas y un `font-size: 10px`, `font-weight: 700`, `letter-spacing: 0.18em;`
+- El titilo será negro con un `font-size: clamp(24px, 2.6vw, 34px)`, `font-weight: 700`, `line-height: 1.12` y va a estar por debajo del caption.
+- Cada item deberá permanecer en estado `inactive` hasta que, con el scroll, el item se revele en la pantalla. Conforme va avanzando el scroll se irán activando los siguientes items hasta llegar al ultimo. En este punto todos los puntos se pondrán en verde como indicando que se avanzo en la linea de tiempo.
+- Conforme vayamos avanzando con el scroll van a ir apareciendoo cada item, es decir, el caption, titulo, subtitulo y description. El punto siempre deberá permanecer.
+- El estado `active` será el circulo mayor completamente en rosa y con el número del item en blanco. Dentras deberá tener un circlo que este creciendo. Debemos usar el efecto de animacion ping de tailwind. Este será el estado del item que esta visible en la pantalla. Además el contenido deberá tener un scale 1.2 para que se vea más grande que el resto.
+- El estado `past` será exactament el mismo que el active pero el scale deberá estar en 1 y el punto no deberá estar coon ping.
+- Estos serán lo puntos:
+
+```
+caption: 01 · Primer contacto
+titile: Empezamos por conocerte
+subtitle: Antes de hablar de flores, queremos entender tu historia.
+description: Cada evento comienza con una conversación. Queremos conocer qué estás celebrando, quiénes son los protagonistas, cómo imaginas ese día y qué emociones quieres transmitir. También hablamos del lugar, el número de invitados y el presupuesto para construir una propuesta que realmente tenga sentido para ti.
+---
+caption: 02 · Diseño de la propuesta
+titile: Creamos una propuesta pensada para tu evento
+subtitle: Cada detalle tiene una intención y una razón de estar ahí.
+description: Transformamos toda la información en un concepto floral integral. Seleccionamos flores, colores, texturas y elementos decorativos para crear una propuesta coherente con tu estilo. Cuando es necesario, visitamos el lugar para validar medidas, iluminación, accesos y cualquier detalle técnico.
+---
+caption: 03 · Afinando el proyecto
+titile: Perfeccionamos cada detalle contigo
+subtitle: Queremos que tengas claridad sobre todo lo que recibirás.
+description: Revisamos juntos la propuesta, resolvemos tus dudas y realizamos los ajustes necesarios hasta que cada elemento refleje lo que imaginas. Tendrás claridad sobre qué incluye el proyecto, cómo se distribuirán los elementos y qué sucederá durante el montaje.
+---
+caption: 04 · Detrás de escena
+titile: Nos encargamos de toda la preparación
+subtitle: Mientras tú continúas con tu evento, nosotros hacemos que todo suceda.
+description: Coordinamos las flores, la elaboración de cada arreglo, los materiales, la logística, el transporte y el equipo de montaje. Cada pieza se prepara cuidadosamente y organizamos los tiempos para que todo llegue en perfectas condiciones.
+---
+caption: 05 · Día del evento
+titile: Tú disfrutas. Nosotros nos ocupamos del resto.
+subtitle: Nuestro trabajo es que tú solo tengas que vivir el momento.
+description: Llegamos con anticipación para realizar el montaje, supervisar cada espacio y asegurarnos de que todo luzca como fue planeado. Coordinamos los últimos detalles antes de que lleguen tus invitados para que puedas disfrutar con la tranquilidad de saber que todo está bajo control.
+```
