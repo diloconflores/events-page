@@ -25,6 +25,10 @@
 [x] En el boton de whatsapp, necesito que uses exactamente el mismo svg que tiene en `diloconflores.com`
 [x] En modo mobile no debe aparecer eel boton `Solicitar propuesta ->` flotante. Este hay que eliminarlo.
 
+### Header
+
+[x] En la versión mobile del header, al darle clic al boton `Eventos`. El dropdown debe ocupar todo el ancho de la pantalla solo respetando un margen en los laterales de la pantalla. Tambien deberá salir un overlay oscuro con backdrop blur debajo del dropdown, este debe estar por encima de toda la pagina, solo deberá estar por encima del overlay el header, y el dropdown.
+
 ### Menu
 
 [x] El nav, ahora tiene un fondo en modo escritorio. No debería tenerlo. En modo mobile si.

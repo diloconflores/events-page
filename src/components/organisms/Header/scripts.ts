@@ -7,6 +7,8 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
     if (header) {
       const headerBrandWhite = header.querySelector('[data-brand-logo="white"]');
       const headerBrandColor = header.querySelector('[data-brand-logo="color"]');
+      const brandDropdown = header.querySelector("[data-dropdown]");
+      const brandDropdownOverlay = document.querySelector("[data-header-dropdown-overlay]");
       const menuButton = header.querySelector("[data-menu-button]");
       const navOverlay = document.querySelector("[data-nav-overlay]");
       const nav = header.querySelector("[data-nav]");
@@ -21,6 +23,38 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
         document.body.style.overscrollBehavior = locked ? "none" : "";
       };
       const isMobileNavMode = () => mobileMediaQuery.matches;
+      let brandDropdownOverlayTimer = 0;
+      const syncBrandDropdownOverlay = () => {
+        if (!(brandDropdownOverlay instanceof HTMLElement)) {
+          return;
+        }
+
+        const isOpen = isMobileNavMode() && brandDropdown instanceof HTMLElement && brandDropdown.dataset.open === "true";
+
+        if (brandDropdownOverlayTimer) {
+          window.clearTimeout(brandDropdownOverlayTimer);
+          brandDropdownOverlayTimer = 0;
+        }
+
+        if (isOpen) {
+          brandDropdownOverlay.dataset.closing = "false";
+          brandDropdownOverlay.dataset.open = "true";
+          return;
+        }
+
+        if (brandDropdownOverlay.dataset.open !== "true") {
+          brandDropdownOverlay.dataset.open = "false";
+          brandDropdownOverlay.dataset.closing = "false";
+          return;
+        }
+
+        brandDropdownOverlay.dataset.closing = "true";
+        brandDropdownOverlayTimer = window.setTimeout(() => {
+          brandDropdownOverlay.dataset.open = "false";
+          brandDropdownOverlay.dataset.closing = "false";
+          brandDropdownOverlayTimer = 0;
+        }, 300);
+      };
       const normalizePath = (value) => {
         if (value === "/") {
           return "/";
@@ -103,6 +137,8 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
           headerBrandWhite.hidden = scrolled;
           headerBrandColor.hidden = !scrolled;
         }
+
+        syncBrandDropdownOverlay();
       };
 
       const setActiveNavLink = (activeKey, activePath) => {
@@ -203,6 +239,7 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
       let activeNavPath = "";
       let rafId = 0;
       let closeTimer = 0;
+      let brandDropdownObserver = null;
 
       const updateActiveNavState = () => {
         rafId = 0;
@@ -325,6 +362,14 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
       window.addEventListener("hashchange", scheduleActiveNavUpdate);
       window.addEventListener("load", scheduleActiveNavUpdate);
 
+      if (brandDropdown instanceof HTMLElement) {
+        brandDropdownObserver = new MutationObserver(syncBrandDropdownOverlay);
+        brandDropdownObserver.observe(brandDropdown, {
+          attributes: true,
+          attributeFilter: ["data-open"],
+        });
+      }
+
       if (menuButton instanceof HTMLButtonElement && nav instanceof HTMLElement) {
         menuButton.addEventListener("click", () => {
           if (!isMobileNavMode()) {
@@ -377,6 +422,8 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
         if (event.key !== "Escape") {
           return;
         }
+
+        syncBrandDropdownOverlay();
 
         closeMobileNav();
       });

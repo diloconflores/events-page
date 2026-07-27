@@ -69,7 +69,7 @@ const brandMenuItems = [
       items={brandMenuItems}
       class="data-[scrolled=true]:text-ink!"
       triggerClass="data-[scrolled=true]:text-ink!"
-      menuClass="left-0!"
+      menuClass="max-[979px]:fixed max-[979px]:left-4 max-[979px]:right-4 max-[979px]:top-[calc(var(--header-height,78px)+12px)] max-[979px]:w-auto max-[979px]:min-w-0 max-[979px]:origin-top max-[979px]:rounded-panel max-[979px]:border max-[979px]:border-line max-[979px]:bg-[rgba(255,255,255,0.96)] max-[979px]:shadow-[0_18px_40px_rgba(32,16,22,0.14)] max-[979px]:backdrop-blur-[14px] min-[980px]:!left-0"
     />
   </div>
 
@@ -150,6 +150,14 @@ const brandMenuItems = [
     </Button>
   </nav>
 </header>
+
+<div
+  class="fixed inset-0 z-90 bg-[rgba(0,0,0,0.52)] opacity-0 backdrop-blur-[12px] transition-[opacity,backdrop-filter] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] pointer-events-none data-[open=true]:opacity-100 data-[open=true]:pointer-events-auto data-[closing=true]:opacity-0 min-[980px]:hidden"
+  data-header-dropdown-overlay
+  data-open="false"
+  data-closing="false"
+  aria-hidden="true"
+></div>
 
 <div
   class="fixed inset-0 z-90 bg-[rgba(0,0,0,0.52)] opacity-0 backdrop-blur-[12px] transition-[opacity,backdrop-filter] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] pointer-events-none data-[open=true]:opacity-100 data-[open=true]:pointer-events-auto data-[closing=true]:opacity-0 min-[980px]:hidden"
