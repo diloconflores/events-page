@@ -89,6 +89,7 @@ En la plataforma hay dos bento grids, estas acciones aplicarán para ambos.
 [x] Al final del todo deberá esta un boton en color blanco con texto negro y una flecha a la derecha. El boton debera tener `rounded-full`
 [x] El alto de la sección deberá corresponder exactamente al alto del contenido no más
 [x] El contenido deberá estar separado de arriba y abajo por `72px` desde los bordes superior e inferior.
+[x] Hagamos un cambio en esta sección. Hagamos que el contenido este separado de la imagen. Pongamos la imagen del lado izquierdo y el contenido a la derecha. El contenido debería ocupar 2 tercios del ancho de la pantalla y en el espacio restante deberá estar la imagen. El contenedor debe estar del mismo ancho que el resto de contenedores. Y la imagen debe seguir la misma linea visual del resto.
 
 ### Así trabajamos
 
