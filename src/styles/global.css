@@ -48,6 +48,10 @@ body.modal-open {
   scrollbar-width: none;
 }
 
+body.modal-open {
+  padding-right: var(--scrollbar-width, 0px);
+}
+
 html.modal-open::-webkit-scrollbar,
 body.modal-open::-webkit-scrollbar {
   display: none;

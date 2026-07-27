@@ -68,6 +68,7 @@ En la plataforma hay dos bento grids, estas acciones aplicarán para ambos.
 [x] En modo mobile el modal debera poder contar con scroll ya que puede irse mas abajo del alto del dispositivo.
 [x] Los botones de prev y next deberán ahora estar por encima de la imagen pero respetando estar a los laterales correspondientes. El boton de cerrar deberá colorcarse en la esquina superior derecha de la imagen mientras que el contador que antes estaba en esta esquina moverse a la esquina inferiror derecha.
 [x] En modo mobile se deberá poder avanzar o retroceder en el carrouse con solo hacer swipe con el dedo sobre la pantalla.
+[x] Al momento de abrir el modal el scrollbar desaparece y eso hace que la pagina cambie de composición. Esto ya lo habiamos resuelto.
 
 ### Por qué elegirnos.
 
