@@ -2,76 +2,66 @@ export function getProcessSectionScript(): string {
   return `
     const root = document.querySelector("[data-process-section]");
 
-    if (!root) {
-      return;
-    }
+    if (root instanceof HTMLElement) {
+      const items = Array.from(root.querySelectorAll("[data-process-item]")).filter(
+        (item) => item instanceof HTMLElement,
+      );
+      const titles = items
+        .map((item) => item.querySelector("h3"))
+        .filter((title) => title instanceof HTMLElement);
 
-    const items = Array.from(root.querySelectorAll("[data-process-item]"));
+      if (items.length && titles.length === items.length) {
+        let rafId = 0;
 
-    if (!items.length) {
-      return;
-    }
+        const getActiveIndex = () => {
+          const activationLine = window.innerHeight / 2;
+          let activeIndex = 0;
 
-    let rafId = 0;
+          titles.forEach((title, index) => {
+            const rect = title.getBoundingClientRect();
 
-    const getActiveIndex = () => {
-      const activationLine = Math.max(window.innerHeight * 0.35, 180);
-      let activeIndex = -1;
+            if (rect.top <= activationLine) {
+              activeIndex = index;
+            }
+          });
 
-      items.forEach((item, index) => {
-        if (!(item instanceof HTMLElement)) {
-          return;
-        }
+          return activeIndex;
+        };
 
-        const rect = item.getBoundingClientRect();
+        const syncItemStates = () => {
+          rafId = 0;
 
-        if (rect.top <= activationLine) {
-          activeIndex = index;
-        }
-      });
+          const activeIndex = getActiveIndex();
 
-      return activeIndex;
-    };
+          items.forEach((item, index) => {
+            if (index < activeIndex) {
+              item.dataset.state = "past";
+              return;
+            }
 
-    const syncItemStates = () => {
-      rafId = 0;
+            if (index === activeIndex) {
+              item.dataset.state = "active";
+              return;
+            }
 
-      const activeIndex = getActiveIndex();
+            item.dataset.state = "inactive";
+          });
+        };
 
-      items.forEach((item, index) => {
-        if (!(item instanceof HTMLElement)) {
-          return;
-        }
+        const scheduleSync = () => {
+          if (rafId) {
+            return;
+          }
 
-        if (activeIndex < 0) {
-          item.dataset.state = "inactive";
-          return;
-        }
+          rafId = window.requestAnimationFrame(syncItemStates);
+        };
 
-        if (index < activeIndex) {
-          item.dataset.state = "past";
-          return;
-        }
-
-        if (index === activeIndex) {
-          item.dataset.state = "active";
-          return;
-        }
-
-        item.dataset.state = "inactive";
-      });
-    };
-
-    const scheduleSync = () => {
-      if (rafId) {
-        return;
+        syncItemStates();
+        window.addEventListener("scroll", scheduleSync, { passive: true });
+        document.addEventListener("scroll", scheduleSync, { passive: true, capture: true });
+        window.addEventListener("resize", scheduleSync);
+        window.addEventListener("load", scheduleSync);
       }
-
-      rafId = window.requestAnimationFrame(syncItemStates);
-    };
-
-    syncItemStates();
-    window.addEventListener("scroll", scheduleSync, { passive: true });
-    window.addEventListener("resize", scheduleSync);
+    }
   `;
 }
