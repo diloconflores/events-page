@@ -2,6 +2,7 @@
 import Button from "../../atoms/Button/index.astro";
 import Icon from "../../atoms/Icon/index.astro";
 import CompleteService from "../../organisms/CompleteService/index.astro";
+import AlliancesSection from "../../organisms/AlliancesSection/index.astro";
 import BentoGrid from "../../organisms/BentoGrid/index.astro";
 import InspirationSection from "../../organisms/InspirationSection/index.astro";
 import Hero from "../../organisms/Hero/index.astro";
@@ -13,7 +14,7 @@ import ShopProductCard from "../../molecules/ShopProductCard/index.astro";
 import { getBentoGridSeoTags } from "../../organisms/BentoGrid/logic";
 import { getEventLandingScript } from "./scripts";
 import type { EventLandingProps } from "./types";
-import { EVENT_FORM_ACTION, OCCASIONS_URL, SHOP_URL } from "./constants";
+import { EVENT_FORM_ACTION, SHOP_URL } from "./constants";
 
 const { locale, content, common } = Astro.props as EventLandingProps;
 const galleryItems = content.gallery.items.map((item) => ({
@@ -49,49 +50,9 @@ const galleryItems = content.gallery.items.map((item) => ({
 
   <ProcessSection content={content.process} />
 
-<section id="alliances" class="bg-brand-pink-soft py-20 sm:py-24">
-    <div class="mx-auto w-full max-w-310 px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-end">
-        <div>
-          <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
-            {content.alliances.kicker}
-          </p>
-          <h2 class="max-w-3xl font-sans text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
-            {content.alliances.title}
-          </h2>
-        </div>
-        <p class="max-w-2xl text-base leading-8 text-brand-muted sm:text-lg">
-          {content.alliances.text}
-        </p>
-      </div>
+  <AlliancesSection content={content.alliances} />
 
-      <div class="mt-10 grid gap-4">
-        <a
-          href={OCCASIONS_URL}
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-          class="group rounded-4xl border border-brand-line bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-glow"
-          data-analytics-event="cta_click"
-          data-analytics-name="bodas_com_mx"
-          data-analytics-location="alliances"
-        >
-          <div class="flex items-center justify-between gap-4">
-            <div>
-              <p class="text-[0.68rem] font-extrabold uppercase tracking-[0.28em] text-brand-pink">
-                {content.alliances.label}
-              </p>
-              <h3 class="mt-3 text-2xl font-semibold tracking-tight text-brand-ink">
-                {content.alliances.copy}
-              </h3>
-            </div>
-            <Icon name="star" class="h-6 w-6 text-brand-pink transition group-hover:scale-110" />
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-<section id="gallery" class="bg-brand-cream py-20 sm:py-24">
+  <section id="gallery" class="bg-brand-cream py-20 sm:py-24">
     <div class="mx-auto w-full max-w-310 px-4 sm:px-6 lg:px-8">
       <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-end">
         <div>
