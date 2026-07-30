@@ -241,8 +241,19 @@
     "kicker": "Partnerships",
     "title": "Relationships that add value to every celebration.",
     "text": "We collaborate with professionals, venues and platforms that share our commitment to detail and well-coordinated service.",
-    "label": "Bodas.com.mx",
-    "copy": "A platform specialized in connecting couples with wedding professionals."
+    "items": [
+      {
+        "label": "Bodas.com.mx",
+        "copy": "A platform specialized in connecting couples with wedding professionals.",
+        "href": "https://www.bodas.com.mx",
+        "logo": {
+          "src": "https://www.bodas.com.mx/images/sellos/Sello-bodasmx--gg433162.png",
+          "alt": "Bodas.com.mx",
+          "width": 180,
+          "height": 48
+        }
+      }
+    ]
   },
   "gallery": {
     "kicker": "Gallery",

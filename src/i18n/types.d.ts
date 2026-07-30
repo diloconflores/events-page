@@ -60,6 +60,18 @@ export interface ProcessStepContent {
   readonly description: string;
 }
 
+export interface AllianceCardContent {
+  readonly label: string;
+  readonly copy: string;
+  readonly href: string;
+  readonly logo: {
+    readonly src: string;
+    readonly alt: string;
+    readonly width: number;
+    readonly height: number;
+  };
+}
+
 export interface ShopProductContent {
   readonly url: string;
   readonly title: string;
@@ -149,8 +161,7 @@ export interface LandingPageContent {
     readonly kicker: string;
     readonly title: string;
     readonly text: string;
-    readonly label: string;
-    readonly copy: string;
+    readonly items: readonly AllianceCardContent[];
   };
   readonly gallery: {
     readonly kicker: string;

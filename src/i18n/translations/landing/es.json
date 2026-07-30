@@ -241,8 +241,19 @@
     "kicker": "Alianzas",
     "title": "Relaciones que suman a cada celebración.",
     "text": "Colaboramos con profesionales, espacios y plataformas que comparten nuestro compromiso con los detalles y una atención bien coordinada.",
-    "label": "Bodas.com.mx",
-    "copy": "Una plataforma especializada en conectar parejas con profesionales para su boda."
+    "items": [
+      {
+        "label": "Bodas.com.mx",
+        "copy": "Una plataforma especializada en conectar parejas con profesionales para su boda.",
+        "href": "https://www.bodas.com.mx",
+        "logo": {
+          "src": "https://www.bodas.com.mx/images/sellos/Sello-bodasmx--gg433162.png",
+          "alt": "Bodas.com.mx",
+          "width": 180,
+          "height": 48
+        }
+      }
+    ]
   },
   "gallery": {
     "kicker": "Galería",
