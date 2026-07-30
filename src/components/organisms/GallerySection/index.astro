@@ -1,0 +1,46 @@
+---
+import BentoGrid from "../BentoGrid/index.astro";
+import { getBentoGridSeoTags } from "../BentoGrid/logic";
+import { GALLERY_SECTION_ID } from "./constants";
+import type { GallerySectionProps } from "./types";
+
+const props = Astro.props as GallerySectionProps;
+const galleryItems = props.content.items.map((item) => ({
+  src: item.src,
+  thumbnail: item.thumbnail ?? item.src,
+  width: item.width ?? 1280,
+  height: item.height ?? 1600,
+  alt: item.alt,
+  caption: item.caption,
+  title: item.title,
+  subtitle: item.subtitle,
+  description: item.description ?? item.caption,
+  tags: item.tags ?? getBentoGridSeoTags(props.locale, item),
+}));
+---
+
+<section id={GALLERY_SECTION_ID} class="bg-brand-pink-soft py-[88px] min-[700px]:py-[120px]">
+  <div class="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
+    <div class="mb-[44px] grid gap-4">
+      <div class="max-w-[830px]">
+        <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
+          {props.content.kicker}
+        </p>
+        <h2 class="font-sans text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
+          {props.content.title}
+        </h2>
+      </div>
+      <p class="max-w-[760px] text-base leading-8 text-brand-muted sm:text-lg">
+        {props.content.text}
+      </p>
+    </div>
+
+    <BentoGrid
+      items={galleryItems}
+      maxColumns={3}
+      variant="gallery"
+      maxVisibleItems={props.content.visibleCount}
+      class="mt-10"
+    />
+  </div>
+</section>
