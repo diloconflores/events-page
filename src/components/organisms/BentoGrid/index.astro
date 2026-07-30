@@ -25,6 +25,7 @@ const variant = props.variant ?? "album";
 
 <div
   data-media-grid={variant}
+  data-media-items={JSON.stringify(props.items)}
   class={cn("relative", props.class)}
   aria-live="polite"
 >
@@ -55,11 +56,13 @@ const variant = props.variant ?? "album";
             aria-label={`Abrir ${item.title}`}
           >
             <img
-              src={item.src}
+              src={item.thumbnail ?? item.src}
               alt={item.alt}
               width={item.width}
               height={item.height}
               loading="lazy"
+              decoding="async"
+              fetchpriority="low"
               class="block h-auto w-full scale-[1.01] transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]"
             />
 

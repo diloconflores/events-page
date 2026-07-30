@@ -51,10 +51,44 @@ export function getBentoGridScript(): string {
       return \`\${words.slice(0, maxWords).join(" ")}…\`;
     };
 
+    const parseItems = (value) => {
+      if (!value) return [];
+
+      try {
+        const parsed = JSON.parse(value);
+
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
+      }
+    };
+
+    const normalizeItem = (item, index) => ({
+      index,
+      src: item?.src ?? "",
+      thumbnail: item?.thumbnail ?? "",
+      width: Number(item?.width ?? "0"),
+      height: Number(item?.height ?? "0"),
+      alt: item?.alt ?? "",
+      caption: item?.caption ?? "",
+      title: item?.title ?? "",
+      subtitle: item?.subtitle ?? "",
+      description: item?.description ?? "",
+      details: item?.details ?? "",
+      tag: item?.tag ?? "",
+      tags: Array.isArray(item?.tags) ? item.tags : [],
+    });
+
     document.querySelectorAll("[data-media-grid]").forEach((root) => {
       if (!(root instanceof HTMLElement)) {
         return;
       }
+
+      if (root.dataset.mediaGridInitialized === "true") {
+        return;
+      }
+
+      root.dataset.mediaGridInitialized = "true";
 
       const cards = Array.from(root.querySelectorAll("[data-media-group]")).filter((item) => item instanceof HTMLButtonElement);
       const gridVariant = root.dataset.mediaGrid === "gallery" ? "gallery" : "album";
@@ -76,27 +110,28 @@ export function getBentoGridScript(): string {
       const lightboxNextButtons = Array.from(root.querySelectorAll("[data-lightbox-next]"));
       const lightboxCloseButtons = Array.from(root.querySelectorAll("[data-lightbox-close]"));
 
-      const items = cards.map((trigger, index) => ({
-        index,
-        src: trigger.dataset.mediaSrc ?? "",
-        thumbnail: trigger.dataset.mediaThumbnail ?? "",
-        width: Number(trigger.dataset.mediaWidth ?? "0"),
-        height: Number(trigger.dataset.mediaHeight ?? "0"),
-        alt: trigger.dataset.mediaAlt ?? "",
-        caption: trigger.dataset.mediaCaption ?? "",
-        title: trigger.dataset.mediaTitle ?? "",
-        subtitle: trigger.dataset.mediaSubtitle ?? "",
-        description: trigger.dataset.mediaDescription ?? "",
-        details: trigger.dataset.mediaDetails ?? "",
-        tag: trigger.dataset.mediaTag ?? "",
-        tags: (() => {
-          try {
-            return JSON.parse(trigger.dataset.mediaTags ?? "[]");
-          } catch {
-            return [];
-          }
-        })(),
-      }));
+      const itemsFromData = parseItems(root.dataset.mediaItems).map((item, index) => normalizeItem(item, index));
+      const items = itemsFromData.length
+        ? itemsFromData
+        : cards.map((trigger, index) =>
+            normalizeItem(
+              {
+                src: trigger.dataset.mediaSrc ?? "",
+                thumbnail: trigger.dataset.mediaThumbnail ?? "",
+                width: trigger.dataset.mediaWidth ?? "0",
+                height: trigger.dataset.mediaHeight ?? "0",
+                alt: trigger.dataset.mediaAlt ?? "",
+                caption: trigger.dataset.mediaCaption ?? "",
+                title: trigger.dataset.mediaTitle ?? "",
+                subtitle: trigger.dataset.mediaSubtitle ?? "",
+                description: trigger.dataset.mediaDescription ?? "",
+                details: trigger.dataset.mediaDetails ?? "",
+                tag: trigger.dataset.mediaTag ?? "",
+                tags: parseItems(trigger.dataset.mediaTags),
+              },
+              index,
+            ),
+          );
 
       if (!items.length) {
         return;
