@@ -3,7 +3,7 @@ import Button from "../../atoms/Button/index.astro";
 import Icon from "../../atoms/Icon/index.astro";
 import CompleteService from "../../organisms/CompleteService/index.astro";
 import AlliancesSection from "../../organisms/AlliancesSection/index.astro";
-import BentoGrid from "../../organisms/BentoGrid/index.astro";
+import GallerySection from "../../organisms/GallerySection/index.astro";
 import InspirationSection from "../../organisms/InspirationSection/index.astro";
 import Hero from "../../organisms/Hero/index.astro";
 import Header from "../../organisms/Header/index.astro";
@@ -11,24 +11,11 @@ import ProcessSection from "../../organisms/ProcessSection/index.astro";
 import WhyUsSection from "../../organisms/WhyUsSection/index.astro";
 import WhatsAppButton from "../../organisms/WhatsAppButton/index.astro";
 import ShopProductCard from "../../molecules/ShopProductCard/index.astro";
-import { getBentoGridSeoTags } from "../../organisms/BentoGrid/logic";
 import { getEventLandingScript } from "./scripts";
 import type { EventLandingProps } from "./types";
 import { EVENT_FORM_ACTION, SHOP_URL } from "./constants";
 
 const { locale, content, common } = Astro.props as EventLandingProps;
-const galleryItems = content.gallery.items.map((item) => ({
-  src: item.src,
-  thumbnail: item.thumbnail ?? item.src,
-  width: item.width ?? 1280,
-  height: item.height ?? 1600,
-  alt: item.alt,
-  caption: item.caption,
-  title: item.title,
-  subtitle: item.subtitle,
-  description: item.caption,
-  tags: getBentoGridSeoTags(locale, item),
-}));
 ---
 
 <a
@@ -52,25 +39,7 @@ const galleryItems = content.gallery.items.map((item) => ({
 
   <AlliancesSection content={content.alliances} />
 
-  <section id="gallery" class="bg-brand-cream py-20 sm:py-24">
-    <div class="mx-auto w-full max-w-310 px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-end">
-        <div>
-          <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
-            {content.gallery.kicker}
-          </p>
-          <h2 class="max-w-4xl font-sans text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
-            {content.gallery.title}
-          </h2>
-        </div>
-        <p class="max-w-2xl text-base leading-8 text-brand-muted sm:text-lg">
-          {content.gallery.text}
-        </p>
-      </div>
-
-      <BentoGrid items={galleryItems} maxColumns={3} variant="gallery" maxVisibleItems={content.gallery.visibleCount} class="mt-10" />
-    </div>
-  </section>
+  <GallerySection locale={locale} content={content.gallery} />
 
   <section id="quote" class="bg-white py-20 sm:py-24">
     <div class="mx-auto grid w-full max-w-310 gap-8 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
