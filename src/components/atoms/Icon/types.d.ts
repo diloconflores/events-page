@@ -12,7 +12,8 @@ export type IconName =
   | "plus"
   | "check"
   | "send"
-  | "sparkles";
+  | "sparkles"
+  | "lock";
 
 export interface IconProps {
   readonly name: IconName;
