@@ -24,6 +24,7 @@ const describedBy = getSelectDescribedBy(id, helperText, errorText, invalid);
 const trailingIcon = trailingIconProp ?? "chevron-down";
 const hasLeadingIcon = leadingIcon !== undefined;
 const hasTrailingIcon = trailingIcon !== undefined;
+const isRequired = Boolean(attributes.required);
 ---
 
 <div class={cn("grid gap-2", className)}>
@@ -31,6 +32,7 @@ const hasTrailingIcon = trailingIcon !== undefined;
     label ? (
       <label class={cn("text-sm font-semibold text-brand-ink", labelClassName)} for={id}>
         {label}
+        {isRequired ? <span class="ml-1 text-[#e45b63]">*</span> : null}
       </label>
     ) : null
   }
