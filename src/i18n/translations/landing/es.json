@@ -513,78 +513,61 @@
       "Celebración",
       "Diseño",
       "Propuesta",
-      "Tus datos"
+      "Contacto"
     ],
     "steps": [
       {
-        "legend": "Hablemos de tu celebración",
-        "copy": "Todo gran evento comienza con una idea. Cuéntanos un poco sobre la celebración que estás imaginando."
+        "legend": "Comencemos por tu celebración",
+        "copy": "Toda gran celebración comienza con una idea. Cuéntanos qué estás planeando y cuándo será para empezar a imaginar una propuesta pensada especialmente para ti."
       },
       {
-        "legend": "Sigamos con la escala",
-        "copy": "Con esta información entendemos mejor el tamaño y la ubicación de tu celebración."
+        "legend": "Conozcamos tu evento",
+        "copy": "Ahora queremos entender un poco mejor el contexto de tu celebración: el número de invitados, el municipio donde se realizará y si ya cuentas con un salón para tu evento."
       },
       {
-        "legend": "¿Ya cuentas con un salón?",
-        "copy": "Si ya tienes lugar, nos ayuda a revisar mejor la logística y los espacios disponibles."
+        "legend": "Empecemos a diseñar",
+        "copy": "Selecciona los espacios o elementos que te gustaría decorar. Esto nos ayudará a dimensionar el alcance del proyecto desde el inicio."
       },
       {
-        "legend": "Diseñemos algo único",
-        "copy": "Queremos conocer los espacios que quieres intervenir para empezar a imaginar una propuesta a tu medida."
+        "legend": "La celebración que imaginas",
+        "copy": "No necesitas tener todo definido. Queremos conocer el estilo, las referencias y la atmósfera que imaginas para crear una propuesta que refleje tu personalidad."
       },
       {
-        "legend": "Tu estilo visual",
-        "copy": "Ahora hablemos de la atmósfera que imaginas y qué tanto acompañamiento necesitas para definirla."
+        "legend": "Personalicemos tu propuesta",
+        "copy": "Conocer tu presupuesto y cualquier detalle adicional nos permitirá preparar una propuesta personalizada, alineada con tus expectativas y las características de tu celebración."
       },
       {
-        "legend": "Los colores del evento",
-        "copy": "Si ya tienes una paleta en mente, aquí la anotamos. Si no, nosotros la podemos proponer contigo."
-      },
-      {
-        "legend": "Cuéntanos tu idea",
-        "copy": "Cuéntanos cómo imaginas tu evento, qué ambiente te gustaría crear o cualquier detalle que consideres importante."
-      },
-      {
-        "legend": "Afinemos la propuesta",
-        "copy": "Con esta información podremos preparar una propuesta mucho más cercana a lo que estás buscando."
-      },
-      {
-        "legend": "Información adicional",
-        "copy": "Si hay algo más que debamos saber, cuéntanoslo aquí."
-      },
-      {
-        "legend": "Tus datos",
-        "copy": "Ya casi terminamos. Solo necesitamos tus datos para enviarte tu propuesta personalizada."
+        "legend": "Ya casi terminamos",
+        "copy": "Solo necesitamos tus datos para enviarte tu propuesta personalizada y ponernos en contacto contigo para dar seguimiento a tu celebración."
       }
     ],
     "labels": {
-      "eventType": "¿Qué tipo de evento estás planeando? *",
-      "eventDate": "¿Cuándo será tu evento? *",
-      "guestCount": "¿Cuántos invitados esperas aproximadamente? *",
-      "municipality": "¿En qué municipio se realizará tu evento? *",
-      "municipalityOther": "Escribe el nombre del municipio *",
-      "venue": "¿Ya cuentas con un salón o lugar para tu evento? *",
-      "venueName": "¿Cuál es el nombre del salón o lugar?",
-      "spaces": "¿Qué espacios o elementos te gustaría decorar? *",
-      "integralSpaces": "Si eliges decoración integral, ¿qué espacios incluirá tu evento? *",
-      "ideaState": "¿Qué tan definida está tu idea? *",
-      "style": "¿Cómo imaginas la decoración de tu evento? *",
-      "styleOther": "Escribe cómo imaginas la decoración de tu evento *",
-      "colors": "¿Hay algún color o combinación de colores que te gustaría utilizar?",
-      "ideaText": "Cuéntanos un poco sobre lo que tienes en mente. *",
-      "inspirationUrl": "¿Tienes alguna fotografía o inspiración que quieras compartir?",
-      "budget": "¿Cuál es el presupuesto aproximado destinado a la decoración floral? *",
-      "source": "¿Cómo conociste Dilo con Flores?",
-      "additionalInfo": "¿Hay algo más que debamos saber? (Opcional)",
-      "contactName": "¿Con quién tendremos el gusto? *",
-      "contactPhone": "¿Cuál es tu teléfono o WhatsApp? *",
-      "contactEmail": "¿Cuál es tu correo electrónico? *",
-      "preferredContact": "¿Cómo prefieres que nos comuniquemos contigo? *",
-      "privacy": "Acepto que Dilo con Flores utilice esta información para contactarme sobre mi solicitud. *"
+      "eventType": "¿Qué tipo de evento estás planeando?",
+      "eventDate": "¿Cuándo será tu evento?",
+      "guestCount": "¿Cuántos invitados esperas aproximadamente?",
+      "municipality": "¿En qué municipio se realizará tu evento?",
+      "municipalityOther": "Escribe el nombre del municipio (si aplica)",
+      "venue": "¿Ya cuentas con un salón para tu evento?",
+      "venueName": "¿Cuál es el nombre del salón? (si aplica)",
+      "spaces": "¿Qué espacios o elementos te gustaría decorar?",
+      "integralSpaces": "Si eliges decoración integral, ¿qué espacios incluirá tu evento?",
+      "ideaState": "¿Qué tan definida está tu idea?",
+      "style": "¿Qué estilo describe mejor la celebración que imaginas? (si aplica)",
+      "styleOther": "Describe brevemente el estilo (si aplica)",
+      "colors": "¿Hay alguna paleta de colores que te inspire?",
+      "ideaText": "Cuéntanos un poco sobre la celebración que imaginas.",
+      "inspirationUrl": "¿Tienes algún tablero de Pinterest, fotografía o inspiración que quieras compartir?",
+      "budget": "¿Qué inversión aproximada tienes contemplada para la decoración floral?",
+      "additionalInfo": "¿Hay algo más que debamos saber sobre tu celebración?",
+      "contactName": "¿Con quién tendremos el gusto?",
+      "contactPhone": "¿Cuál es tu teléfono o WhatsApp?",
+      "contactEmail": "¿Cuál es tu correo electrónico?",
+      "privacy": "Acepto que Dilo con Flores utilice esta información para contactarme sobre mi solicitud.",
+      "privacyNotice": "Tus datos se utilizarán únicamente para atender esta solicitud."
     },
     "placeholders": {
       "municipalityOther": "Ej. Cadereyta Jiménez",
-      "venueName": "Opcional",
+      "venueName": "Nombre del salón",
       "styleOther": "Cuéntanos el estilo que tienes en mente",
       "colors": "Ej. Blanco y verde, tonos pastel, terracota, vino, etc.",
       "ideaText": "Cuéntanos cómo imaginas tu evento, qué ambiente te gustaría crear o cualquier detalle que consideres importante. Entre más nos compartas, mejor podremos preparar una propuesta pensada especialmente para ti.",
@@ -696,7 +679,7 @@
         },
         {
           "label": "🕒 No, todavía no tengo salón",
-          "value": "Buscando"
+          "value": "No, todavía no tengo salón"
         }
       ],
       "spaces": [
@@ -753,15 +736,15 @@
       ],
       "ideaStates": [
         {
-          "label": "🌟 Ya tengo una idea muy clara de lo que quiero.",
+          "label": "Ya tengo una idea muy clara",
           "value": "clara"
         },
         {
-          "label": "🌿 Tengo algunas referencias, pero me gustaría recibir asesoría para definirla.",
+          "label": "Tengo algunas referencias pero me gustaría recibir asesoría para definirla.",
           "value": "referencias"
         },
         {
-          "label": "🤍 Aún no tengo una idea; me gustaría que ustedes me orientaran y propusieran opciones.",
+          "label": "Aún no tengo una idea; me gustaría que ustedes me orientaran y propusieran opciones.",
           "value": "sin_idea"
         }
       ],
@@ -801,72 +784,24 @@
           "value": "Aún no lo tengo definido; necesito orientación"
         },
         {
-          "label": "Menos de $15,000 MXN",
-          "value": "Menos de $15,000 MXN"
+          "label": "Menos de $20,000 MXN",
+          "value": "Menos de $20,000 MXN"
         },
         {
-          "label": "$15,000 a $30,000 MXN",
-          "value": "$15,000 a $30,000 MXN"
+          "label": "$20,000 a $40,000 MXN",
+          "value": "$20,000 a $40,000 MXN"
         },
         {
-          "label": "$30,001 a $60,000 MXN",
-          "value": "$30,001 a $60,000 MXN"
+          "label": "$40,001 a $70,000 MXN",
+          "value": "$40,001 a $70,000 MXN"
         },
         {
-          "label": "$60,001 a $100,000 MXN",
-          "value": "$60,001 a $100,000 MXN"
+          "label": "$70,001 a $120,000 MXN",
+          "value": "$70,001 a $120,000 MXN"
         },
         {
-          "label": "Más de $100,000 MXN",
-          "value": "Más de $100,000 MXN"
-        }
-      ],
-      "sources": [
-        {
-          "label": "Google",
-          "value": "Google"
-        },
-        {
-          "label": "Instagram",
-          "value": "Instagram"
-        },
-        {
-          "label": "Facebook",
-          "value": "Facebook"
-        },
-        {
-          "label": "TikTok",
-          "value": "TikTok"
-        },
-        {
-          "label": "Bodas.com.mx",
-          "value": "Bodas.com.mx"
-        },
-        {
-          "label": "Recomendación de un familiar o amigo",
-          "value": "Recomendación de un familiar o amigo"
-        },
-        {
-          "label": "Ya había trabajado con ustedes",
-          "value": "Ya había trabajado con ustedes"
-        },
-        {
-          "label": "Otro",
-          "value": "Otro"
-        }
-      ],
-      "preferredContacts": [
-        {
-          "label": "📱 WhatsApp",
-          "value": "WhatsApp"
-        },
-        {
-          "label": "📞 Llamada telefónica",
-          "value": "Llamada telefónica"
-        },
-        {
-          "label": "✉️ Correo electrónico",
-          "value": "Correo electrónico"
+          "label": "Más de $120,000 MXN",
+          "value": "Más de $120,000 MXN"
         }
       ]
     },
@@ -886,11 +821,9 @@
       "ideaText": "Cuéntanos un poco más; escribe al menos 20 caracteres.",
       "inspirationUrl": "Escribe una URL válida que comience con http:// o https://.",
       "budget": "Selecciona una opción de presupuesto.",
-      "source": "Selecciona una opción.",
       "contactName": "Escribe tu nombre completo.",
       "contactPhone": "Escribe un teléfono de al menos 10 dígitos.",
       "contactEmail": "Escribe un correo electrónico válido.",
-      "preferredContact": "Selecciona una forma de contacto.",
       "privacy": "Debes aceptar para poder enviar la solicitud.",
       "errorTitle": "No pudimos enviar tu solicitud.",
       "errorBody": "Revisa tu conexión e inténtalo nuevamente. Tus datos permanecen en el formulario.",

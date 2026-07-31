@@ -196,12 +196,10 @@ export interface LandingPageContent {
       readonly ideaText: string;
       readonly inspirationUrl: string;
       readonly budget: string;
-      readonly source: string;
       readonly additionalInfo: string;
       readonly contactName: string;
       readonly contactPhone: string;
       readonly contactEmail: string;
-      readonly preferredContact: string;
       readonly privacy: string;
     };
     readonly placeholders: {
@@ -226,8 +224,6 @@ export interface LandingPageContent {
       readonly ideaStates: readonly FormOptionContent[];
       readonly styles: readonly FormOptionContent[];
       readonly budgets: readonly FormOptionContent[];
-      readonly sources: readonly FormOptionContent[];
-      readonly preferredContacts: readonly FormOptionContent[];
     };
     readonly messages: {
       readonly typeEvent: string;
@@ -245,12 +241,11 @@ export interface LandingPageContent {
       readonly ideaText: string;
       readonly inspirationUrl: string;
       readonly budget: string;
-      readonly source: string;
       readonly contactName: string;
       readonly contactPhone: string;
       readonly contactEmail: string;
-      readonly preferredContact: string;
       readonly privacy: string;
+      readonly privacyNotice: string;
       readonly errorTitle: string;
       readonly errorBody: string;
       readonly successKicker: string;

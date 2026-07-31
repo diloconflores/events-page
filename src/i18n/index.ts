@@ -28,8 +28,8 @@ const homeMetadata: Record<LocaleCode, HomeMetadata> = {
 };
 
 const landingContent: Record<LocaleCode, LandingPageContent> = {
-  es: landingEs as LandingPageContent,
-  en: landingEn as LandingPageContent,
+  es: landingEs as unknown as LandingPageContent,
+  en: landingEn as unknown as LandingPageContent,
 };
 
 const routeMaps: Record<LocaleCode, RouteDictionary> = {

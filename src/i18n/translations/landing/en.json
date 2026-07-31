@@ -513,78 +513,61 @@
       "Celebration",
       "Design",
       "Proposal",
-      "Your details"
+      "Contact"
     ],
     "steps": [
       {
-        "legend": "Let's talk about your celebration",
-        "copy": "Every great event starts with an idea. Tell us a bit about the celebration you are imagining."
+        "legend": "Let's begin with your celebration",
+        "copy": "Every great celebration starts with an idea. Tell us what you are planning and when it will happen so we can start imagining a proposal made especially for you."
       },
       {
-        "legend": "Let's continue with the scale",
-        "copy": "This information helps us understand the size and location of your celebration."
+        "legend": "Let's get to know your event",
+        "copy": "Now we want to better understand the context of your celebration: the number of guests, the municipality where it will take place and whether you already have a venue for your event."
       },
       {
-        "legend": "Do you already have a venue?",
-        "copy": "If you already have a venue, it helps us review logistics and available spaces."
+        "legend": "Let's start designing",
+        "copy": "Select the spaces or elements you would like to decorate. This will help us understand the scope of the project from the start."
       },
       {
-        "legend": "Let's design something unique",
-        "copy": "We want to know the spaces you want to decorate so we can start imagining a proposal tailored to you."
+        "legend": "The celebration you imagine",
+        "copy": "You do not need to have everything defined. We want to understand the style, references and atmosphere you imagine so we can create a proposal that reflects your personality."
       },
       {
-        "legend": "Your visual style",
-        "copy": "Now let's talk about the atmosphere you imagine and how much guidance you need to define it."
+        "legend": "Let's personalize your proposal",
+        "copy": "Knowing your budget and any additional details will allow us to prepare a personalized proposal aligned with your expectations and your celebration."
       },
       {
-        "legend": "The colors of the event",
-        "copy": "If you already have a palette in mind, we will note it here. If not, we can propose one with you."
-      },
-      {
-        "legend": "Tell us your idea",
-        "copy": "Tell us how you imagine your event, what atmosphere you want to create or any detail you think is important."
-      },
-      {
-        "legend": "Let's refine the proposal",
-        "copy": "With this information we can prepare a proposal much closer to what you are looking for."
-      },
-      {
-        "legend": "Additional information",
-        "copy": "If there is anything else we should know, tell us here."
-      },
-      {
-        "legend": "Your details",
-        "copy": "We are almost done. We just need your details to send your personalized proposal."
+        "legend": "We are almost done",
+        "copy": "We only need your details to send your personalized proposal and get in touch with you to follow up on your celebration."
       }
     ],
     "labels": {
-      "eventType": "What type of event are you planning? *",
-      "eventDate": "When will your event take place? *",
-      "guestCount": "About how many guests are you expecting? *",
-      "municipality": "In which municipality will your event take place? *",
-      "municipalityOther": "Enter the municipality name *",
-      "venue": "Do you already have a venue for your event? *",
-      "venueName": "What is the venue name?",
-      "spaces": "Which spaces or elements would you like to decorate? *",
-      "integralSpaces": "If you choose full decoration, which spaces will your event include? *",
-      "ideaState": "How defined is your idea? *",
-      "style": "How do you imagine the event decor? *",
-      "styleOther": "Describe how you imagine the event decor *",
-      "colors": "Is there a color or color combination you would like to use?",
-      "ideaText": "Tell us a little about what you have in mind. *",
-      "inspirationUrl": "Do you have a photo or inspiration you want to share?",
-      "budget": "What is the approximate budget for the floral decor? *",
-      "source": "How did you hear about Dilo con Flores?",
-      "additionalInfo": "Anything else we should know? (Optional)",
-      "contactName": "Who will we have the pleasure of speaking with? *",
-      "contactPhone": "What is your phone number or WhatsApp? *",
-      "contactEmail": "What is your email address? *",
-      "preferredContact": "How do you prefer we contact you? *",
-      "privacy": "I agree that Dilo con Flores may use this information to contact me about my request. *"
+      "eventType": "What type of event are you planning?",
+      "eventDate": "When will your event take place?",
+      "guestCount": "About how many guests are you expecting?",
+      "municipality": "In which municipality will your event take place?",
+      "municipalityOther": "Enter the municipality name (if applicable)",
+      "venue": "Do you already have a venue for your event?",
+      "venueName": "What is the venue name? (if applicable)",
+      "spaces": "Which spaces or elements would you like to decorate?",
+      "integralSpaces": "If you choose full decoration, which spaces will your event include?",
+      "ideaState": "How defined is your idea?",
+      "style": "Which style best describes the celebration you imagine? (if applicable)",
+      "styleOther": "Describe briefly the style (if applicable)",
+      "colors": "Is there a color palette that inspires you?",
+      "ideaText": "Tell us a little about the celebration you imagine.",
+      "inspirationUrl": "Do you have a Pinterest board, photo or inspiration you'd like to share?",
+      "budget": "What approximate investment do you have in mind for the floral decoration?",
+      "additionalInfo": "Anything else we should know about your celebration?",
+      "contactName": "Who will we have the pleasure of speaking with?",
+      "contactPhone": "What is your phone number or WhatsApp?",
+      "contactEmail": "What is your email address?",
+      "privacy": "I agree that Dilo con Flores may use this information to contact me about my request.",
+      "privacyNotice": "Your data will only be used to handle this request."
     },
     "placeholders": {
       "municipalityOther": "e.g. Cadereyta Jiménez",
-      "venueName": "Optional",
+      "venueName": "Venue name",
       "styleOther": "Tell us the style you have in mind",
       "colors": "e.g. White and green, pastel tones, terracotta, wine, etc.",
       "ideaText": "Tell us how you imagine your event, what atmosphere you would like to create or any detail that matters. The more you share, the better we can prepare a proposal made especially for you.",
@@ -696,7 +679,7 @@
         },
         {
           "label": "🕒 No, not yet",
-          "value": "Looking"
+          "value": "No, not yet"
         }
       ],
       "spaces": [
@@ -753,15 +736,15 @@
       ],
       "ideaStates": [
         {
-          "label": "🌟 I already have a very clear idea of what I want.",
+          "label": "I already have a very clear idea",
           "value": "clara"
         },
         {
-          "label": "🌿 I have some references, but I would like guidance to define it.",
+          "label": "I have some references but I would like guidance to define it.",
           "value": "referencias"
         },
         {
-          "label": "🤍 I do not yet have an idea; I would like you to guide me and suggest options.",
+          "label": "I do not yet have an idea; I would like you to guide me and suggest options.",
           "value": "sin_idea"
         }
       ],
@@ -801,72 +784,24 @@
           "value": "Not defined yet; I need guidance"
         },
         {
-          "label": "Less than $15,000 MXN",
-          "value": "Less than $15,000 MXN"
+          "label": "Less than $20,000 MXN",
+          "value": "Less than $20,000 MXN"
         },
         {
-          "label": "$15,000 to $30,000 MXN",
-          "value": "$15,000 to $30,000 MXN"
+          "label": "$20,000 to $40,000 MXN",
+          "value": "$20,000 to $40,000 MXN"
         },
         {
-          "label": "$30,001 to $60,000 MXN",
-          "value": "$30,001 to $60,000 MXN"
+          "label": "$40,001 to $70,000 MXN",
+          "value": "$40,001 to $70,000 MXN"
         },
         {
-          "label": "$60,001 to $100,000 MXN",
-          "value": "$60,001 to $100,000 MXN"
+          "label": "$70,001 to $120,000 MXN",
+          "value": "$70,001 to $120,000 MXN"
         },
         {
-          "label": "More than $100,000 MXN",
-          "value": "More than $100,000 MXN"
-        }
-      ],
-      "sources": [
-        {
-          "label": "Google",
-          "value": "Google"
-        },
-        {
-          "label": "Instagram",
-          "value": "Instagram"
-        },
-        {
-          "label": "Facebook",
-          "value": "Facebook"
-        },
-        {
-          "label": "TikTok",
-          "value": "TikTok"
-        },
-        {
-          "label": "Bodas.com.mx",
-          "value": "Bodas.com.mx"
-        },
-        {
-          "label": "Recommendation from family or friend",
-          "value": "Recommendation from family or friend"
-        },
-        {
-          "label": "I have worked with you before",
-          "value": "I have worked with you before"
-        },
-        {
-          "label": "Other",
-          "value": "Other"
-        }
-      ],
-      "preferredContacts": [
-        {
-          "label": "📱 WhatsApp",
-          "value": "WhatsApp"
-        },
-        {
-          "label": "📞 Phone call",
-          "value": "Phone call"
-        },
-        {
-          "label": "✉️ Email",
-          "value": "Email"
+          "label": "More than $120,000 MXN",
+          "value": "More than $120,000 MXN"
         }
       ]
     },
@@ -886,11 +821,9 @@
       "ideaText": "Tell us a bit more; write at least 20 characters.",
       "inspirationUrl": "Enter a valid URL starting with http:// or https://.",
       "budget": "Select a budget option.",
-      "source": "Select an option.",
       "contactName": "Enter your full name.",
       "contactPhone": "Enter a phone number with at least 10 digits.",
       "contactEmail": "Enter a valid email address.",
-      "preferredContact": "Select a contact method.",
       "privacy": "You must accept to send the request.",
       "errorTitle": "We could not send your request.",
       "errorBody": "Check your connection and try again. Your data remains in the form.",
