@@ -1,0 +1,54 @@
+---
+import { cn } from "../../../utils/cn";
+import { getCheckboxDescribedBy, getCheckboxId } from "./logic";
+import type { CheckboxProps } from "./types";
+
+const {
+  class: className = "",
+  inputClass: inputClassName = "",
+  labelClass: labelClassName = "",
+  helperClass: helperClassName = "",
+  errorClass: errorClassName = "",
+  invalid = false,
+  label,
+  helperText,
+  errorText,
+  id: providedId,
+  ...attributes
+} = Astro.props as CheckboxProps;
+const id = getCheckboxId({ id: providedId, name: attributes.name });
+const describedBy = getCheckboxDescribedBy(id, helperText, errorText, invalid);
+---
+
+<label class={cn("grid gap-2 rounded-[18px] border border-brand-line bg-white px-4 py-3 text-brand-ink transition-[border-color,background-color] duration-200 has-[:checked]:border-brand-pink has-[:checked]:bg-brand-pink-soft", className)}>
+  <span class={cn("flex items-start gap-3", labelClassName)}>
+    <input
+      id={id}
+      type="checkbox"
+      aria-invalid={invalid ? "true" : undefined}
+      aria-describedby={describedBy}
+      class={cn(
+        "mt-1 h-4 w-4 shrink-0 rounded border-brand-line accent-brand-pink focus:ring-brand-pink disabled:cursor-not-allowed disabled:opacity-60",
+        invalid && "border-[#e45b63] focus:ring-[#e45b63]",
+        inputClassName,
+      )}
+      {...attributes}
+    />
+
+    <span class="grid gap-1">
+      <span class="text-sm font-semibold leading-6 text-brand-ink">
+        <slot>{label}</slot>
+      </span>
+      {helperText ? (
+        <span id={`${id}-helper`} class={cn("text-[11px] leading-5 text-brand-muted", helperClassName)}>
+          {helperText}
+        </span>
+      ) : null}
+      {errorText ? (
+        <span id={`${id}-error`} hidden={!invalid} class={cn("text-[11px] font-medium leading-5 text-[#b42318]", errorClassName)}>
+          {errorText}
+        </span>
+      ) : null}
+    </span>
+  </span>
+</label>
