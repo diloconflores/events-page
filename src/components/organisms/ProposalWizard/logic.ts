@@ -1,8 +1,9 @@
 import dayjs from "dayjs";
-import type { LocaleCode, LandingPageContent } from "../../../i18n/types";
+import type { LocaleCode } from "../../../i18n/types";
 import type {
   WizardField,
   WizardSchema,
+  WizardStep,
 } from "../Wizard/types";
 import type { ProposalWizardContent } from "./types";
 
@@ -37,20 +38,58 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
   const styleOtherValue = getLocaleStyleOtherValue(locale);
   const minimumEventDate = dayjs().startOf("day").add(30, "day").format("YYYY-MM-DD");
 
-  const fields: readonly WizardField[] = [
+  const steps: readonly WizardStep[] = [
     {
-      kind: "input",
-      name: "eventDate",
-      label: content.labels.eventDate,
-      errorText: content.messages.dateEvent,
-      required: true,
-      step: 0,
+      id: "step-1",
+      legend: content.steps[0]?.legend ?? "",
+      copy: content.steps[0]?.copy,
       order: 0,
-      type: "date",
-      validation: {
-        min: minimumEventDate,
-      },
+      phaseIndex: 0,
+      tabTitle: content.progress[0] ?? "",
     },
+    {
+      id: "step-2",
+      legend: content.steps[1]?.legend ?? "",
+      copy: content.steps[1]?.copy,
+      order: 1,
+      phaseIndex: 0,
+      tabTitle: content.progress[0] ?? "",
+    },
+    {
+      id: "step-3",
+      legend: content.steps[2]?.legend ?? "",
+      copy: content.steps[2]?.copy,
+      order: 2,
+      phaseIndex: 1,
+      tabTitle: content.progress[1] ?? "",
+    },
+    {
+      id: "step-4",
+      legend: content.steps[3]?.legend ?? "",
+      copy: content.steps[3]?.copy,
+      order: 3,
+      phaseIndex: 1,
+      tabTitle: content.progress[1] ?? "",
+    },
+    {
+      id: "step-5",
+      legend: content.steps[4]?.legend ?? "",
+      copy: content.steps[4]?.copy,
+      order: 4,
+      phaseIndex: 2,
+      tabTitle: content.progress[2] ?? "",
+    },
+    {
+      id: "step-6",
+      legend: content.steps[5]?.legend ?? "",
+      copy: content.steps[5]?.copy,
+      order: 5,
+      phaseIndex: 3,
+      tabTitle: content.progress[3] ?? "",
+    },
+  ];
+
+  const fields: readonly WizardField[] = [
     {
       kind: "select",
       name: "eventType",
@@ -59,8 +98,21 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       errorText: content.messages.typeEvent,
       required: true,
       step: 0,
-      order: 1,
+      order: 0,
       options: content.options.eventTypes,
+    },
+    {
+      kind: "input",
+      name: "eventDate",
+      label: content.labels.eventDate,
+      errorText: content.messages.dateEvent,
+      required: true,
+      step: 0,
+      order: 1,
+      type: "date",
+      validation: {
+        min: minimumEventDate,
+      },
     },
     {
       kind: "select",
@@ -135,7 +187,7 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       name: "spaces",
       label: content.labels.spaces,
       errorText: content.messages.spaces,
-      helperText: content.steps[3]?.copy,
+      helperText: content.steps[2]?.copy,
       required: true,
       step: 3,
       order: 0,
@@ -171,7 +223,7 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       placeholder: content.messages.ideaState,
       errorText: content.messages.ideaState,
       required: true,
-      step: 4,
+      step: 3,
       order: 0,
       options: content.options.ideaStates,
     },
@@ -182,13 +234,13 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       placeholder: content.messages.style,
       errorText: content.messages.style,
       required: true,
-      step: 4,
+      step: 3,
       order: 1,
       showWhen: [
         {
           field: "ideaState",
-          operator: "includes",
-          value: ["clara", "referencias"],
+          operator: "notEquals",
+          value: "sin_idea",
         },
       ],
       options: content.options.styles,
@@ -200,7 +252,7 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       placeholder: content.placeholders.styleOther,
       errorText: content.messages.styleOther,
       required: true,
-      step: 4,
+      step: 3,
       order: 2,
       showWhen: [
         {
@@ -215,19 +267,19 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       name: "colors",
       label: content.labels.colors,
       placeholder: content.placeholders.colors,
-      step: 5,
-      order: 0,
+      step: 3,
+      order: 3,
     },
     {
       kind: "textarea",
       name: "ideaText",
       label: content.labels.ideaText,
-      helperText: content.steps[6]?.copy,
+      helperText: content.steps[3]?.copy,
       placeholder: content.placeholders.ideaText,
       errorText: content.messages.ideaText,
       required: true,
-      step: 6,
-      order: 0,
+      step: 3,
+      order: 4,
       rows: 6,
       validation: {
         minLength: 20,
@@ -239,8 +291,8 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       label: content.labels.inspirationUrl,
       placeholder: content.placeholders.inspirationUrl,
       errorText: content.messages.inspirationUrl,
-      step: 6,
-      order: 1,
+      step: 3,
+      order: 5,
       type: "url",
     },
     {
@@ -250,26 +302,17 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       placeholder: content.messages.budget,
       errorText: content.messages.budget,
       required: true,
-      step: 7,
+      step: 4,
       order: 0,
       options: content.options.budgets,
-    },
-    {
-      kind: "select",
-      name: "source",
-      label: content.labels.source,
-      placeholder: content.messages.source,
-      step: 7,
-      order: 1,
-      options: content.options.sources,
     },
     {
       kind: "textarea",
       name: "additionalInfo",
       label: content.labels.additionalInfo,
       placeholder: content.placeholders.additionalInfo,
-      step: 8,
-      order: 0,
+      step: 4,
+      order: 1,
       rows: 5,
     },
     {
@@ -280,7 +323,7 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       errorText: content.messages.contactName,
       required: true,
       autocomplete: "name",
-      step: 9,
+      step: 5,
       order: 0,
     },
     {
@@ -292,7 +335,7 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       required: true,
       autocomplete: "tel",
       type: "tel",
-      step: 9,
+      step: 5,
       order: 1,
       validation: {
         minLength: 10,
@@ -307,19 +350,8 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       required: true,
       autocomplete: "email",
       type: "email",
-      step: 9,
+      step: 5,
       order: 2,
-    },
-    {
-      kind: "select",
-      name: "preferredContact",
-      label: content.labels.preferredContact,
-      placeholder: content.messages.preferredContact,
-      errorText: content.messages.preferredContact,
-      required: true,
-      step: 9,
-      order: 3,
-      options: content.options.preferredContacts,
     },
     {
       kind: "checkbox",
@@ -328,7 +360,16 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
       value: "Sí",
       errorText: content.messages.privacy,
       required: true,
-      step: 9,
+      step: 5,
+      order: 3,
+    },
+    {
+      kind: "text",
+      name: "privacyNotice",
+      label: content.messages.privacyNotice,
+      text: content.messages.privacyNotice,
+      icon: "lock",
+      step: 5,
       order: 4,
     },
   ];
@@ -336,12 +377,7 @@ export function getProposalWizardSchema(content: ProposalWizardContent, locale: 
   return {
     formId: "event-form",
     progress: content.progress,
-    steps: content.steps.map((step, index) => ({
-      id: `step-${index + 1}`,
-      legend: step.legend,
-      copy: step.copy,
-      order: index,
-    })),
+    steps,
     fields,
     controls: {
       previous: content.messages.previous,

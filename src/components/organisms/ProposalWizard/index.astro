@@ -1,5 +1,4 @@
 ---
-import { cn } from "../../../utils/cn";
 import Wizard from "../Wizard/index.astro";
 import { getProposalWizardSchema } from "./logic";
 import type { ProposalWizardProps } from "./types";
@@ -11,7 +10,7 @@ const schema = getProposalWizardSchema(content, props.locale);
 
 <div
   data-proposal-wizard
-  class={cn("form-card rounded-[40px] border border-[rgba(232,223,227,.9)] bg-[linear-gradient(180deg,#fff,rgba(255,255,255,.96))] p-5 shadow-[0_24px_60px_rgba(34,16,24,.08)]", props.class)}
+  class={props.class}
 >
   <Wizard schema={schema} action={props.action} locale={props.locale} />
 </div>
