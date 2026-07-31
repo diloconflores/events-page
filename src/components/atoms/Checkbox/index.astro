@@ -18,6 +18,7 @@ const {
 } = Astro.props as CheckboxProps;
 const id = getCheckboxId({ id: providedId, name: attributes.name });
 const describedBy = getCheckboxDescribedBy(id, helperText, errorText, invalid);
+const isRequired = Boolean(attributes.required);
 ---
 
 <label class={cn("grid gap-2 rounded-[18px] border border-brand-line bg-white px-4 py-3 text-brand-ink transition-[border-color,background-color] duration-200 has-[:checked]:border-brand-pink has-[:checked]:bg-brand-pink-soft", className)}>
@@ -38,6 +39,7 @@ const describedBy = getCheckboxDescribedBy(id, helperText, errorText, invalid);
     <span class="grid gap-1">
       <span class="text-sm font-semibold leading-6 text-brand-ink">
         <slot>{label}</slot>
+        {isRequired ? <span class="ml-1 text-[#e45b63]">*</span> : null}
       </span>
       {helperText ? (
         <span id={`${id}-helper`} class={cn("text-[11px] leading-5 text-brand-muted", helperClassName)}>
