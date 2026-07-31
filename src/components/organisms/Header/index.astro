@@ -36,7 +36,7 @@ const brandMenuItems = [
 ---
 
 <header
-  class="[--header-height:78px] fixed inset-x-0 top-0 z-100 flex h-19.5 items-center justify-between px-4 text-white transition-[height,color,background-color,border-color,backdrop-filter] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] data-[scrolled=true]:h-[68px] data-[scrolled=true]:border-b data-[scrolled=true]:border-line data-[scrolled=true]:bg-[rgba(251,248,246,0.94)] data-[scrolled=true]:text-ink data-[scrolled=true]:backdrop-blur-[16px] min-[980px]:h-[88px] min-[980px]:px-8 min-[980px]:[--header-height:88px]"
+  class="[--header-height:78px] fixed inset-x-0 top-0 z-100 flex h-19.5 items-center justify-between px-4 text-white transition-[height,color,background-color,border-color,backdrop-filter] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] data-[scrolled=true]:h-[68px] data-[scrolled=true]:border-b data-[scrolled=true]:border-line data-[scrolled=true]:bg-[rgba(251,248,246,0.94)] data-[scrolled=true]:text-ink data-[scrolled=true]:backdrop-blur-[16px] min-[980px]:fixed min-[980px]:h-[88px] min-[980px]:px-8 min-[980px]:[--header-height:88px]"
   data-header
   data-scrolled="false"
 >
@@ -95,7 +95,7 @@ const brandMenuItems = [
 
   <nav
     id={mobileMenuId}
-    class="fixed right-0 top-[var(--header-height,78px)] z-95 flex h-[calc(100dvh-var(--header-height,78px))] w-[90vw] translate-x-full flex-col gap-3 border-0 bg-transparent px-5 pb-8 pt-6 text-ink shadow-none backdrop-blur-0 opacity-0 transition-[transform,translate,opacity] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] data-[open=true]:translate-x-0 data-[open=true]:opacity-100 data-[closing=true]:translate-x-full data-[closing=true]:opacity-0 max-[979px]:border-l max-[979px]:border-line max-[979px]:bg-[rgba(251,248,246,0.96)] max-[979px]:backdrop-blur-[18px] min-[980px]:static min-[980px]:inset-auto min-[980px]:ml-auto min-[980px]:h-auto min-[980px]:w-auto min-[980px]:translate-x-0 min-[980px]:flex-row min-[980px]:items-center min-[980px]:gap-6 min-[980px]:px-0 min-[980px]:py-0 min-[980px]:text-inherit min-[980px]:opacity-100"
+    class="fixed right-0 top-[var(--header-height,78px)] z-95 flex h-[calc(100dvh-var(--header-height,78px))] w-[90vw] translate-x-full flex-col gap-3 border-0 bg-transparent px-5 pb-8 pt-6 text-ink shadow-none backdrop-blur-0 opacity-0 transition-[transform,translate,opacity] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] data-[open=true]:translate-x-0 data-[open=true]:opacity-100 data-[closing=true]:translate-x-full data-[closing=true]:opacity-0 max-[979px]:border-l max-[979px]:border-line max-[979px]:bg-[rgba(251,248,246,0.96)] max-[979px]:backdrop-blur-[18px] min-[980px]:relative min-[980px]:inset-auto min-[980px]:ml-auto min-[980px]:h-auto min-[980px]:w-auto min-[980px]:translate-x-0 min-[980px]:flex-row min-[980px]:items-center min-[980px]:gap-6 min-[980px]:px-0 min-[980px]:py-0 min-[980px]:text-inherit min-[980px]:opacity-100"
     data-nav
     data-open="false"
     data-closing="false"
@@ -104,7 +104,7 @@ const brandMenuItems = [
     <Button
       href="#service"
       ghost
-      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
+      class="relative z-10 border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="service"
       data-analytics-location="header_nav"
@@ -113,7 +113,7 @@ const brandMenuItems = [
     <Button
       href="#inspiration"
       ghost
-      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
+      class="relative z-10 border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="inspiration"
       data-analytics-location="header_nav"
@@ -122,7 +122,7 @@ const brandMenuItems = [
     <Button
       href="#why-us"
       ghost
-      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
+      class="relative z-10 border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="why_us"
       data-analytics-location="header_nav"
@@ -131,7 +131,7 @@ const brandMenuItems = [
     <Button
       href="#process"
       ghost
-      class="border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
+      class="relative z-10 border-b border-line py-4 text-[18px] font-medium tracking-tight text-ink transition-colors hover:text-pink data-[active=true]:text-pink! min-[980px]:border-0 min-[980px]:py-0 min-[980px]:font-sans min-[980px]:text-[12px] min-[980px]:font-semibold min-[980px]:text-inherit"
       data-analytics-event="cta_click"
       data-analytics-name="process"
       data-analytics-location="header_nav"
@@ -149,6 +149,12 @@ const brandMenuItems = [
       {content.nav.cta}
     </Button>
   </nav>
+
+  <span
+    aria-hidden="true"
+    class="pointer-events-none hidden h-[4px] rounded-full bg-brand-pink opacity-0 transition-[width,transform,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] min-[980px]:absolute min-[980px]:bottom-0 min-[980px]:left-0 min-[980px]:block min-[980px]:shadow-[0_0_0_1px_rgba(231,35,113,0.08)]"
+    data-header-nav-indicator
+  ></span>
 </header>
 
 <div

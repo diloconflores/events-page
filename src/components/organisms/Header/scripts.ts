@@ -176,7 +176,7 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
           return;
         }
 
-        const navRect = nav.getBoundingClientRect();
+        const navRect = header.getBoundingClientRect();
         const linkRect = activeLink.getBoundingClientRect();
         const left = Math.max(0, linkRect.left - navRect.left);
 
@@ -207,7 +207,16 @@ export function getHeaderScript(options: HeaderScriptOptions): string {
       const getCurrentActiveState = () => {
         const pathname = normalizePath(window.location.pathname);
         const sectionId = getCurrentSectionId();
-        const sectionMatch = navTargets.find((entry) => entry.kind === "section" && entry.target instanceof HTMLElement && entry.target.id === sectionId);
+        const sectionMatch = navTargets.find((entry) => {
+          if (entry.kind !== "section" || !(entry.target instanceof HTMLElement) || entry.target.id !== sectionId) {
+            return false;
+          }
+
+          const offset = header instanceof HTMLElement ? header.offsetHeight + 56 : 56;
+          const rect = entry.target.getBoundingClientRect();
+
+          return rect.top <= offset && rect.bottom > offset;
+        });
 
         if (sectionMatch instanceof Object && "link" in sectionMatch) {
           const href = sectionMatch.link.getAttribute("href");
