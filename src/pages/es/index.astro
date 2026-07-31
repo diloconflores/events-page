@@ -1,0 +1,23 @@
+---
+const redirectPath = "/";
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth bg-cream text-ink">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="refresh" content={`0; url=${redirectPath}`} />
+    <link rel="canonical" href={redirectPath} />
+    <title>Redirigiendo...</title>
+    <script is:inline>
+      window.location.replace("/");
+    </script>
+  </head>
+  <body class="min-h-screen bg-cream font-sans antialiased">
+    <main class="flex min-h-screen items-center justify-center px-6 py-16">
+      <p class="text-sm font-medium text-muted">Redirigiendo a la versión en español...</p>
+    </main>
+  </body>
+</html>

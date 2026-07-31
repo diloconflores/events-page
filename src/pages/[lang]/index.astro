@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout/index.astro";
 import EventLanding from "../../components/templates/EventLanding/index.astro";
 import {
+  defaultLocale,
   getCommonTranslations,
   getLandingContent,
   getLocalizedPath,
@@ -9,11 +10,13 @@ import {
 } from "../../i18n";
 
 export function getStaticPaths() {
-  return supportedLocales.filter((locale) => locale.enabled).map((locale) => ({
-    params: {
-      lang: locale.code,
-    },
-  }));
+  return supportedLocales
+    .filter((locale) => locale.enabled && locale.code !== defaultLocale)
+    .map((locale) => ({
+      params: {
+        lang: locale.code,
+      },
+    }));
 }
 
 const locale = Astro.params.lang;

@@ -49,6 +49,7 @@ Reglas:
 
 - El idioma por defecto es español.
 - La URL raíz actúa como fallback en español.
+- La ruta `/es/` debe redirigir a `/` por compatibilidad.
 - Las rutas por idioma se resuelven con wildcard a nivel de idioma.
 - Las rutas traducidas siguen centralizadas en `src/i18n/routes`.
 
@@ -204,9 +205,17 @@ Las páginas deben seguir:
 src/pages/
 
 ├── index.astro
+├── es/
+│   └── index.astro
 └── [lang]/
     └── index.astro
 ```
+
+Reglas:
+
+- `src/pages/index.astro` representa la versión principal en español.
+- `src/pages/es/index.astro` debe existir solo como compatibilidad y redirigir a `/`.
+- `src/pages/[lang]/index.astro` debe generar únicamente idiomas no default.
 
 ---
 

@@ -1,23 +1,14 @@
 ---
-const redirectPath = "/es/";
+import BaseLayout from "../layouts/BaseLayout/index.astro";
+import EventLanding from "../components/templates/EventLanding/index.astro";
+import { defaultLocale, getCommonTranslations, getLandingContent, getLocalizedPath } from "../i18n";
+
+const locale = defaultLocale;
+const common = getCommonTranslations(locale);
+const content = getLandingContent(locale);
+const canonicalPath = getLocalizedPath(locale);
 ---
 
-<!doctype html>
-<html lang="es" class="scroll-smooth bg-cream text-ink">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta http-equiv="refresh" content={`0; url=${redirectPath}`} />
-    <link rel="canonical" href={redirectPath} />
-    <title>Redirigiendo...</title>
-    <script is:inline>
-      window.location.replace("/es/");
-    </script>
-  </head>
-  <body class="min-h-screen bg-cream font-sans antialiased">
-    <main class="flex min-h-screen items-center justify-center px-6 py-16">
-      <p class="text-sm font-medium text-muted">Redirigiendo a la versión en español...</p>
-    </main>
-  </body>
-</html>
+<BaseLayout locale={locale} title={content.metadata.title} description={content.metadata.description} canonicalPath={canonicalPath} route="home">
+  <EventLanding locale={locale} content={content} common={common} />
+</BaseLayout>

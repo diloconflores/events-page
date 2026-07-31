@@ -80,6 +80,11 @@ export interface ResolvedLocalizedRoute {
   readonly slug: string | null;
 }
 
+export interface LocalizedPathSource {
+  readonly search?: string;
+  readonly hash?: string;
+}
+
 export function resolveLocalizedRoute(path: string | undefined): ResolvedLocalizedRoute {
   const segments = path?.split("/").filter(Boolean) ?? [];
   const firstSegment = segments[0];
@@ -103,16 +108,17 @@ export function resolveLocalizedRoute(path: string | undefined): ResolvedLocaliz
   };
 }
 
-export function getLocalizedPath(locale: string, route: RouteKey = "home"): string {
+export function getLocalizedPath(locale: string, route: RouteKey = "home", source?: LocalizedPathSource): string {
   const resolvedLocale = resolveLocale(locale);
+  const suffix = `${source?.search ?? ""}${source?.hash ?? ""}`;
 
   if (route === "home") {
-    return `/${resolvedLocale}/`;
+    return resolvedLocale === defaultLocale ? `/${suffix}` : `/${resolvedLocale}/${suffix}`;
   }
 
   const slug = getRouteSlug(resolvedLocale, route);
 
-  return `/${resolvedLocale}/${slug}/`;
+  return resolvedLocale === defaultLocale ? `/${slug}/${suffix}` : `/${resolvedLocale}/${slug}/${suffix}`;
 }
 
 export function getAlternateLocalePaths(route: RouteKey = "home"): Array<{ code: LocaleCode; href: string }> {
