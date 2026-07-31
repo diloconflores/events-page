@@ -138,3 +138,8 @@ titile: Tú disfrutas. Nosotros nos ocupamos del resto.
 subtitle: Nuestro trabajo es que tú solo tengas que vivir el momento.
 description: Llegamos con anticipación para realizar el montaje, supervisar cada espacio y asegurarnos de que todo luzca como fue planeado. Coordinamos los últimos detalles antes de que lleguen tus invitados para que puedas disfrutar con la tranquilidad de saber que todo está bajo control.
 ```
+
+### Solicita tu propuesta
+
+[x] Los 4 tabs no deben ser cliqueables.
+[x] No funciona el boton continuar
