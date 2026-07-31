@@ -1,0 +1,264 @@
+---
+import Button from "../../atoms/Button/index.astro";
+import Checkbox from "../../atoms/Checkbox/index.astro";
+import Input from "../../atoms/Input/index.astro";
+import Radio from "../../atoms/Radio/index.astro";
+import Select from "../../atoms/Select/index.astro";
+import Textarea from "../../atoms/Textarea/index.astro";
+import { cn } from "../../../utils/cn";
+import { getWizardFieldsForStep, getWizardFieldId, getWizardSteps } from "./logic";
+import { getWizardScript } from "./scripts";
+import type { WizardField, WizardProps } from "./types";
+
+const props = Astro.props as WizardProps;
+const schema = props.schema;
+const steps = getWizardSteps(schema);
+const stepNumber = (index: number): string => String(index + 1).padStart(2, "0");
+
+const isVisible = (field: WizardField): boolean => true;
+---
+
+<div
+  data-wizard-root
+  class={cn("form-card rounded-[40px] border border-[rgba(232,223,227,.9)] bg-[linear-gradient(180deg,#fff,rgba(255,255,255,.96))] p-5 shadow-[0_24px_60px_rgba(34,16,24,.08)]", props.class)}
+>
+  <form
+    id={schema.formId}
+    action={props.action}
+    method="POST"
+    novalidate
+    class="grid gap-6"
+    data-wizard-form
+    data-analytics-form={schema.analytics.formName}
+    data-analytics-location={schema.analytics.location}
+    data-locale={props.locale}
+    data-submit-label={schema.controls.submit}
+    data-loading-label={schema.controls.loading}
+  >
+    {schema.hiddenFields?.map((field) => <input type="hidden" name={field.name} value={field.value} />)}
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" />
+
+    <div class="grid gap-[14px] pt-[2px] pb-[6px]">
+      <p class="text-[12px] font-bold uppercase tracking-[0.14em] text-brand-pink">
+        {schema.progress[0]}
+      </p>
+      <div class="h-[4px] overflow-hidden rounded-full bg-[#efe6ea]" aria-hidden="true">
+        <span data-wizard-progress class="block h-full w-0 rounded-full bg-[linear-gradient(90deg,#e72371,#ff7ba9)] transition-[width] duration-300 ease-[cubic-bezier(.22,.72,.2,1)]" />
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {schema.progress.map((label, index) => (
+          <button
+            type="button"
+            disabled
+            aria-disabled="true"
+            class="group inline-flex items-center gap-2 rounded-full border border-brand-line bg-white px-3 py-[9px] text-[11px] font-bold text-brand-muted transition-[transform,border-color,background-color,color,box-shadow] duration-[200ms] ease-[cubic-bezier(.22,.72,.2,1)] hover:-translate-y-0.5 hover:border-brand-pink hover:bg-brand-pink-soft hover:text-brand-pink focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[rgba(231,35,113,.09)] disabled:cursor-not-allowed disabled:opacity-60 data-[active=true]:border-brand-pink data-[active=true]:bg-brand-pink-soft data-[active=true]:text-brand-pink data-[active=true]:opacity-100 data-[past=true]:opacity-70"
+            data-wizard-jump={index}
+            data-active={index === 0 ? "true" : "false"}
+            data-past="false"
+          >
+            <span class="grid h-[22px] w-[22px] place-items-center rounded-full bg-brand-cream text-[10px] text-brand-ink transition-colors duration-[200ms] ease-[cubic-bezier(.22,.72,.2,1)] group-data-[active=true]:bg-brand-pink group-data-[active=true]:text-white group-data-[past=true]:bg-[#f3eef0] group-data-[past=true]:text-[#9d9297]">
+              {index + 1}
+            </span>
+            {label}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="grid gap-6">
+      {steps.map((step, stepIndex) => (
+        <fieldset class="grid gap-4" data-wizard-step data-wizard-step-legend={step.legend} hidden={stepIndex !== 0}>
+          <legend class="mb-[14px] flex w-full items-center gap-3 border-b border-brand-line pb-[14px] text-[clamp(1.02rem,1.8vw,1.25rem)] leading-[1.1] text-brand-ink">
+            <span class="text-[11px] font-bold text-brand-pink">{stepNumber(stepIndex)}</span> {step.legend}
+          </legend>
+          {step.copy ? <p class="max-w-[62ch] text-[0.93rem] leading-7 text-brand-muted">{step.copy}</p> : null}
+
+          <div class="grid gap-4">
+            {getWizardFieldsForStep(schema, step.order).map((field) => {
+              const fieldId = getWizardFieldId(schema, field);
+              const validation = field.validation ? JSON.stringify(field.validation) : undefined;
+              const conditions = field.showWhen ? JSON.stringify(field.showWhen) : undefined;
+              const wrapperCommon = {
+                "data-wizard-field": true,
+                "data-wizard-field-id": fieldId,
+                "data-wizard-field-kind": field.kind,
+                "data-wizard-field-required": field.required ? "true" : "false",
+                "data-wizard-field-validation": validation,
+                "data-wizard-show-when": conditions,
+              } as const;
+
+              if (field.kind === "input") {
+                return (
+                  <div {...wrapperCommon}>
+                    <Input
+                      id={fieldId}
+                      name={field.name}
+                      label={field.label}
+                      helperText={field.helperText}
+                      errorText={field.errorText}
+                      invalid={false}
+                      required={field.required}
+                      placeholder={field.placeholder}
+                      autocomplete={field.autocomplete}
+                      type={field.type ?? "text"}
+                      min={field.type === "date" ? field.validation?.min : undefined}
+                      max={field.type === "date" ? field.validation?.max : undefined}
+                      class="w-full"
+                    />
+                  </div>
+                );
+              }
+
+              if (field.kind === "textarea") {
+                return (
+                  <div {...wrapperCommon}>
+                    <Textarea
+                      id={fieldId}
+                      name={field.name}
+                      label={field.label}
+                      helperText={field.helperText}
+                      errorText={field.errorText}
+                      invalid={false}
+                      required={field.required}
+                      placeholder={field.placeholder}
+                      autocomplete={field.autocomplete}
+                      rows={field.rows ?? 5}
+                      class="w-full"
+                    />
+                  </div>
+                );
+              }
+
+              if (field.kind === "select") {
+                return (
+                  <div {...wrapperCommon}>
+                    <Select
+                      id={fieldId}
+                      name={field.name}
+                      label={field.label}
+                      helperText={field.helperText}
+                      errorText={field.errorText}
+                      invalid={false}
+                      required={field.required}
+                      autocomplete={field.autocomplete}
+                      class="w-full"
+                    >
+                      <option value="">{field.placeholder ?? field.label}</option>
+                      {field.options.map((option) => (
+                        <option value={option.value}>{option.label}</option>
+                      ))}
+                    </Select>
+                  </div>
+                );
+              }
+
+              if (field.kind === "radio-group") {
+                return (
+                  <div {...wrapperCommon} class="grid gap-3">
+                    <p class="text-sm font-semibold text-brand-ink">{field.label}</p>
+                    <div class="grid gap-2">
+                      {field.options.map((option) => (
+                        <Radio name={field.name} value={option.value} label={option.label} helperText={option.helperText} required={field.required} />
+                      ))}
+                    </div>
+                    {field.helperText ? <p class="text-[11px] leading-5 text-brand-muted">{field.helperText}</p> : null}
+                    {field.errorText ? (
+                      <p data-wizard-group-error hidden class="text-[11px] font-medium leading-5 text-[#b42318]">
+                        {field.errorText}
+                      </p>
+                    ) : null}
+                  </div>
+                );
+              }
+
+              if (field.kind === "checkbox-group") {
+                return (
+                  <div {...wrapperCommon} class="grid gap-3">
+                    <p class="text-sm font-semibold text-brand-ink">{field.label}</p>
+                    <div class="grid gap-2 sm:grid-cols-2">
+                      {field.options.map((option) => (
+                        <Checkbox
+                          name={`${field.name}[]`}
+                          value={option.value}
+                          label={option.label}
+                          helperText={option.helperText}
+                          required={field.required}
+                        />
+                      ))}
+                    </div>
+                    {field.helperText ? <p class="text-[11px] leading-5 text-brand-muted">{field.helperText}</p> : null}
+                    {field.errorText ? (
+                      <p data-wizard-group-error hidden class="text-[11px] font-medium leading-5 text-[#b42318]">
+                        {field.errorText}
+                      </p>
+                    ) : null}
+                  </div>
+                );
+              }
+
+              return (
+                <div {...wrapperCommon}>
+                  <Checkbox
+                    id={fieldId}
+                    name={field.name}
+                    value={field.value ?? "Sí"}
+                    label={field.label}
+                    helperText={field.helperText}
+                    errorText={field.errorText}
+                    invalid={false}
+                    required={field.required}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </fieldset>
+      ))}
+    </div>
+
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+      <Button type="button" variant="wizard-back" leadingIcon="arrow-left" data-wizard-back hidden>
+        {schema.controls.previous}
+      </Button>
+      <Button type="button" variant="wizard-next" trailingIcon="arrow-right" data-wizard-next>
+        {schema.controls.next}
+      </Button>
+      <button
+        type="submit"
+        class="submit-button hidden min-h-[58px] min-w-[240px] items-center justify-between gap-3 rounded-[18px] bg-pink px-5 py-4 text-sm font-bold text-white shadow-glow transition hover:bg-pink-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink/30"
+        data-wizard-submit
+        disabled
+      >
+        <span data-wizard-submit-label>{schema.controls.submit}</span>
+        <i class="submit-arrow" data-lucide="send"></i>
+        <span data-wizard-submit-spinner class="hidden h-5 w-5 rounded-full border-2 border-white/35 border-t-white" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div class="hidden rounded-[40px] border border-[#f5b7ae] bg-[#fff4f2] p-8 text-center text-[#8e2418]" role="alert" data-wizard-form-error>
+      <strong class="block text-base font-semibold text-brand-ink">
+        {schema.messages.errorTitle}
+      </strong>
+      <p class="mt-3 text-sm leading-7 text-brand-muted">
+        {schema.messages.errorBody}
+      </p>
+    </div>
+  </form>
+
+  <div class="hidden rounded-4xl border border-brand-line bg-brand-surface p-8 text-center shadow-soft" data-wizard-success hidden>
+    <p class="text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
+      {schema.messages.successKicker}
+    </p>
+    <h3 class="mt-4 text-2xl font-semibold tracking-tight text-brand-ink">
+      {schema.messages.successTitle}
+    </h3>
+    <p class="mt-4 text-sm leading-7 text-brand-muted">
+      {schema.messages.successText}
+    </p>
+    <Button type="button" variant="primary" data-wizard-new-request class="mt-6">
+      {schema.messages.successButton}
+    </Button>
+  </div>
+
+  <script type="module" set:html={getWizardScript()} />
+</div>
