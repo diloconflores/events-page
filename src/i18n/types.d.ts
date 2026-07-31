@@ -235,6 +235,7 @@ export interface LandingPageContent {
       readonly guestCount: string;
       readonly municipality: string;
       readonly municipalityOther: string;
+      readonly municipalityOtherHelper: string;
       readonly venue: string;
       readonly spaces: string;
       readonly integralSpaces: string;
@@ -244,6 +245,7 @@ export interface LandingPageContent {
       readonly ideaText: string;
       readonly inspirationUrl: string;
       readonly budget: string;
+      readonly source: string;
       readonly contactName: string;
       readonly contactPhone: string;
       readonly contactEmail: string;

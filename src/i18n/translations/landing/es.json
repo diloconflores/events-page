@@ -245,7 +245,7 @@
       {
         "label": "Bodas.com.mx",
         "copy": "Una plataforma especializada en conectar parejas con profesionales para su boda.",
-        "href": "https://www.bodas.com.mx",
+        "href": "https://www.bodas.com.mx/florerias/dilo-con-flores--e433162",
         "logo": {
           "src": "https://www.bodas.com.mx/images/sellos/Sello-bodasmx--gg433162.png",
           "alt": "Bodas.com.mx",
@@ -876,6 +876,7 @@
       "guestCount": "Selecciona un rango de invitados.",
       "municipality": "Selecciona el municipio del evento.",
       "municipalityOther": "Escribe el nombre del municipio.",
+      "municipalityOtherHelper": "Si nos escribes desde otro estado, agrega municipio y estado.",
       "venue": "Selecciona una opción.",
       "spaces": "Selecciona al menos una opción.",
       "integralSpaces": "Selecciona al menos una opción.",
@@ -885,6 +886,7 @@
       "ideaText": "Cuéntanos un poco más; escribe al menos 20 caracteres.",
       "inspirationUrl": "Escribe una URL válida que comience con http:// o https://.",
       "budget": "Selecciona una opción de presupuesto.",
+      "source": "Selecciona una opción.",
       "contactName": "Escribe tu nombre completo.",
       "contactPhone": "Escribe un teléfono de al menos 10 dígitos.",
       "contactEmail": "Escribe un correo electrónico válido.",
