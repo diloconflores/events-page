@@ -89,10 +89,11 @@ export function getWizardScript(): string {
       const wizardScreens = Array.from(root.querySelectorAll("[data-wizard-step]")).filter((screen) => screen instanceof HTMLElement);
       const wizardBackButtons = Array.from(root.querySelectorAll("[data-wizard-back]")).filter((button) => button instanceof HTMLButtonElement);
       const wizardNextButtons = Array.from(root.querySelectorAll("[data-wizard-next]")).filter((button) => button instanceof HTMLButtonElement);
-      const wizardJumpButtons = Array.from(root.querySelectorAll("[data-wizard-jump]")).filter((button) => button instanceof HTMLButtonElement);
-      const wizardProgress = root.querySelector("[data-wizard-progress]");
+      const activeTabTitle = root.querySelector("[data-wizard-active-tab-title]");
+      const phaseTimelines = Array.from(root.querySelectorAll("[data-wizard-phase-timeline]")).filter((timeline) => timeline instanceof HTMLElement);
       const submitButton = root.querySelector("[data-wizard-submit]");
       const submitLabel = submitButton?.querySelector("[data-wizard-submit-label]");
+      const submitIcon = submitButton?.querySelector("[data-wizard-submit-icon]");
       const submitSpinner = submitButton?.querySelector("[data-wizard-submit-spinner]");
       const formError = root.querySelector("[data-wizard-form-error]");
       const successState = root.querySelector("[data-wizard-success]");
@@ -139,28 +140,58 @@ export function getWizardScript(): string {
         language: String(locale).startsWith("en") ? "en" : "es",
       });
 
-      const updateProgressBar = (stepIndex) => {
-        if (!(wizardProgress instanceof HTMLElement)) {
+      const updatePhaseTimelines = () => {
+        const phaseState = Array.from({ length: phaseTimelines.length }, () => ({
+          completed: 0,
+          total: 0,
+        }));
+
+        wizardScreens.forEach((screen, stepIndex) => {
+          if (!(screen instanceof HTMLElement)) {
+            return;
+          }
+
+          const phaseIndex = Number(screen.dataset.wizardPhaseIndex);
+
+          if (!Number.isFinite(phaseIndex) || phaseIndex < 0 || phaseIndex >= phaseState.length) {
+            return;
+          }
+
+          phaseState[phaseIndex].total += 1;
+
+          if (stepIndex < currentStep) {
+            phaseState[phaseIndex].completed += 1;
+          }
+        });
+
+        phaseTimelines.forEach((timeline, phaseIndex) => {
+          if (!(timeline instanceof HTMLElement)) {
+            return;
+          }
+
+          const fill = timeline.querySelector("[data-wizard-phase-fill]");
+          const progress = phaseState[phaseIndex] || { completed: 0, total: 0 };
+          const ratio = progress.total === 0 ? 0 : progress.completed / progress.total;
+
+          if (fill instanceof HTMLElement) {
+            fill.style.width = String(Math.max(0, Math.min(1, ratio)) * 100) + "%";
+          }
+
+          timeline.dataset.state = ratio >= 1 ? "complete" : ratio > 0 ? "active" : "idle";
+        });
+      };
+
+      const updateActiveTabTitle = (stepIndex) => {
+        if (!(activeTabTitle instanceof HTMLElement)) {
           return;
         }
 
-        const ratio = wizardScreens.length <= 1 ? 1 : (stepIndex + 1) / wizardScreens.length;
-        wizardProgress.style.width = String(Math.max(0, Math.min(1, ratio)) * 100) + "%";
-      };
+        const screen = wizardScreens[stepIndex];
+        const title = screen instanceof HTMLElement ? screen.dataset.wizardTabTitle : "";
 
-      const getActiveChipIndex = (stepIndex) => Math.max(0, Math.min(stepIndex, wizardJumpButtons.length - 1));
-
-      const updateChips = (stepIndex) => {
-        const activeChipIndex = getActiveChipIndex(stepIndex);
-
-        wizardJumpButtons.forEach((button, index) => {
-          const isActive = index === activeChipIndex;
-          const isPast = index < activeChipIndex;
-
-          button.dataset.active = String(isActive);
-          button.dataset.past = String(isPast);
-          button.setAttribute("aria-current", isActive ? "step" : "false");
-        });
+        if (typeof title === "string" && title.length > 0) {
+          activeTabTitle.textContent = title;
+        }
       };
 
       const updateButtons = () => {
@@ -176,6 +207,7 @@ export function getWizardScript(): string {
         });
 
         submitButton.hidden = !isLastStep;
+        submitButton.disabled = !isLastStep;
       };
 
       const updateConditionalFields = () => {
@@ -200,6 +232,8 @@ export function getWizardScript(): string {
             }
           }
         });
+
+        updatePhaseTimelines();
       };
 
       const getVisibleFieldsForStep = (stepIndex) => {
@@ -401,8 +435,8 @@ export function getWizardScript(): string {
 
         updateConditionalFields();
         updateButtons();
-        updateProgressBar(currentStep);
-        updateChips(currentStep);
+        updatePhaseTimelines();
+        updateActiveTabTitle(currentStep);
         trackWizardStepView(currentStep);
       };
 
@@ -449,11 +483,17 @@ export function getWizardScript(): string {
           submitLabel.textContent = loading ? submitLoadingLabel : submitIdleLabel;
         }
 
+        if (submitIcon instanceof HTMLElement) {
+          submitIcon.hidden = loading;
+        }
+
         if (submitSpinner instanceof HTMLElement) {
           submitSpinner.hidden = !loading;
         }
 
-        submitButton.disabled = loading;
+        submitButton.disabled = loading || currentStep !== wizardScreens.length - 1;
+        submitButton.setAttribute("aria-busy", String(loading));
+        submitButton.dataset.wizardState = loading ? "sending" : "idle";
       };
 
       const resetFormState = () => {
@@ -466,6 +506,8 @@ export function getWizardScript(): string {
         formError?.classList.add("hidden");
         if (successState instanceof HTMLElement) {
           successState.hidden = true;
+          successState.classList.add("opacity-0");
+          successState.classList.remove("opacity-100");
         }
         form.hidden = false;
       };
@@ -479,12 +521,6 @@ export function getWizardScript(): string {
       wizardNextButtons.forEach((button) => {
         button.addEventListener("click", () => {
           moveStep(1);
-        });
-      });
-
-      wizardJumpButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          jumpToStep(Number(button.dataset.wizardJump ?? "0"));
         });
       });
 
@@ -526,7 +562,10 @@ export function getWizardScript(): string {
           form.hidden = true;
           if (successState instanceof HTMLElement) {
             successState.hidden = false;
+            successState.classList.remove("opacity-0");
+            successState.classList.add("opacity-100");
           }
+          formError?.classList.add("hidden");
         } catch (error) {
           console.error(error);
           formError?.classList.remove("hidden");

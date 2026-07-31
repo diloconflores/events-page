@@ -1,4 +1,5 @@
 import type { HTMLInputTypeAttribute } from "astro/types";
+import type { IconName } from "../../atoms/Icon/types";
 
 export type WizardConditionOperator = "equals" | "notEquals" | "includes" | "notIncludes" | "exists" | "notExists";
 
@@ -69,19 +70,28 @@ export interface WizardCheckboxGroupField extends WizardFieldBase {
   readonly options: readonly WizardFieldOption[];
 }
 
+export interface WizardTextField extends WizardFieldBase {
+  readonly kind: "text";
+  readonly text: string;
+  readonly icon?: IconName;
+}
+
 export type WizardField =
   | WizardInputField
   | WizardTextareaField
   | WizardSelectField
   | WizardRadioGroupField
   | WizardCheckboxField
-  | WizardCheckboxGroupField;
+  | WizardCheckboxGroupField
+  | WizardTextField;
 
 export interface WizardStep {
   readonly id: string;
   readonly legend: string;
   readonly copy?: string;
   readonly order: number;
+  readonly phaseIndex: number;
+  readonly tabTitle: string;
 }
 
 export interface WizardHiddenField {
