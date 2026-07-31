@@ -1,0 +1,82 @@
+---
+import Icon from "../Icon/index.astro";
+import { cn } from "../../../utils/cn";
+import { getTextareaDescribedBy, getTextareaId } from "./logic";
+import type { TextareaProps } from "./types";
+
+const {
+  class: className = "",
+  textareaClass: textareaClassName = "",
+  labelClass: labelClassName = "",
+  helperClass: helperClassName = "",
+  errorClass: errorClassName = "",
+  invalid = false,
+  label,
+  helperText,
+  errorText,
+  leadingIcon,
+  trailingIcon,
+  id: providedId,
+  rows = 5,
+  ...attributes
+} = Astro.props as TextareaProps;
+const id = getTextareaId({ id: providedId, name: attributes.name });
+const describedBy = getTextareaDescribedBy(id, helperText, errorText, invalid);
+const hasLeadingIcon = leadingIcon !== undefined;
+const hasTrailingIcon = trailingIcon !== undefined;
+---
+
+<div class={cn("grid gap-2", className)}>
+  {
+    label ? (
+      <label class={cn("text-sm font-semibold text-brand-ink", labelClassName)} for={id}>
+        {label}
+      </label>
+    ) : null
+  }
+
+  <div class="relative">
+    {
+      leadingIcon ? (
+        <span class="pointer-events-none absolute left-[14px] top-[14px] grid place-items-center text-brand-muted">
+          <Icon name={leadingIcon} decorative class="h-4 w-4" />
+        </span>
+      ) : null
+    }
+
+    <textarea
+      id={id}
+      rows={rows}
+      aria-invalid={invalid ? "true" : undefined}
+      aria-describedby={describedBy}
+      class={cn(
+        "block w-full rounded-[18px] border border-brand-line bg-white px-[14px] py-[13px] text-sm leading-7 text-brand-ink outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-brand-muted/70 focus:border-brand-pink focus:ring-[3px] focus:ring-[rgba(231,35,113,.09)] disabled:cursor-not-allowed disabled:bg-brand-surface disabled:text-brand-muted",
+        hasLeadingIcon && "pl-11",
+        hasTrailingIcon && "pr-11",
+        invalid && "border-[#e45b63] focus:border-[#e45b63] focus:ring-[3px] focus:ring-[rgba(228,91,99,.12)]",
+        textareaClassName,
+      )}
+      {...attributes}
+    ></textarea>
+
+    {
+      trailingIcon ? (
+        <span class="pointer-events-none absolute right-[14px] top-[14px] grid place-items-center text-brand-muted">
+          <Icon name={trailingIcon} decorative class="h-4 w-4" />
+        </span>
+      ) : null
+    }
+  </div>
+
+  {helperText ? (
+    <p id={`${id}-helper`} class={cn("text-[11px] leading-5 text-brand-muted", helperClassName)}>
+      {helperText}
+    </p>
+  ) : null}
+
+  {errorText ? (
+    <p id={`${id}-error`} hidden={!invalid} class={cn("text-[11px] font-medium leading-5 text-[#b42318]", errorClassName)}>
+      {errorText}
+    </p>
+  ) : null}
+</div>
