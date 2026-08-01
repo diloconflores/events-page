@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
-const siteUrl = process.env.SITE_URL ?? "https://example.com";
+const siteUrl = process.env.SITE_URL ?? "https://eventos.diloconflores.com";
 
 export default defineConfig({
   site: siteUrl,

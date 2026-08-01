@@ -16,7 +16,7 @@ const {
 } = Astro.props as BaseLayoutProps;
 
 const localeConfig = getLocaleConfig(locale);
-const siteUrl = Astro.site ?? new URL("https://example.com");
+const siteUrl = Astro.site ?? new URL("https://eventos.diloconflores.com");
 const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
 const localeAlternates = getAlternateLocalePaths(route);
 const xDefaultUrl = new URL(getLocalizedPath(defaultLocale, route), siteUrl).toString();
