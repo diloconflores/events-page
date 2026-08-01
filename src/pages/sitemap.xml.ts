@@ -2,7 +2,7 @@ import type { APIRoute } from "astro";
 import { getLocalizedPath, supportedLocales } from "../i18n";
 
 export const GET: APIRoute = () => {
-  const siteUrl = import.meta.env.SITE ?? "https://example.com";
+  const siteUrl = import.meta.env.SITE ?? "https://eventos.diloconflores.com";
 
   const urls = supportedLocales
     .map((locale) => {
