@@ -3,8 +3,6 @@
 @import "@fontsource/manrope/500.css";
 @import "@fontsource/manrope/600.css";
 @import "@fontsource/manrope/700.css";
-@import "@fontsource/playfair-display/500.css";
-@import "@fontsource/playfair-display/500-italic.css";
 
 @theme {
   --color-black: #151214;
@@ -31,7 +29,6 @@
   --color-brand-pink-soft: #fff0f6;
 
   --font-sans: "Manrope", Arial, sans-serif;
-  --font-serif: "Playfair Display", Georgia, serif;
 
   --shadow-soft: 0 24px 70px rgba(32, 16, 22, 0.08);
   --shadow-glow: 0 18px 48px rgba(231, 35, 113, 0.18);

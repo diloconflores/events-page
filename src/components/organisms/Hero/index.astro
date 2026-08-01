@@ -1,16 +1,22 @@
 ---
+import { Image } from "astro:assets";
 import Button from "../../atoms/Button/index.astro";
+import heroImage from "../../../assets/images/hero-eventos.webp";
 import type { HeroProps } from "./types";
 
 const { content } = Astro.props as HeroProps;
 ---
 
 <section id="hero" class="relative isolate grid min-h-[100svh] overflow-hidden text-white">
-  <img
-    src={content.image.src}
+  <Image
+    src={heroImage}
     alt={content.image.alt}
-    fetchpriority="high"
     class="absolute inset-0 h-full w-full scale-[1.08] object-cover object-[54%_center] will-change-transform"
+    sizes="100vw"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+    format="webp"
   />
   <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,10,12,0.2)_0%,rgba(14,10,12,0.35)_30%,rgba(14,10,12,0.88)_100%)]"></div>
 

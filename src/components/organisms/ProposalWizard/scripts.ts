@@ -5,6 +5,7 @@ export interface ProposalWizardScriptOptions {
 
 export function getProposalWizardScript(options: ProposalWizardScriptOptions): string {
   return `
+    (() => {
     const hasAnalytics = () => typeof window !== "undefined" && typeof window.gtag === "function";
 
     const getLanguage = (form) => {
@@ -559,5 +560,6 @@ export function getProposalWizardScript(options: ProposalWizardScriptOptions): s
 
       renderStep(0);
     });
+    })();
   `;
 }

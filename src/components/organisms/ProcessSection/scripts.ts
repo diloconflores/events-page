@@ -3,14 +3,24 @@ export function getProcessSectionScript(): string {
     const root = document.querySelector("[data-process-section]");
 
     if (root instanceof HTMLElement) {
-      const items = Array.from(root.querySelectorAll("[data-process-item]")).filter(
-        (item) => item instanceof HTMLElement,
-      );
-      const titles = items
-        .map((item) => item.querySelector("h3"))
-        .filter((title) => title instanceof HTMLElement);
+      const init = () => {
+        if (root.dataset.processInitialized === "true") {
+          return;
+        }
 
-      if (items.length && titles.length === items.length) {
+        root.dataset.processInitialized = "true";
+
+        const items = Array.from(root.querySelectorAll("[data-process-item]")).filter(
+          (item) => item instanceof HTMLElement,
+        );
+        const titles = items
+          .map((item) => item.querySelector("h3"))
+          .filter((title) => title instanceof HTMLElement);
+
+        if (!items.length || titles.length !== items.length) {
+          return;
+        }
+
         let rafId = 0;
 
         const getActiveIndex = () => {
@@ -61,7 +71,28 @@ export function getProcessSectionScript(): string {
         document.addEventListener("scroll", scheduleSync, { passive: true, capture: true });
         window.addEventListener("resize", scheduleSync);
         window.addEventListener("load", scheduleSync);
+      };
+
+      if (!("IntersectionObserver" in window)) {
+        init();
+        return;
       }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            observer.disconnect();
+            init();
+          });
+        },
+        { rootMargin: "200px 0px" },
+      );
+
+      observer.observe(root);
     }
   `;
 }

@@ -17,15 +17,11 @@ const isEnabled =
   isEnabled && (
     <>
       <script
-        async
-        src={`${GOOGLE_ANALYTICS_SCRIPT_URL}?id=${measurementId}`}
-      />
-
-      <script
         is:inline
         define:vars={{
           measurementId,
           config: DEFAULT_GTAG_CONFIG,
+          scriptUrl: `${GOOGLE_ANALYTICS_SCRIPT_URL}?id=${measurementId}`,
         }}
       >
         window.dataLayer = window.dataLayer || [];
@@ -37,6 +33,26 @@ const isEnabled =
         window.gtag('js', new Date());
 
         window.gtag('config', measurementId, config);
+
+        const loadAnalytics = () => {
+          if (document.querySelector('script[data-gtag-loader="true"]')) {
+            return;
+          }
+
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = scriptUrl;
+          script.dataset.gtagLoader = 'true';
+          document.head.appendChild(script);
+        };
+
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(loadAnalytics, { timeout: 2000 });
+        } else {
+          window.addEventListener('load', () => {
+            window.setTimeout(loadAnalytics, 1500);
+          }, { once: true });
+        }
       </script>
 
       <script

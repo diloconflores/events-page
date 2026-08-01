@@ -1,6 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import Button from "../../atoms/Button/index.astro";
-import Icon from "../../atoms/Icon/index.astro";
+import whyUsImage from "../../../assets/images/why-dilo-flores.webp";
 import type { WhyUsSectionProps } from "./types";
 
 const props = Astro.props as WhyUsSectionProps;
@@ -9,11 +10,14 @@ const props = Astro.props as WhyUsSectionProps;
 <section id="why-us" class="relative isolate overflow-hidden bg-brand-ink py-[72px] text-white">
   <div class="relative mx-auto grid w-full max-w-310 gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:items-stretch lg:px-8">
     <div class="relative min-h-[320px] overflow-hidden rounded-4xl border border-white/8 bg-black/20 shadow-[0_24px_70px_rgba(10,7,9,.28)] lg:min-h-[760px]">
-      <img
-        src="/why-dilo-flores.webp"
+      <Image
+        src={whyUsImage}
         alt={props.content.imageAlt}
-        loading="lazy"
         class="absolute inset-0 h-full w-full object-cover object-center"
+        sizes="(min-width: 1024px) 33vw, 100vw"
+        loading="lazy"
+        decoding="async"
+        format="webp"
       />
       <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,6,7,.12)_0%,rgba(8,6,7,.28)_36%,rgba(8,6,7,.65)_100%)]"></div>
     </div>

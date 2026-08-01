@@ -2,6 +2,7 @@ import type { EventLandingScriptOptions } from "./types";
 
 export function getEventLandingScript(options: EventLandingScriptOptions): string {
   return `
+    (() => {
     const form = document.querySelector("#event-form");
     const formCard = document.querySelector(".form-card");
     const errorBox = document.querySelector("[data-form-error]");
@@ -185,5 +186,6 @@ export function getEventLandingScript(options: EventLandingScriptOptions): strin
       showStep(currentStep);
       updateConditionalFields();
     });
+    })();
   `;
 }

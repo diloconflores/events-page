@@ -53,7 +53,6 @@ const variant = props.variant ?? "album";
             data-media-details={item.details ?? ""}
             data-media-tag={item.tag ?? ""}
             data-media-tags={JSON.stringify(item.tags)}
-            aria-label={`Abrir ${item.title}`}
           >
             <img
               src={item.thumbnail ?? item.src}
@@ -70,7 +69,7 @@ const variant = props.variant ?? "album";
 
             {isOverflowItem ? (
               <span class="absolute inset-0 z-20 grid place-items-center rounded-[inherit] bg-[rgba(6,4,5,.72)] text-[clamp(2rem,4vw,4.2rem)] font-extrabold tracking-[-0.04em] text-white backdrop-blur-sm">
-                +{overflowCount}
+                +{overflowCount} más
               </span>
             ) : (
               <span class="absolute inset-x-4.5 bottom-4.5 z-20 grid gap-0.75 text-white">

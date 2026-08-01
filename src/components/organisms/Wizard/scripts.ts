@@ -1,5 +1,6 @@
 export function getWizardScript(): string {
   return `
+    (() => {
     const parseJson = (value, fallback) => {
       if (!value) {
         return fallback;
@@ -582,5 +583,6 @@ export function getWizardScript(): string {
 
       renderStep(0);
     });
+    })();
   `;
 }

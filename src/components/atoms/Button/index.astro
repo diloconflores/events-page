@@ -48,7 +48,7 @@ const slotClass = isGhostUnderlined
         "group inline-flex items-center justify-center gap-2 font-sans font-semibold focus-visible:outline-none disabled:pointer-events-none disabled:opacity-45",
         roundedClass,
         isGhost && "bg-transparent border-0 shadow-none backdrop-blur-0",
-        !isGhost && variant === "primary" && "bg-pink px-6 py-4 text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-pink-dark focus-visible:ring-2 focus-visible:ring-pink/30",
+        !isGhost && variant === "primary" && "bg-pink-dark px-6 py-4 text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-[#ae1350] focus-visible:ring-2 focus-visible:ring-pink/30",
         !isGhost && variant === "secondary" && !isGlass && "border border-brand-line bg-white px-6 py-4 text-brand-ink transition hover:-translate-y-0.5 hover:bg-brand-pink-soft focus-visible:ring-2 focus-visible:ring-brand-pink/20",
         !isGhost && variant === "secondary" && isGlass && "border border-white/55 bg-white/5 px-6 py-4 text-white backdrop-blur-[8px] transition-[transform,background-color,color,border-color] duration-[250ms] ease-[cubic-bezier(0.22,0.72,0.2,1)] hover:-translate-y-0.5 hover:bg-white hover:text-black focus-visible:ring-2 focus-visible:ring-white/20",
         !isGhost && variant === "light" && "border border-brand-line bg-white px-6 py-4 text-brand-ink transition hover:-translate-y-0.5 hover:bg-brand-pink-soft focus-visible:ring-2 focus-visible:ring-brand-pink/20",
