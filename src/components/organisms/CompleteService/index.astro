@@ -6,7 +6,6 @@ import {
   COMPLETE_SERVICE_CTA_HREF,
   COMPLETE_SERVICE_SECTION_ID,
 } from "./constants";
-import { getCompleteServiceScript } from "./scripts";
 import type { CompleteServiceProps } from "./types";
 
 const { content } = Astro.props as CompleteServiceProps;
@@ -16,11 +15,12 @@ const { content } = Astro.props as CompleteServiceProps;
   id={COMPLETE_SERVICE_SECTION_ID}
   class="bg-white pt-23 pb-20"
   data-complete-service
+  data-scroll-reveal
 >
   <div
     class="mx-auto grid w-[min(calc(100%-32px),1240px)] max-w-310 gap-10 min-[700px]:w-[min(calc(100%-64px),1240px)] min-[700px]:max-w-310 lg:grid-cols-[1.08fr_0.92fr] lg:items-center"
   >
-    <div class="reveal text-left">
+    <div class="text-left" data-scroll-reveal-item>
       <p
         class="mb-3.5 text-xs font-bold uppercase tracking-[0.18em] text-brand-pink"
       >
@@ -58,7 +58,7 @@ const { content } = Astro.props as CompleteServiceProps;
       </div>
     </div>
 
-    <div class="reveal lg:justify-self-end">
+    <div class="lg:justify-self-end" data-scroll-reveal-item>
       <div class="relative overflow-visible rounded-4xl bg-brand-surface shadow-soft">
         <div class="overflow-hidden rounded-4xl">
           <Image
@@ -86,11 +86,11 @@ const { content } = Astro.props as CompleteServiceProps;
   </div>
 </section>
 
-<section class="bg-brand-pink text-white">
+<section class="bg-brand-pink text-white" data-scroll-reveal>
   <div
     class="mx-auto flex w-[min(calc(100%-32px),1240px)] max-w-310 flex-col justify-center gap-2 py-5.5 min-[700px]:w-[min(calc(100%-64px),1240px)] min-[700px]:max-w-310 min-[700px]:flex-row min-[700px]:items-center min-[700px]:justify-between"
   >
-    <p class="m-0 text-base font-bold leading-[1.2]">
+    <p class="m-0 text-base font-bold leading-[1.2]" data-scroll-reveal-item>
       {content.conversionBand.text}
     </p>
     <Button
@@ -103,10 +103,9 @@ const { content } = Astro.props as CompleteServiceProps;
       data-analytics-event="cta_click"
       data-analytics-name="conversion_band_quote"
       data-analytics-location="conversion_band"
+      data-scroll-reveal-item
     >
       {content.conversionBand.cta}
     </Button>
   </div>
 </section>
-
-<script type="module" set:html={getCompleteServiceScript()} />

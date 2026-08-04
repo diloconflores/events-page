@@ -56,3 +56,45 @@ html.modal-open::-webkit-scrollbar,
 body.modal-open::-webkit-scrollbar {
   display: none;
 }
+
+html[data-scroll-reveal-ready="true"] [data-scroll-reveal] {
+  --reveal-distance: 28px;
+  --reveal-duration: 760ms;
+  --reveal-ease: cubic-bezier(0.22, 0.72, 0.2, 1);
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-distance), 0);
+  transition:
+    opacity var(--reveal-duration) var(--reveal-ease),
+    transform var(--reveal-duration) var(--reveal-ease);
+  will-change: opacity, transform;
+}
+
+html[data-scroll-reveal-ready="true"] [data-scroll-reveal][data-scroll-reveal-state="visible"] {
+  opacity: 1;
+  transform: none;
+}
+
+html[data-scroll-reveal-ready="true"] [data-scroll-reveal] [data-scroll-reveal-item] {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 640ms var(--reveal-ease),
+    transform 640ms var(--reveal-ease);
+  transition-delay: calc(var(--reveal-order, 0) * 92ms);
+  will-change: opacity, transform;
+}
+
+html[data-scroll-reveal-ready="true"] [data-scroll-reveal][data-scroll-reveal-state="visible"] [data-scroll-reveal-item] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-scroll-reveal-ready="true"] [data-scroll-reveal],
+  html[data-scroll-reveal-ready="true"] [data-scroll-reveal] [data-scroll-reveal-item] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}

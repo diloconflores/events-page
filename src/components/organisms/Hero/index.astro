@@ -5,7 +5,7 @@ import type { HeroProps } from "./types";
 const { content } = Astro.props as HeroProps;
 ---
 
-<section id="hero" class="relative isolate grid min-h-[100svh] overflow-hidden text-white">
+<section id="hero" class="relative isolate grid min-h-[100svh] overflow-hidden text-white" data-scroll-reveal>
   <img
     src={content.image.src}
     alt={content.image.alt}
@@ -15,7 +15,7 @@ const { content } = Astro.props as HeroProps;
   <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(14,10,12,0.2)_0%,rgba(14,10,12,0.35)_30%,rgba(14,10,12,0.88)_100%)]"></div>
 
   <div class="relative z-[1] mx-auto grid w-[min(calc(100%-32px),1240px)] items-end pt-[120px] pb-[95px] min-[700px]:w-[min(calc(100%-64px),1240px)] min-[980px]:pb-[105px]">
-    <div class="max-w-[960px]">
+    <div class="max-w-[960px]" data-scroll-reveal-item>
       <p class="mb-[14px] text-xs font-bold uppercase tracking-[0.18em] text-white">
         {content.kicker}
       </p>

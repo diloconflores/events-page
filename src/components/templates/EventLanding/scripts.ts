@@ -187,3 +187,68 @@ export function getEventLandingScript(options: EventLandingScriptOptions): strin
     });
   `;
 }
+
+export function getScrollRevealScript(): string {
+  return `
+    const revealRoots = Array.from(document.querySelectorAll("[data-scroll-reveal]")).filter(
+      (node) => node instanceof HTMLElement,
+    );
+
+    if (!revealRoots.length) {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const markVisible = (root) => {
+      if (!(root instanceof HTMLElement)) {
+        return;
+      }
+
+      root.dataset.scrollRevealState = "visible";
+
+      Array.from(root.querySelectorAll("[data-scroll-reveal-item]")).forEach((item, index) => {
+        if (item instanceof HTMLElement) {
+          item.style.setProperty("--reveal-order", String(index));
+        }
+      });
+    };
+
+    if (!("IntersectionObserver" in window) || prefersReducedMotion.matches) {
+      revealRoots.forEach(markVisible);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting || !(entry.target instanceof HTMLElement)) {
+            return;
+          }
+
+          markVisible(entry.target);
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.16,
+        rootMargin: "0px 0px -10% 0px",
+      },
+    );
+
+    revealRoots.forEach((root) => observer.observe(root));
+
+    const handleMotionPreferenceChange = () => {
+      if (!prefersReducedMotion.matches) {
+        return;
+      }
+
+      observer.disconnect();
+      revealRoots.forEach(markVisible);
+    };
+
+    if (typeof prefersReducedMotion.addEventListener === "function") {
+      prefersReducedMotion.addEventListener("change", handleMotionPreferenceChange);
+    }
+  `;
+}

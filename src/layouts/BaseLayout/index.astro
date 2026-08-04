@@ -28,6 +28,9 @@ const ogLocale = localeConfig.code === "es" ? "es_ES" : "en_US";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      document.documentElement.dataset.scrollRevealReady = "true";
+    </script>
     <meta name="theme-color" content={DEFAULT_THEME_COLOR} />
     <link rel="icon" href="/favicon/isotipo-color.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
     <link rel="icon" href="/favicon/isotipo-white.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
