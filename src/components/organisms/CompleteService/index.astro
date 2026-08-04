@@ -20,7 +20,7 @@ const { content } = Astro.props as CompleteServiceProps;
   <div
     class="mx-auto grid w-[min(calc(100%-32px),1240px)] max-w-310 gap-10 min-[700px]:w-[min(calc(100%-64px),1240px)] min-[700px]:max-w-310 lg:grid-cols-[1.08fr_0.92fr] lg:items-center"
   >
-    <div class="text-left" data-scroll-reveal-item>
+    <div class="text-left" data-scroll-reveal-item data-scroll-reveal-direction="left">
       <p
         class="mb-3.5 text-xs font-bold uppercase tracking-[0.18em] text-brand-pink"
       >
@@ -58,7 +58,7 @@ const { content } = Astro.props as CompleteServiceProps;
       </div>
     </div>
 
-    <div class="lg:justify-self-end" data-scroll-reveal-item>
+    <div class="lg:justify-self-end" data-scroll-reveal-item data-scroll-reveal-direction="right">
       <div class="relative overflow-visible rounded-4xl bg-brand-surface shadow-soft">
         <div class="overflow-hidden rounded-4xl">
           <Image
@@ -90,7 +90,7 @@ const { content } = Astro.props as CompleteServiceProps;
   <div
     class="mx-auto flex w-[min(calc(100%-32px),1240px)] max-w-310 flex-col justify-center gap-2 py-5.5 min-[700px]:w-[min(calc(100%-64px),1240px)] min-[700px]:max-w-310 min-[700px]:flex-row min-[700px]:items-center min-[700px]:justify-between"
   >
-    <p class="m-0 text-base font-bold leading-[1.2]" data-scroll-reveal-item>
+    <p class="m-0 text-base font-bold leading-[1.2]" data-scroll-reveal-item data-scroll-reveal-direction="up">
       {content.conversionBand.text}
     </p>
     <Button
@@ -104,6 +104,7 @@ const { content } = Astro.props as CompleteServiceProps;
       data-analytics-name="conversion_band_quote"
       data-analytics-location="conversion_band"
       data-scroll-reveal-item
+      data-scroll-reveal-direction="up"
     >
       {content.conversionBand.cta}
     </Button>

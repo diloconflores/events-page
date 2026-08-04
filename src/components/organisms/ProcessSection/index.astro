@@ -7,7 +7,7 @@ const props = Astro.props as ProcessSectionProps;
 
 <section id="process" class="bg-white py-[72px]" data-process-section data-scroll-reveal>
   <div class="mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
-    <div data-scroll-reveal-item>
+    <div data-scroll-reveal-item data-scroll-reveal-direction="up">
       <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-brand-pink">
         {props.content.kicker}
       </p>
@@ -26,6 +26,7 @@ const props = Astro.props as ProcessSectionProps;
           data-process-item
           data-state={index === 0 ? "active" : "inactive"}
           data-scroll-reveal-item
+          data-scroll-reveal-direction="up"
           class="group relative origin-top-left pb-20 pl-11 transition-[padding,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] data-[state=active]:z-10 data-[state=active]:pb-28 data-[state=past]:opacity-85 data-[state=inactive]:opacity-60"
         >
           <span class="absolute left-0 top-0 h-[34px] w-[34px]">

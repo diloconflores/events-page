@@ -11,6 +11,7 @@ const schema = getProposalWizardSchema(content, props.locale);
 <div
   data-proposal-wizard
   data-scroll-reveal-item
+  data-scroll-reveal-direction="right"
   class={props.class}
 >
   <Wizard schema={schema} action={props.action} locale={props.locale} />
