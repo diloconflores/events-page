@@ -8,9 +8,9 @@ const props = Astro.props as ProposalSectionProps;
 const content = props.content;
 ---
 
-<section id={PROPOSAL_SECTION_ID} class={cn("bg-white py-20 sm:py-24", props.class)}>
+<section id={PROPOSAL_SECTION_ID} class={cn("bg-white py-20 sm:py-24", props.class)} data-scroll-reveal>
   <div class="mx-auto grid w-full max-w-310 gap-8 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-    <div class="max-w-2xl">
+    <div class="max-w-2xl" data-scroll-reveal-item data-scroll-reveal-direction="left">
       <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
         {content.kicker}
       </p>

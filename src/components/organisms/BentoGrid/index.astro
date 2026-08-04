@@ -38,6 +38,8 @@ const variant = props.variant ?? "album";
         return (
           <button
             type="button"
+            data-scroll-reveal-item
+            data-scroll-reveal-direction="up"
             class="media-card group relative mb-3.5 block w-full cursor-pointer break-inside-avoid overflow-hidden rounded-panel bg-[#ddd] text-left shadow-[0_18px_42px_rgba(32,16,22,.08)] isolate focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-pink/20"
             data-media-group={variant}
             data-media-index={index}
