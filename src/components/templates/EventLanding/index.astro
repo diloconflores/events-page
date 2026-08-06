@@ -1,5 +1,4 @@
 ---
-import Button from "../../atoms/Button/index.astro";
 import CompleteService from "../../organisms/CompleteService/index.astro";
 import AlliancesSection from "../../organisms/AlliancesSection/index.astro";
 import GallerySection from "../../organisms/GallerySection/index.astro";
@@ -10,9 +9,12 @@ import ProcessSection from "../../organisms/ProcessSection/index.astro";
 import ProposalSection from "../../organisms/ProposalSection/index.astro";
 import WhyUsSection from "../../organisms/WhyUsSection/index.astro";
 import WhatsAppButton from "../../organisms/WhatsAppButton/index.astro";
-import ShopProductCard from "../../molecules/ShopProductCard/index.astro";
 import type { EventLandingProps } from "./types";
 import { EVENT_FORM_ACTION, SHOP_URL } from "./constants";
+import ServiceAreaSection from "./sections/ServiceAreaSection/index.astro";
+import FinalCtaSection from "./sections/FinalCtaSection/index.astro";
+import ShopSection from "./sections/ShopSection/index.astro";
+import LandingFooter from "./sections/LandingFooter/index.astro";
 
 const { locale, content, common, showShop = true } = Astro.props as EventLandingProps;
 ---
@@ -34,37 +36,7 @@ const { locale, content, common, showShop = true } = Astro.props as EventLanding
 
   <WhyUsSection content={content.whyUs} />
 
-  {content.serviceArea ? (
-    <section class="bg-brand-cream py-20 sm:py-24">
-      <div class="mx-auto w-full max-w-310 px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-8 rounded-4xl border border-brand-line bg-white p-7 shadow-[0_16px_40px_rgba(34,16,24,0.06)] sm:p-10 lg:grid-cols-[1fr_0.95fr] lg:items-center">
-          <div class="max-w-2xl">
-            <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
-              {content.serviceArea.kicker}
-            </p>
-            <h2 class="font-sans text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
-              {content.serviceArea.title}
-            </h2>
-            <p class="mt-6 text-base leading-8 text-brand-muted sm:text-lg">
-              {content.serviceArea.text}
-            </p>
-          </div>
-          <div class="rounded-3xl bg-brand-pink-soft p-6 sm:p-8">
-            <p class="text-[0.7rem] font-extrabold uppercase tracking-[0.28em] text-brand-pink">
-              {content.serviceArea.areasLabel}
-            </p>
-            <ul class="mt-5 flex flex-wrap gap-2">
-              {content.serviceArea.areas.map((area) => (
-                <li class="rounded-full border border-brand-line bg-white px-4 py-2 text-sm font-semibold text-brand-ink shadow-[0_4px_14px_rgba(34,16,24,0.04)]">
-                  {area}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  ) : null}
+  {content.serviceArea ? <ServiceAreaSection content={content.serviceArea} /> : null}
 
   <ProcessSection content={content.process} />
 
@@ -74,85 +46,9 @@ const { locale, content, common, showShop = true } = Astro.props as EventLanding
 
   <ProposalSection locale={locale} content={content.form} action={EVENT_FORM_ACTION} />
 
-  <section class="relative isolate overflow-hidden bg-brand-pink py-20 text-white sm:py-24">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.1),transparent_30%)]"></div>
-    <div class="relative mx-auto grid w-full max-w-310 gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
-      <div class="max-w-4xl">
-        <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink-soft/90">
-          {content.finalCta.kicker}
-        </p>
-        <h2 class="font-sans text-3xl font-medium tracking-tight text-white sm:text-4xl lg:text-6xl">
-          {content.finalCta.title}
-        </h2>
-      </div>
-      <Button
-        href="#quote"
-        variant="light"
-        trailingIcon="arrow-right"
-        class="border-0"
-        data-analytics-event="cta_click"
-        data-analytics-name="final_quote"
-        data-analytics-location="final_cta"
-      >
-        {content.finalCta.cta}
-      </Button>
-    </div>
-  </section>
+  <FinalCtaSection content={content.finalCta} />
 
-  {showShop ? (
-    <section id="shop" class="bg-white py-20 sm:py-24">
-      <div class="mx-auto w-full max-w-310 px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-end">
-          <div>
-            <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink">
-              {content.shop.kicker}
-            </p>
-            <h2 class="max-w-3xl font-sans text-3xl font-medium tracking-tight text-brand-ink sm:text-4xl lg:text-5xl">
-              {content.shop.title}
-            </h2>
-          </div>
-          <p class="max-w-2xl text-base leading-8 text-brand-muted sm:text-lg">
-            {content.shop.text}
-          </p>
-        </div>
-
-        <div class="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {content.shop.products.map((product) => (
-            <ShopProductCard
-              href={product.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              image={product.image}
-              alt={product.alt}
-              label={product.label}
-              title={product.title}
-              data-analytics-event="cta_click"
-              data-analytics-name={product.title}
-              data-analytics-location="shop_products"
-            />
-          ))}
-        </div>
-
-        <div class="mt-10 flex flex-col items-start justify-between gap-4 rounded-4xl border border-brand-line bg-brand-pink-soft p-6 sm:flex-row sm:items-center">
-          <p class="max-w-2xl text-sm leading-7 text-brand-ink">
-            {content.shop.footerText}
-          </p>
-          <Button
-            href={SHOP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="primary"
-            trailingIcon="arrow-right"
-            data-analytics-event="cta_click"
-            data-analytics-name="shop_footer"
-            data-analytics-location="shop"
-          >
-            {content.shop.footerButton}
-          </Button>
-        </div>
-      </div>
-    </section>
-  ) : null}
+  {showShop ? <ShopSection content={content.shop} url={SHOP_URL} /> : null}
 </main>
 
 <WhatsAppButton
@@ -162,38 +58,4 @@ const { locale, content, common, showShop = true } = Astro.props as EventLanding
   analyticsLocation="floating_button"
 />
 
-<footer id="contact" class="border-t border-brand-line bg-brand-cream py-14">
-  <div class="mx-auto grid w-full max-w-310 gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr_0.9fr] lg:px-8">
-    <div class="max-w-2xl">
-      <img src="/brand/logo-horz-color.svg" alt={content.brand.label} class="h-8 w-auto" />
-      <p class="mt-6 max-w-xl text-sm leading-7 text-brand-muted">
-        {content.footer.description}
-      </p>
-    </div>
-
-    <div>
-      <p class="text-[0.7rem] font-extrabold uppercase tracking-[0.28em] text-brand-pink">
-        {content.footer.contact}
-      </p>
-      <div class="mt-5 grid gap-3 text-sm font-semibold text-brand-ink">
-        <a href={`mailto:${content.footer.email}`} class="transition hover:text-brand-pink">
-          {content.footer.email}
-        </a>
-        <a href={`tel:${content.footer.phone}`} class="transition hover:text-brand-pink">
-          {content.footer.phone}
-        </a>
-      </div>
-    </div>
-
-    <div>
-      <p class="text-[0.7rem] font-extrabold uppercase tracking-[0.28em] text-brand-pink">
-        {content.footer.explore}
-      </p>
-      <nav class="mt-5 grid gap-3 text-sm font-semibold text-brand-ink">
-        <a class="transition hover:text-brand-pink" href="#inspiration" data-analytics-event="cta_click" data-analytics-name="footer_inspiration" data-analytics-location="footer">{content.footer.inspiration}</a>
-        <a class="transition hover:text-brand-pink" href="#gallery" data-analytics-event="cta_click" data-analytics-name="footer_gallery" data-analytics-location="footer">{content.footer.gallery}</a>
-        <a class="transition hover:text-brand-pink" href="#quote" data-analytics-event="cta_click" data-analytics-name="footer_quote" data-analytics-location="footer">{content.footer.quote}</a>
-      </nav>
-    </div>
-  </div>
-</footer>
+<LandingFooter content={content.footer} brandLabel={content.brand.label} />

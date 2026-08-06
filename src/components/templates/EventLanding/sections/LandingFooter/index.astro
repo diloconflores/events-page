@@ -1,0 +1,59 @@
+---
+interface LandingFooterProps {
+  readonly brandLabel: string;
+  readonly content: {
+    readonly description: string;
+    readonly contact: string;
+    readonly email: string;
+    readonly phone: string;
+    readonly explore: string;
+    readonly inspiration: string;
+    readonly gallery: string;
+    readonly quote: string;
+  };
+}
+
+const { brandLabel, content } = Astro.props as LandingFooterProps;
+---
+
+<footer id="contact" class="border-t border-brand-line bg-brand-cream py-14">
+  <div class="mx-auto grid w-full max-w-310 gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr_0.9fr] lg:px-8">
+    <div class="max-w-2xl">
+      <img src="/brand/logo-horz-color.svg" alt={brandLabel} class="h-8 w-auto" />
+      <p class="mt-6 max-w-xl text-sm leading-7 text-brand-muted">
+        {content.description}
+      </p>
+    </div>
+
+    <div>
+      <p class="text-[0.7rem] font-extrabold uppercase tracking-[0.28em] text-brand-pink">
+        {content.contact}
+      </p>
+      <div class="mt-5 grid gap-3 text-sm font-semibold text-brand-ink">
+        <a href={`mailto:${content.email}`} class="transition hover:text-brand-pink">
+          {content.email}
+        </a>
+        <a href={`tel:${content.phone}`} class="transition hover:text-brand-pink">
+          {content.phone}
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-[0.7rem] font-extrabold uppercase tracking-[0.28em] text-brand-pink">
+        {content.explore}
+      </p>
+      <nav class="mt-5 grid gap-3 text-sm font-semibold text-brand-ink">
+        <a class="transition hover:text-brand-pink" href="#inspiration" data-analytics-event="cta_click" data-analytics-name="footer_inspiration" data-analytics-location="footer">
+          {content.inspiration}
+        </a>
+        <a class="transition hover:text-brand-pink" href="#gallery" data-analytics-event="cta_click" data-analytics-name="footer_gallery" data-analytics-location="footer">
+          {content.gallery}
+        </a>
+        <a class="transition hover:text-brand-pink" href="#quote" data-analytics-event="cta_click" data-analytics-name="footer_quote" data-analytics-location="footer">
+          {content.quote}
+        </a>
+      </nav>
+    </div>
+  </div>
+</footer>
