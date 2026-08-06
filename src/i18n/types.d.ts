@@ -263,6 +263,13 @@ export interface LandingPageContent {
     readonly title: string;
     readonly cta: string;
   };
+  readonly serviceArea?: {
+    readonly kicker: string;
+    readonly title: string;
+    readonly text: string;
+    readonly areasLabel: string;
+    readonly areas: readonly string[];
+  };
   readonly shop: {
     readonly kicker: string;
     readonly title: string;

@@ -1,0 +1,38 @@
+---
+import Button from "../../../../atoms/Button/index.astro";
+
+interface FinalCtaSectionProps {
+  readonly content: {
+    readonly kicker: string;
+    readonly title: string;
+    readonly cta: string;
+  };
+}
+
+const { content } = Astro.props as FinalCtaSectionProps;
+---
+
+<section class="relative isolate overflow-hidden bg-brand-pink py-20 text-white sm:py-24">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.1),transparent_30%)]"></div>
+  <div class="relative mx-auto grid w-full max-w-310 gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+    <div class="max-w-4xl">
+      <p class="mb-4 text-[0.7rem] font-extrabold uppercase tracking-[0.34em] text-brand-pink-soft/90">
+        {content.kicker}
+      </p>
+      <h2 class="font-sans text-3xl font-medium tracking-tight text-white sm:text-4xl lg:text-6xl">
+        {content.title}
+      </h2>
+    </div>
+    <Button
+      href="#quote"
+      variant="light"
+      trailingIcon="arrow-right"
+      class="border-0"
+      data-analytics-event="cta_click"
+      data-analytics-name="final_quote"
+      data-analytics-location="final_cta"
+    >
+      {content.cta}
+    </Button>
+  </div>
+</section>

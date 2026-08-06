@@ -11,6 +11,8 @@ const {
   description,
   canonicalPath = getLocalizedPath(locale),
   route = "home",
+  alternatePaths,
+  xDefaultPath,
   noIndex = false,
   ogType = "website",
 } = Astro.props as BaseLayoutProps;
@@ -18,8 +20,8 @@ const {
 const localeConfig = getLocaleConfig(locale);
 const siteUrl = Astro.site ?? new URL("https://eventos.diloconflores.com");
 const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
-const localeAlternates = getAlternateLocalePaths(route);
-const xDefaultUrl = new URL(getLocalizedPath(defaultLocale, route), siteUrl).toString();
+const localeAlternates = alternatePaths ?? getAlternateLocalePaths(route);
+const xDefaultUrl = new URL(xDefaultPath ?? getLocalizedPath(defaultLocale, route), siteUrl).toString();
 const ogLocale = localeConfig.code === "es" ? "es_ES" : "en_US";
 ---
 
