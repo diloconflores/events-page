@@ -4,6 +4,7 @@ export interface EventLandingProps {
   readonly locale: LocaleCode;
   readonly content: LandingPageContent;
   readonly common: CommonTranslations;
+  readonly showShop?: boolean;
 }
 
 export interface EventLandingScriptOptions {

@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout/index.astro";
+import EventLanding from "../../../components/templates/EventLanding/index.astro";
+import { getSeoLandingCityPaths, getSeoLandingLocationFromParams, getSeoLandingPage } from "../../../content/seo-event-landings";
+
+export function getStaticPaths() {
+  return getSeoLandingCityPaths("eventos-sociales");
+}
+
+const location = getSeoLandingLocationFromParams(Astro.params);
+const page = getSeoLandingPage("eventos-sociales", location);
+---
+
+<BaseLayout
+  locale={page.locale}
+  title={page.content.metadata.title}
+  description={page.content.metadata.description}
+  canonicalPath={page.canonicalPath}
+  alternatePaths={page.alternatePaths}
+  xDefaultPath={page.xDefaultPath}
+>
+  <EventLanding locale={page.locale} content={page.content} common={page.common} showShop={false} />
+</BaseLayout>

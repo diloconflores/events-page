@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout/index.astro";
+import EventLanding from "../../components/templates/EventLanding/index.astro";
+import { getSeoLandingPage } from "../../content/seo-event-landings";
+
+const page = getSeoLandingPage("bodas", {
+  level: "base",
+});
+---
+
+<BaseLayout
+  locale={page.locale}
+  title={page.content.metadata.title}
+  description={page.content.metadata.description}
+  canonicalPath={page.canonicalPath}
+  alternatePaths={page.alternatePaths}
+  xDefaultPath={page.xDefaultPath}
+>
+  <EventLanding locale={page.locale} content={page.content} common={page.common} showShop={false} />
+</BaseLayout>

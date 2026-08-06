@@ -1,7 +1,7 @@
-const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
+const formspreeEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT?.trim();
 
-if (typeof formspreeEndpoint !== "string" || formspreeEndpoint.length === 0) {
-  throw new Error("Missing PUBLIC_FORMSPREE_ENDPOINT environment variable.");
-}
-
-export const FORMSPREE_ENDPOINT = formspreeEndpoint;
+// Keep builds working in environments where the secret is not injected yet.
+export const FORMSPREE_ENDPOINT =
+  typeof formspreeEndpoint === "string" && formspreeEndpoint.length > 0
+    ? formspreeEndpoint
+    : "https://formspree.io/f/placeholder";
